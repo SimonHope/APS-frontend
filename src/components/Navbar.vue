@@ -1,0 +1,69 @@
+<template>
+  <div>
+    <!-- bar -->
+    <v-app-bar color="#F86624" fixed >
+      <v-spacer></v-spacer>
+      <v-btn icon>
+        <v-img height="32" width="32" src="../assets/logodoc.png"> </v-img>
+      </v-btn>
+      <v-spacer></v-spacer>
+
+      <v-app-bar-nav-icon @click="openmenu = true"> </v-app-bar-nav-icon>
+    </v-app-bar>
+    <!-- bar -->
+
+    <!-- เเถบข้างเวลากดเเฮมไบเกอร์ -->
+    <v-navigation-drawer v-model="openmenu" absolute temporary right>
+      <v-list-item-group
+        v-model="group"
+        active-class="deep-purple--text text--accent-4"
+      >
+        
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>หน้าหลัก</v-list-item-title>
+        </v-list-item>
+
+        <v-divider></v-divider>
+
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-account</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>เข้าสู่ระบบ</v-list-item-title>
+        </v-list-item>
+
+        <v-divider></v-divider>
+
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-account</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>เข้าสู่ระบบ</v-list-item-title>
+        </v-list-item>
+
+
+      </v-list-item-group>
+
+      
+
+    </v-navigation-drawer>
+    <!-- เเถบข้างเวลากดเเฮมไบเกอร์ -->
+
+
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Navbar",
+  data: () => ({
+    openmenu: false,
+  }),
+};
+</script>
+
+<style>
+</style>
