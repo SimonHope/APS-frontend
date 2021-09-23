@@ -30,7 +30,7 @@ services:
     container_name: nginx
     restart: always
     volumes:
-      - ./imgstore:/usr/share/nginx/html
+      - ./web:/usr/share/nginx/html
     ports:
       - "${WEBSERVER_PORT}:80"
     environment:
