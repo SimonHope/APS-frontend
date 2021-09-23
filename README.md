@@ -1,4 +1,4 @@
-# project_kmitl2
+# academicpetition
 
 ## Project setup
 ```
