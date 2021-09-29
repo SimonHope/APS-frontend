@@ -1,24 +1,21 @@
 <template>
   <div>
-    <Navbar ></Navbar>
+    <Navbar></Navbar>
     <router-view></router-view>
     <footer><footers></footers></footer>
-    
   </div>
 </template>
 
 <script>
-import Navbar from "./components/NavbarGen.vue"
-import footers from "./components/footers.vue"
+import Navbar from "./components/NavbarGen.vue";
+import footers from "./components/footers.vue";
 export default {
   name: "App",
-  components:{
+  components: {
     Navbar,
     footers,
-  }
-
-
-}
+  },
+};
 </script>
 
 <style>
@@ -26,8 +23,8 @@ body {
   margin: 3% 0% 0% 0%;
   background-color: rgb(255, 255, 255);
   text-align: center;
-  background-image:url("./assets/background.png");
-  
+  background-image: url("./assets/background.png");
+  font-family: "Prompt", sans-serif;
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
 </style>
