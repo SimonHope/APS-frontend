@@ -22,7 +22,7 @@
         
       >
 
-        <v-list-item>
+        <v-list-item to="/">
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
@@ -31,7 +31,7 @@
 
         <v-divider></v-divider>
 
-        <v-list-item>
+        <v-list-item to="/login">
           <v-list-item-icon>
             <v-icon>mdi-account</v-icon>
           </v-list-item-icon>
