@@ -5,7 +5,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 cleanWs()
-                git branch: 'master',url: 'https://github.com/SimonHope/Project_KMITL.git'
+                git branch: 'main',url: 'https://github.com/SimonHope/Project_KMITL.git'
             }
         }
         
