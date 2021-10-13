@@ -15,7 +15,7 @@
   <!-- ส่วนของ BAR -->
 
   <!-- เเถบข้างเวลากดเเฮมไบเกอร์ -->
-    <v-navigation-drawer v-model="openmenu" absolute temporary right>
+    <v-navigation-drawer v-model="openmenu"  fixed temporary right>
       <v-list-item-group
         v-model="group"
         active-class="deep-purple--text text--accent-4"
@@ -59,7 +59,10 @@
 
 <script>
 export default {
-    name:"NavbarStudent"
+    name:"NavbarStudent",
+    data: () => ({
+    openmenu: false,
+  }),
 
 }
 </script>

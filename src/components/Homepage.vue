@@ -10,38 +10,15 @@
     ></v-carousel-item>
   </v-carousel>
   </div>
-
+<!-- ส่วนของบทความ -->
   <div class="content1" id="article">
     <v-card>
-      <v-row>
-        <v-col>
-          <v-btn fab height="250" width="250">sdfs</v-btn>
-          <h1> รวดเร็ว </h1>
-          <p>Phasellus feugiat arcu sapien, 
-            et iaculis ipsum elementum sit amet. 
-            Mauris cursus commodo interdum.
-          </p>
-        </v-col>
-        <v-col>
-          <v-btn fab height="250" width="250">sdfs</v-btn>
-          <h1>ติดตามได้</h1>
-          <p>Phasellus feugiat arcu sapien, 
-            et iaculis ipsum elementum sit amet. 
-            Mauris cursus commodo interdum.
-          </p>
-        </v-col>
-        <v-col>
-          <v-btn fab height="250" width="250">sdfs</v-btn>
-          <h1>สะดวกง่าย</h1>
-          <p>Phasellus feugiat arcu sapien, 
-            et iaculis ipsum elementum sit amet. 
-            Mauris cursus commodo interdum.
-          </p>
-        </v-col>
-      </v-row>
+      
+      <v-btn>ดูทั้งหมด</v-btn>
     </v-card>
+    
   </div>
-
+<!-- ส่วนของบทความ -->
      
 
   <div class="content2">

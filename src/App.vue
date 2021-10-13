@@ -3,20 +3,20 @@
     <Navbar   ></Navbar>
     <!-- <NavbarStu  ></NavbarStu> -->
     <router-view></router-view>
-    <footer><footers></footers></footer>
+    <!-- <footer><footers></footers></footer> -->
   </div>
 </template>
 
 <script>
 import Navbar from "./components/NavbarGen.vue";
 // import NavbarStu from "./components/NavbarStudent.vue"
-import footers from "./components/footers.vue";
+// import footers from "./components/footers.vue";
 export default {
   name: "App",
   components: {
     Navbar,
     // NavbarStu,
-    footers,
+    // footers,
   },
 };
 </script>
