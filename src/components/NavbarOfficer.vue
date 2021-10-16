@@ -1,59 +1,50 @@
 <template>
   <div>
-    <!-- ส่วนของ BAR -->
+  <!-- ส่วนของ BAR -->
   <v-app-bar color="#536DFE" fixed >
-
+    <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-img height="128" width="128" src="../assets/logo.png"> </v-img>
+      <v-btn fab color="##536DFE"  icon>
+        <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
-
-      <v-app-bar-nav-icon @click="openmenu = true"> </v-app-bar-nav-icon>
-
   </v-app-bar>
+  
   <!-- ส่วนของ BAR -->
 
-  <!-- เเถบข้างเวลากดเเฮมไบเกอร์ -->
-    <v-navigation-drawer v-model="openmenu" fixed temporary right>
-      <v-list-item-group
+  <!-- เเถบข้างเเสดงเมนู -->
+    
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      class="backNav"
+      width='300'
+      
+    >
+      <!-- ส่วนตัวเลือกเมนู -->
+      <v-list-item-group 
         v-model="group"
-        active-class="deep-purple--text text--accent-4"
       >
-
-        <v-list-item>
+        <v-list-item to="/">
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
           <v-list-item-title>หน้าหลัก</v-list-item-title>
-        </v-list-item>
-
-        <v-divider></v-divider>
-
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>เข้าสู่ระบบ</v-list-item-title>
-        </v-list-item>
-
-        <v-divider></v-divider>
-
-        <v-list-item>
-          <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>เข้าสู่ระบบ</v-list-item-title>
-        </v-list-item>
-
-
+        </v-list-item> 
       </v-list-item-group>
-
-
-
+      <!-- ส่วนตัวเลือกเมนู -->
     </v-navigation-drawer>
-    <!-- เเถบข้างเวลากดเเฮมไบเกอร์ -->
-
+  <!-- เเถบข้างเเสดงเมนู -->
+    
+  <!-- ส่วนจัดเเสดง -->
+    <v-main>
+      <v-card class="backedit">
+        <v-responsive :aspect-ratio="9/11">
+        
+      </v-responsive>
+      </v-card>
+    </v-main>
+    <!-- ส่วนจัดเเสดง -->
   </div>
 </template>
 
@@ -61,13 +52,19 @@
 export default {
     name:"NavbarOfficer",
     data: () => ({
-    openmenu: false,
+    drawer: null,
   }),
+  methods: {
+},
 
 
 }
 </script>
 
+
 <style>
+.backedit{
+  z-index: -2;
+}
 
 </style>

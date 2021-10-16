@@ -48,6 +48,7 @@
       </v-col>
       </v-col>
     </v-row>
+    <footer class="buttomm"  ><FB/></footer>
 
   </div>
 </template>
@@ -56,12 +57,15 @@
 import Billboard from '../components/Billboard.vue'
 import Article from '../components/Grouparticle.vue'
 import vision from '../components/vision.vue'
+import FB from '../components/Footer.vue'
+
   export default {
     name: 'Homepage',
     components: {
     Billboard,
     Article,
     vision,
+    FB,
   },
 
     
@@ -89,5 +93,10 @@ body{
   text-align: center;
   padding: 10px;
 }
-
+.buttomm{
+  margin: 1% ;
+  z-index: -2;
+  position: sticky;
+  
+}
 </style>

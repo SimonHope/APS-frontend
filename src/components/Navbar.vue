@@ -39,6 +39,20 @@
           <v-list-item-title>เข้าสู่ระบบ</v-list-item-title>
         </v-list-item>
 
+        <v-list-item to="/about">
+          <v-list-item-icon>
+            <v-icon>mdi-alert-octagon</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>เกี่ยวกับ</v-list-item-title>
+        </v-list-item>
+
+        <v-list-item to="/rules">
+          <v-list-item-icon>
+            <v-icon>mdi-archive-check</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>ข้อตกลง เเละ นโยบาย</v-list-item-title>
+        </v-list-item>
+
         <v-divider></v-divider>
       </v-list-item-group>
       
