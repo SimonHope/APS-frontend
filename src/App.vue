@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <v-btn 
+      <!-- <v-btn 
     fixed 
      
     left
@@ -10,13 +10,13 @@
     @click="roluser = 'officer'"
     >
 
-    </v-btn>
+    </v-btn> -->
     </div>
-    <Navbar v-if="roluser == 'null'" ></Navbar>
-    <NavbarStu v-if="roluser == 'Student'" ></NavbarStu>
-    <NavbarHOF v-if="roluser == 'Hoffice'" ></NavbarHOF>
-    <NavbarOF v-if="roluser == 'officer'" ></NavbarOF>
-    <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper>
+    <Navbar v-if="roluser == 'null'"  ></Navbar>
+    <NavbarStu v-if="roluser == 'Student'"  ></NavbarStu>
+    <NavbarHOF v-if="roluser == 'Hoffice'"  ></NavbarHOF>
+    <NavbarOF v-if="roluser == 'officer'"  ></NavbarOF>
+    <NavbarSuper v-if="roluser == 'admin'" ></NavbarSuper>
     
   
 
@@ -59,17 +59,15 @@ export default {
 </script>
 
 <style>
-.viweshow{
-  
-  background-color: rgba(232, 232, 235, 0.452);
-  
-}
+
 body{
-  margin: 8% 8% 0% 8%;
-  background-color: rgb(234, 235, 238);
+  margin: 6% 8% 0% 8%;
+  background-color: rgb(80, 82, 85);
 }
 .buttomm{
   margin: 1% ;
+  z-index: -2;
+  position: sticky;
   
 }
 </style>

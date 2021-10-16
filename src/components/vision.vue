@@ -3,7 +3,7 @@
     <v-row>
       <v-col align="center">
         <v-btn elevation="2" fab class="btnvison" width="100" height="100">
-             <v-img src="../assets/Thunder.png" max-height="300" max-width="70"></v-img> 
+             <v-img src="../assets/Thunder.png" max-height="300" max-width="300"></v-img> 
              </v-btn>
         <h1> รวดเร็ว </h1>
           <p>ทำทำงานที่รวดเร็ว
@@ -38,7 +38,7 @@ export default {
 
 <style>
 .btnvison{
-    margin: 10%;
+    margin: 4.5%;
     
 }
 </style>

@@ -5,7 +5,7 @@
 
       <v-spacer></v-spacer>
       <v-btn icon>
-        <v-img height="50" width="34" src="../assets/logo.png"> </v-img>
+        <v-img height="128" width="128" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
 

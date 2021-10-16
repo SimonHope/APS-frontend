@@ -14,8 +14,11 @@
         <v-col>
 
         <div class="article" >
-      <v-card class="backArticle" color="#D3D3D3">
+      <v-card class="backArticle" color="#FAFAFA">
       <v-row>
+        <v-col>
+          
+        </v-col>
         <v-col>
           <h1 class="topic1">Article</h1>
         </v-col>
@@ -36,7 +39,7 @@
       <v-col>
       <v-col>
       <div class="article1" >
-      <v-card class="backArticle" color="#D3D3D3">
+      <v-card color="#FAFAFA">
       <h1 class="topic1">vision</h1>
       <vision/>
       </v-card>
@@ -83,9 +86,8 @@ body{
 
 }
 .topic1{
-  text-align: left;
+  text-align: center;
+  padding: 10px;
 }
-.backArticle{
-  background-color:rgb(129, 128, 128);
-}
+
 </style>
