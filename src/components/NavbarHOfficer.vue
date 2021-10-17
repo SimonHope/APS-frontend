@@ -1,5 +1,5 @@
 <template>
-   <div>
+  <div>
   <!-- ส่วนของ BAR -->
   <v-app-bar color="#E040FB" fixed >
     <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
@@ -19,19 +19,54 @@
       app
       class="backNav"
       width='300'
-      
     >
       <!-- ส่วนตัวเลือกเมนู -->
-      <v-list-item-group 
-        v-model="group"
-      >
-        <v-list-item to="/">
+     <v-btn fab width="200" height="200" class="profile">
+       <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
+     </v-btn>
+     <v-divider></v-divider>
+     
+
+
+        <v-list-item   >
+          <v-list-item to="" @click="opDash">
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>หน้าหลัก</v-list-item-title>
+          <v-list-item-title>Dashboard</v-list-item-title>
         </v-list-item> 
-      </v-list-item-group>
+            <!-- <v-btn block @click="opDSTU"> <v-icon>mdi-home</v-icon> Dashboard<v-spacer></v-spacer></v-btn> -->
+        </v-list-item> 
+
+       <v-list-item >
+         <v-list-item to="" @click="opCRUDF">
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>จักการ Froms</v-list-item-title>
+        </v-list-item> 
+          <!-- <v-btn block @click="opFSTU"> <v-icon>mdi-home</v-icon> คำร้อง / ยื่นคำร้อง<v-spacer></v-spacer></v-btn> -->
+        </v-list-item>
+
+        <v-list-item>
+          <v-list-item to="" @click="opCRUDOFFice">
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>จัดการ Office</v-list-item-title>
+        </v-list-item> 
+          <!-- <v-btn block @click="opRPSTU"> <v-icon>mdi-home</v-icon> รายงานเสนอเเนะ<v-spacer></v-spacer></v-btn> -->
+        </v-list-item> 
+
+        <v-list-item>
+          <v-list-item to="" @click="opTranking">
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>สถานะเอกสาร/คำร้อง</v-list-item-title>
+        </v-list-item> 
+          <!-- <v-btn block @click="opRPSTU"> <v-icon>mdi-home</v-icon> รายงานเสนอเเนะ<v-spacer></v-spacer></v-btn> -->
+        </v-list-item> 
       <!-- ส่วนตัวเลือกเมนู -->
     </v-navigation-drawer>
   <!-- เเถบข้างเเสดงเมนู -->
@@ -39,31 +74,89 @@
   <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="backedit">
-        <v-responsive :aspect-ratio="9/11">
+        <Dashboard v-if="openDash = openDash"></Dashboard>
+        <CRUDForms v-if="openCRUDF = openCRUDF"></CRUDForms>
+        <Traking v-if="openTranking = openTranking"></Traking>
+        <CRUDOffice  v-if="openCRUDOFF = openCRUDOFF" ></CRUDOffice>
+
+
         
-      </v-responsive>
       </v-card>
+
+      
     </v-main>
     <!-- ส่วนจัดเเสดง -->
   </div>
 </template>
 
 <script>
+import Dashboard from "../components/DashboardHOffice/Dashboard.vue"
+import CRUDForms from "../components/DashboardHOffice/CRUDForms.vue"
+import Traking from "../components/DashboardHOffice/Traking.vue"
+import CRUDOffice from "../components/DashboardHOffice/CRUDOffice.vue"
 export default {
-    name:"NavbarHOfficer",
+    name:"NavbarOffice",
     data: () => ({
     drawer: null,
+    openDash:true,
+    openTranking:null,
+    openCRUDF:null,
+    openCRUDOFF:null,
   }),
-  methods: { 
+components:{
+  Dashboard,
+  CRUDForms,
+  Traking,
+  CRUDOffice,
+  
 },
-
+methods: {
+  opDash: function() {
+    this.openDash = true
+    if (this.openDash == true) {
+      this.openTranking = false,
+      this.openCRUDF = false,
+      this.openCRUDOFF = false
+    }
+  },
+  opCRUDF: function() {
+    this.openCRUDF = true
+    if (this.openCRUDF == true) {
+      this.openTranking = false,
+      this.openDash = false,
+      this.openCRUDOFF = false
+    }
+  },
+  opTranking: function() {
+    this.openTranking = true
+    if (this.openTranking == true) {
+      this.openDash = false,
+      this.openCRUDF = false,
+      this.openCRUDOFF = false
+    }
+  },
+  opCRUDOFFice: function() {
+    this.openCRUDOFF = true
+    if (this.openCRUDOFF == true) {
+      this.openDash = false,
+      this.openCRUDF = false,
+      this.openTranking = false
+    }
+  }
+  
+},
 
 }
 </script>
 
 <style>
 .backedit{
-  z-index: -2;
+  z-index: -3;
+  margin: 2%;
+  
+}
+.profile{
+  margin: 100px 0px 50px 0px;
 }
 
 </style>
