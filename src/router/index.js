@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import login from '../views/login.vue'
 import Dashboard from '../views/Dashboard.vue'
+import DashboardSTU from '../components/DashboardSTUDENT/Dashboard.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,12 @@ const routes = [
     path: '/Dashboard',
     name: 'Dashboard',
     component: Dashboard
+  }
+  ,
+  {
+    path: '/DashboardSTU',
+    name: 'DashboardSTU',
+    component: DashboardSTU
   }
 ]
 

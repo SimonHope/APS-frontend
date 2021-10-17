@@ -27,7 +27,7 @@ export default {
   name:'dashboard',
   data() {
     return {
-       roluser:'Student',
+       roluser:'admin',
 
 
     }
