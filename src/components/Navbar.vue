@@ -23,37 +23,20 @@
         
       >
 
-        <v-list-item to="/">
+        <v-list-item 
+        v-for="menu in menu"
+          :key="menu.numforms"
+          router :to="menu.route"
+        >
+          <v-list-item  >
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>หน้าหลัก</v-list-item-title>
-        </v-list-item>
-
-        <v-divider></v-divider>
-
-        <v-list-item to="/login">
-          <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>เข้าสู่ระบบ</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item to="/about">
-          <v-list-item-icon>
-            <v-icon>mdi-alert-octagon</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>เกี่ยวกับ</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item to="/rules">
-          <v-list-item-icon>
-            <v-icon>mdi-archive-check</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>ข้อตกลง เเละ นโยบาย</v-list-item-title>
-        </v-list-item>
-
-        <v-divider></v-divider>
+          <v-list-item-title >{{menu.text}}</v-list-item-title>
+        </v-list-item> 
+    
+        </v-list-item> 
+        
       </v-list-item-group>
       
 
@@ -72,6 +55,13 @@ export default {
     name:'Navbar',
     data: () => ({
     openmenu: false,
+    menu : [
+        {menu:'1',text:'หน้าหลัก', route:'/'},
+        {menu:'2',text:'เข้าสู่ระบบ', route:'/login'},
+        {menu:'3',text:'เกี่ยวกับ', route:'/about'},
+        {menu:'4',text:'ข้อตกลง เเละ นโยบาย', route:'/rules'},
+        
+      ]
   }),
 
 }
@@ -80,3 +70,4 @@ export default {
 <style>
 
 </style>
+

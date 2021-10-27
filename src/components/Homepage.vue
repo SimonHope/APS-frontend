@@ -77,15 +77,17 @@ body{
 }
 .Billboard{
   height: 400px;
+  margin: 6% 8% 0% 8%;
 
 }
 .article{
-  margin: 20px 0px 0px 0px;
+  margin: 0% 8% 0% 8%;
   height: 450px;
+  
 
 }
 .article1{
-  margin: 70px 0px 0px 0px;
+  margin: 5% 8% 0% 8%;
   height: 300px;
 
 }
@@ -94,7 +96,6 @@ body{
   padding: 10px;
 }
 .buttomm{
-  margin: 1% ;
   z-index: -2;
   position: sticky;
   
