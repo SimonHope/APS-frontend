@@ -8,19 +8,50 @@
           <v-divider></v-divider>
         </h1>
 
-        <v-card elevation="2" 
-        loading 
-        class="trackcrad"
-        v-for=" listtracking in listtracking "
-        :key="listtracking.num"
-        >
-          <h2>{{listtracking.title}}</h2>
-          <v-row>
-            <v-col>
+        <!-- วนเเสดงรายการสถาณะเอสาร -->
 
+        <v-expansion-panels>
+          <v-expansion-panel
+            v-for="listtracking in listtracking"
+            :key="listtracking.num"
+          >
+            <v-expansion-panel-header>
+              {{ listtracking.title }}
+              <!-- เเสดงชื่อเอกสาร -->
+              <v-spacer></v-spacer>
+              {{ listtracking.checktracking }} / {{ listtracking.pointracking }}
+              <!-- เเสดงขั้นนตอน-->
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <!-- เเสดงเนื้อหาข้างใน -->
 
-          </v-row>
-        </v-card>
+              <v-row>
+                <v-col>
+                  <v-btn
+                    fab disabled
+                    class="tarkingbtn"
+                    v-for="listtracking in listtracking.pointracking"
+                    :key="listtracking.pointracking"
+                  >
+                    <v-icon>mdi-home</v-icon>
+                    
+                  </v-btn>
+                  <v-btn
+                      fab
+                      class="checkingbtn"
+                      color="#43A047"
+                      v-for="listtracking in listtracking.checktracking"
+                      :key="listtracking.checktracking"
+                    >
+                    </v-btn>
+                </v-col>
+              </v-row>
+              
+
+              <!-- เเสดงเนื้อหาข้างใน -->
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-card>
     </v-main>
     <!-- ส่วนจัดเเสดง -->
@@ -32,9 +63,11 @@ export default {
   name: "TrackingSTU",
   data() {
     return {
-      listtracking : [
-        {num:1,title:'เอกสารที่1',pointracking:5,}
-      ]
+      listtracking: [
+        { num: 1, title: "เอกสารที่1", pointracking: 6, checktracking: 3 },
+        { num: 2, title: "เอกสารที่2", pointracking: 2, checktracking: 2 },
+        { num: 3, title: "เอกสารที่2", pointracking: 2, checktracking: 1 },
+      ],
     };
   },
 };
@@ -48,8 +81,18 @@ h1 {
 .cardshow {
   margin: 8%;
 }
-.trackcrad{
+.trackcrad {
   text-align: center;
+}
+.text-right {
+  text-align: left;
+}
+.tarkingbtn {
+  margin: 10px;
+}
+.checkingbtn {
+  margin: 10px;
   
 }
+
 </style>
