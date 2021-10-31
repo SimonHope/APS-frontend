@@ -4,39 +4,27 @@
     class="mx-auto"
     elevation="12"
     max-width="1920"
+    
   >
     <v-slide-group
-      v-model="model"
-      class="pa-4"
-      active-class="success"
       show-arrows
     >
       <v-slide-item
-        v-for="n in 11"
-        :key="n"
-        v-slot="{ active, toggle }"
+        v-for="article in article"
+        :key="article.menu"
+        
+         
       >
         <v-card
-          :color="active ? undefined : 'grey lighten-1'"
           class="ma-4"
           height="450"
           width="200"
-          @click="toggle"
+          router :to="article.route"
+          
         >
-          <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-          >
-            <v-scale-transition>
-              <v-icon
-                v-if="active"
-                color="white"
-                size="48"
-                v-text="'mdi-close-circle-outline'"
-              ></v-icon>
-            </v-scale-transition>
-          </v-row>
+        <br>
+          <h2>{{article.text}}</h2>
+          
         </v-card>
       </v-slide-item>
     </v-slide-group>
@@ -47,7 +35,18 @@
   export default {
     name:'article',
     data: () => ({
-      model: null,
+      // model: null,
+
+      article : [
+        {menu:'1',text:'หน้าหลัก', route:'/',src: require('@/assets/n1.png')},
+        {menu:'2',text:'เข้าสู่ระบบ', route:'/login',src: require('@/assets/n1.png')},
+        {menu:'3',text:'เกี่ยวกับ', route:'/about',src: require('@/assets/n1.png')},
+        {menu:'4',text:'ข้อตกลง เเละ นโยบาย', route:'/rules',src: require('@/assets/n1.png')},
+        {menu:'4',text:'ข้อตกลง เเละ นโยบาย', route:'/rules',src: require('@/assets/n1.png')},
+        {menu:'4',text:'ข้อตกลง เเละ นโยบาย', route:'/rules',src: require('@/assets/n1.png')},
+        {menu:'4',text:'ข้อตกลง เเละ นโยบาย', route:'/rules',src: require('@/assets/n1.png')},
+        
+      ],
     }),
   }
 </script>

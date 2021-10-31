@@ -1,14 +1,37 @@
 <template>
   <div>
+    
     <div>
+      
     <!-- ส่วนของ BAR -->
   <v-app-bar color="#F86624" fixed >
-
-      <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
       <v-btn icon href=#top>
         <v-img height="128" width="128" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+
+
+
+      
 
       <v-app-bar-nav-icon @click="openmenu = true"> </v-app-bar-nav-icon>
 
@@ -61,7 +84,8 @@ export default {
         {menu:'3',text:'เกี่ยวกับ', route:'/about'},
         {menu:'4',text:'ข้อตกลง เเละ นโยบาย', route:'/rules'},
         
-      ]
+      ],
+      
   }),
 
 }
