@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-app>
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">
@@ -29,7 +29,7 @@
     </v-main>
     <!-- ส่วนจัดเเสดง -->
     
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -37,7 +37,7 @@ export default {
   name: "ReportSTU",
   data() {
     return {
-      items: ["Foo", "Bar", "Fizz", "Buzz"],
+      items: ["หัวข้อที่ 1", "หัวข้อที่ 2", "หัวข้อที่ 3", "หัวข้อที่ 3"],
       snackbar: false,
       text: "ส่งรายงานเเล้วอิควาย",
       timeout: 2000,

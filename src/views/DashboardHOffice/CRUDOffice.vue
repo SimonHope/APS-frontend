@@ -1,5 +1,5 @@
 <template>
-  <v-app class="background-1">
+  <v-app >
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">
@@ -40,8 +40,8 @@
             <v-col>{{ forms.Lname }}</v-col>
             <v-col>{{ forms.satatus }}</v-col>
             <v-col>
-                  <v-btn color="#FFEB3B" class="btn-magin" @click="dialog = !dialog" > เเก้ไขข้อมูล</v-btn>
-                  <v-btn color="#F44336" @click="dialogdel = !dialogdel"> ลบข้อมูล</v-btn>
+                  <v-btn color="#FFEB3B" class="btn-magin" @click="dialog = !dialog" > เเก้ไข</v-btn>
+                  <v-btn color="#F44336" @click="dialogdel = !dialogdel"> ลบ</v-btn>
             </v-col>
         </v-row>
 
@@ -231,7 +231,5 @@ h1 {
   margin: 5%;
 }
 .background-1 {
-  background-color: rgb(80, 82, 85);
-  
 }
 </style>

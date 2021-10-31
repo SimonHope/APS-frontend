@@ -1,82 +1,137 @@
 <template>
-  <div>
-  <!-- ส่วนของ BAR -->
-  <v-app-bar color="#E53935" fixed >
-    <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
+  <v-app>
+    <!-- ส่วนของ BAR -->
+    <v-app-bar color="#E53935" fixed>
+      <v-app-bar-nav-icon @click="drawer = !drawer">
+        <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-btn fab color="#E53935"  icon>
+      <v-btn fab color="#E53935" icon>
         <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
-  </v-app-bar>
-  
-  <!-- ส่วนของ BAR -->
+      <!-- เมนูออก -->
+      <v-menu offset-y open-on-hover>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="#FFFFFF" dark v-bind="attrs" v-on="on" icon>
+            <v-icon>mdi-cog-outline</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item @click="slideexit = !slideexit">
+            <v-list-item-title>ออกจากระบบ</v-list-item-title>
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item
+            v-for="menuseting in menuseting"
+            :key="menuseting.no"
+            router
+            :to="menuseting.route"
+          >
+            <v-list-item-title>{{ menuseting.text }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <!-- เมนูออก -->
+    </v-app-bar>
 
-  <!-- เเถบข้างเเสดงเมนู -->
-    
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      color="#E53935"
-      width='300'
-    >
+    <!-- ส่วนของ BAR -->
+
+    <!-- เเถบข้างเเสดงเมนู -->
+
+    <v-navigation-drawer v-model="drawer" app color="#E53935" width="300">
       <!-- ส่วนตัวเลือกเมนู -->
-     <v-btn fab width="200" height="200" class="profile">
-       <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
-     </v-btn>
-     <v-divider></v-divider>
-     
+      <v-btn fab width="200" height="200" class="profile">
+        <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
+      </v-btn>
+      <v-divider></v-divider>
 
-
-        <v-list-item 
+      <v-list-item
         v-for="menu in menu"
-          :key="menu.numforms"
-          router :to="menu.route"
-          
-        >
-          <v-list-item  >
+        :key="menu.numforms"
+        router
+        :to="menu.route"
+      >
+        <v-list-item>
           <v-list-item-icon>
-            <v-icon>mdi-home</v-icon>
+            <v-icon color="#FFFFFF">mdi-{{menu.icon}}</v-icon>
           </v-list-item-icon>
-          <v-list-item-title class="text-color">{{menu.text}}</v-list-item-title>
-        </v-list-item> 
-    
-        </v-list-item> 
+          <v-list-item-title class="text-color">{{
+            menu.text
+          }}</v-list-item-title>
+        </v-list-item>
+      </v-list-item>
       <!-- ส่วนตัวเลือกเมนู -->
     </v-navigation-drawer>
-  <!-- เเถบข้างเเสดงเมนู -->
-    
-  
-  </div>
+    <!-- เเถบข้างเเสดงเมนู -->
+
+    <router-view></router-view>
+
+
+    <!-- popup หน้าต่างกดออก -->
+    <v-dialog v-model="slideexit" persistent width="800">
+      <v-card>
+        <h1>ออกจากระบบ</h1>
+
+        <v-divider></v-divider>
+        <br />
+        <v-btn fab width="150" height="150" left class="text-pprofile-magin">
+          <v-icon>mdi-emoticon-cry-outline</v-icon>
+        </v-btn>
+        <br />
+        <br />
+        <h2>กด "ตกลง" เพื่อนยืนยันการออกจากระบบ</h2>
+        <br />
+
+        <v-divider></v-divider>
+        <v-btn
+          color="green darken-1"
+          @click="slideexit = false"
+          to="/"
+          class="btn-margin"
+        >
+          ตกลง
+        </v-btn>
+
+        <v-btn color="red darken-1" @click="slideexit = false"> ยกเลิก </v-btn>
+      </v-card>
+    </v-dialog>
+    <!-- popup หน้าต่างกดออก -->
+  </v-app>
 </template>
 
 <script>
-
 export default {
-    name:"NavbarOffice",
-    data: () => ({
+  name: "NavbarOffice",
+  data: () => ({
     drawer: null,
-    menu : [
-        {menu:'1',text:'Dashboard', route:'/DashboarAD'},
-        {menu:'2',text:'จัดการ Group', route:'/Group'},
-        {menu:'3',text:'จัดการ Froms', route:'/FormsAD'},
-        {menu:'4',text:'จัดการ Office', route:'/OfficerAD'},
-        {menu:'5',text:'จัดการ HeadOffice', route:'/HofficerAD'},
-        {menu:'7',text:'จัดการ บทความ', route:'/Blog'},
-      ]
+    slideexit: false,
+    menu: [
+      { menu: "1", text: "Dashboard", route: "/DashboarAD",icon:'home', },
+      { menu: "2", text: "จัดการ Group", route: "/Group",icon:'account-group', },
+      { menu: "3", text: "จัดการ Froms", route: "/FormsAD",icon:'form-select', },
+      { menu: "4", text: "จัดการ Office", route: "/OfficerAD",icon:'account-check', },
+      { menu: "5", text: "จัดการ HeadOffice", route: "/HofficerAD",icon:'account-star', },
+      { menu: "7", text: "จัดการ บทความ", route: "/Blog",icon:'book', },
+    ],
+    menuseting: [
+      { menu: "1", text: "เกี่ยวกับ", route: "/about" },
+      { menu: "2", text: "ตั้งค่า", route: "/seting" },
+    ],
   }),
-}
+};
 </script>
 
 <style>
-.profile{
+.profile {
   margin: 100px 0px 50px 0px;
 }
-.navback{
+.navback {
   z-index: 2;
-  
 }
-.text-color{
+.text-color {
   color: aliceblue;
+}
+.btn-margin {
+  margin: 30px;
 }
 </style>

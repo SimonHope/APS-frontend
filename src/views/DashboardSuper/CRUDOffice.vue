@@ -1,5 +1,5 @@
 <template>
-  <v-app class="background-1">
+  <v-app >
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">

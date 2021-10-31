@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-app>
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">
@@ -115,7 +115,7 @@
 
     
     
-  </div>
+  </v-app>
 </template>
 
 <script>

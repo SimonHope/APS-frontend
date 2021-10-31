@@ -1,6 +1,6 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <v-app class="background-1">
+  <v-app >
     <v-main>
       <v-card class="cardshow">
         <h1>
@@ -185,8 +185,5 @@ h1 {
 .text-pprofile-magin{
   margin: 5%;
 }
-.background-1 {
-  background-color: rgb(80, 82, 85);
-  
-}
+
 </style>

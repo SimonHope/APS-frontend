@@ -1,5 +1,5 @@
 <template>
-  
+  <div>
   <v-sheet
     class="mx-auto"
     elevation="12"
@@ -29,6 +29,7 @@
       </v-slide-item>
     </v-slide-group>
   </v-sheet>
+  </div>
 </template>
 
 <script>
