@@ -32,6 +32,7 @@ import HofficerAD from '../views/DashboardSuper/CRUDHOffice.vue'
 import tarckingAD from '../views/DashboardSuper/Traking.vue'
 import Blog from '../views/DashboardSuper/BLOG.vue'
 //คนดูเเลระบบ
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -157,7 +158,7 @@ const routes = [
     name: 'Blog',
     component: Blog 
   }
-
+  
   //คนดูเเลระบบ
 
  

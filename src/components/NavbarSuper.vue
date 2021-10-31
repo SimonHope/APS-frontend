@@ -62,7 +62,6 @@ export default {
         {menu:'3',text:'จัดการ Froms', route:'/FormsAD'},
         {menu:'4',text:'จัดการ Office', route:'/OfficerAD'},
         {menu:'5',text:'จัดการ HeadOffice', route:'/HofficerAD'},
-        {menu:'6',text:'สถานะเอกสาร/คำร้อง', route:'/tarckingAD'},
         {menu:'7',text:'จัดการ บทความ', route:'/Blog'},
       ]
   }),
@@ -74,7 +73,7 @@ export default {
   margin: 100px 0px 50px 0px;
 }
 .navback{
-  z-index: -1;
+  z-index: 2;
   
 }
 .text-color{

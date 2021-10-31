@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-app class="background-1">
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">
@@ -18,7 +18,7 @@
             
           </v-col>
           <v-col align ="right">
-            <v-btn  class="box-margin" color="#4CAF50">
+            <v-btn  class="box-margin" color="#4CAF50" @click="dialogadd = !dialogadd">
           <h2>+ เพิ่มรายชื่อใหม่</h2>
           </v-btn>
           </v-col>
@@ -40,14 +40,143 @@
             <v-col>{{ forms.Lname }}</v-col>
             <v-col>{{ forms.satatus }}</v-col>
             <v-col>
-                  <v-btn color="#FFEB3B" class="btn-magin"> เเก้ไขข้อมูล</v-btn>
-                  <v-btn color="#F44336"> ลบข้อมูล</v-btn>
+                  <v-btn color="#FFEB3B" class="btn-magin" @click="dialog = !dialog" > เเก้ไขข้อมูล</v-btn>
+                  <v-btn color="#F44336" @click="dialogdel = !dialogdel"> ลบข้อมูล</v-btn>
             </v-col>
         </v-row>
+
+
+
+
+
+        <!-- ส่วนจัดเเสดงเวลากดเเก้ไข -->
+
+        <v-dialog v-model="dialog" persistent width="800" >
+          
+          <v-card >
+            <h1>จัดการข้อมูล  Head Officer</h1>
+            
+            <v-divider></v-divider>
+            <v-btn fab width="250" height="250" left class="text-pprofile-magin">fuck</v-btn>
+
+            <v-text-field
+            label="ชื่อ"
+            outlined
+            readonly
+            class="text-pprofile-magin"
+          ></v-text-field>
+          
+          <v-text-field
+            label="นามสกุล"
+            outlined
+            readonly
+            class="text-pprofile-magin"
+          ></v-text-field>
+          <v-text-field
+            label="หน่วยงาน"
+            outlined
+            readonly
+            class="text-pprofile-magin"
+          ></v-text-field>
+
+          <v-textarea
+          label="คำอธิบาย"
+          auto-grow
+          outlined
+          rows="1"
+          row-height="15"
+          class="text-pprofile-magin"
+        ></v-textarea>
+            <v-divider></v-divider>
+            <v-btn color="green darken-1" text @click="dialog = false">
+              ตกลง
+            </v-btn>
+            <v-btn color="red darken-1" text @click="dialog = false">
+              ยกเลิก
+            </v-btn>
+          </v-card>
+        </v-dialog>
+        <!-- ส่วนจัดเเสดงเวลากดเเก้ไข -->
+
+        <!-- เพิ่มข้อมูล Head officer -->
+        <v-dialog v-model="dialogadd" persistent width="800" >
+          
+          <v-card >
+            <h1>เพิ่มข้อมูล Head officer</h1>
+            
+            <v-divider></v-divider>
+            <v-btn fab width="250" height="250" left class="text-pprofile-magin">fuck</v-btn>
+
+            <v-text-field
+            label="ชื่อ"
+            outlined
+            readonly
+            class="text-pprofile-magin"
+          ></v-text-field>
+          
+          <v-text-field
+            label="นามสกุล"
+            outlined
+            readonly
+            class="text-pprofile-magin"
+          ></v-text-field>
+          <v-text-field
+            label="หน่วยงาน"
+            outlined
+            readonly
+            class="text-pprofile-magin"
+          ></v-text-field>
+
+          <v-textarea
+          label="คำอธิบาย"
+          auto-grow
+          outlined
+          rows="1"
+          row-height="15"
+          class="text-pprofile-magin"
+        ></v-textarea>
+            <v-divider></v-divider>
+            <v-btn color="green darken-1" text @click="dialogadd = false">
+              ตกลง
+            </v-btn>
+            <v-btn color="red darken-1" text @click="dialogadd = false">
+              ยกเลิก
+            </v-btn>
+          </v-card>
+        </v-dialog>
+
+        <!-- ลบ Head officer -->
+
+        <v-dialog v-model="dialogdel" persistent width="800" >
+          
+          <v-card >
+            <h1>ยืนยัน</h1>
+            
+            <v-divider></v-divider>
+            <h2>ต้องการลบข้อมูลของ  {{"ตรงนี้ใส่ index คนที่จะลบ"}} </h2>
+
+          
+            <v-divider></v-divider>
+            <v-btn color="green darken-1" text @click="dialogdel = false">
+              ตกลง
+            </v-btn>
+            <v-btn color="red darken-1" text @click="dialogdel = false">
+              ยกเลิก
+            </v-btn>
+          </v-card>
+        </v-dialog>
+
+
+        <!-- ลบ Head officer -->
+
+
+
+
+
       </v-card>
     </v-main>
     <!-- ส่วนจัดเเสดง -->
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -59,6 +188,9 @@ export default {
         { no: "1", Fname: "ชญานิน", Lname: "บัวสละ", satatus: "H-Officer" },
         { no: "2", Fname: "ชญานิน", Lname: "บัวสละ", satatus: "H-Officer" },
       ],
+      dialog:false,
+      dialogadd:false,
+      dialogdel:false,
     };
   },
   components: {},
@@ -81,6 +213,25 @@ h1 {
 }
 .btn-magin{
   margin: 3%;
+  
+}
+.btn-groupmargin {
+  margin: 3%;
+}
+.box-margin {
+  margin: 10px 0px 10px 0px;
+}
+.Gprofile-margin1 {
+  margin: 50%;
+}
+.Gprofile-marginin {
+  margin: 30%;
+}
+.text-pprofile-magin{
+  margin: 5%;
+}
+.background-1 {
+  background-color: rgb(80, 82, 85);
   
 }
 </style>
