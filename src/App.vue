@@ -46,7 +46,7 @@ export default {
     },
   data() {
     return {
-      roluser:'officer',
+      roluser:'null',
     }
   },
 

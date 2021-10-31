@@ -32,12 +32,13 @@
         v-for="menu in menu"
           :key="menu.numforms"
           router :to="menu.route"
+          
         >
           <v-list-item  >
           <v-list-item-icon>
             <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
-          <v-list-item-title >{{menu.text}}</v-list-item-title>
+          <v-list-item-title class="text-color">{{menu.text}}</v-list-item-title>
         </v-list-item> 
     
         </v-list-item> 
@@ -74,6 +75,9 @@ export default {
 }
 .navback{
   z-index: -1;
+  
 }
-
+.text-color{
+  color: aliceblue;
+}
 </style>

@@ -25,7 +25,7 @@
             <v-expansion-panel-content>
               <!-- เเสดงเนื้อหาข้างใน -->
 
-              <v-row>
+              <!-- <v-row>
                 <v-col>
                   <v-btn
                     fab disabled
@@ -44,9 +44,31 @@
                       :key="listtracking.checktracking"
                     >
                     </v-btn>
+
+                  
+                    
+                  
                 </v-col>
-              </v-row>
-              
+              </v-row> -->
+
+              <v-app id="inspire">
+                <v-stepper alt-labels>
+                  <v-stepper-header>
+                    <v-stepper-step 
+                    step="1"
+                    v-for="listtracking in listtracking.pointracking"
+                    :key="listtracking.pointracking"
+                    
+                    > รับข้อมูล </v-stepper-step>
+                    
+
+                    
+
+
+                  
+                  </v-stepper-header>
+                </v-stepper>
+              </v-app>
 
               <!-- เเสดงเนื้อหาข้างใน -->
             </v-expansion-panel-content>
@@ -92,7 +114,7 @@ h1 {
 }
 .checkingbtn {
   margin: 10px;
-  
 }
-
+.top-pic {
+}
 </style>
