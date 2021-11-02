@@ -8,12 +8,69 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./style.css" scope >
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <div id="app">
+      
+      
+      
+
+
+      
+
+
+    </div>
+    
+    
   </body>
 </html>
+<script  >
+
+  let stars = document.getElementById('stars');
+  let moon = document.getElementById('moon');
+  let mtb = document.getElementById('mtb');
+  let text = document.getElementById('text');
+  let mtf = document.getElementById('mtf');
+  let RKR = document.getElementById('RKR');
+  let line = document.getElementById('line');
+  let logo3 = document.getElementById('logo3');
+  let vision1 = document.getElementById('vision1');
+  window.addEventListener('scroll',function(){
+    let value = window.scrollY;
+    let valueX = window.scrollX;
+    mtb.style.left = value + 'px';
+    moon.style.top = value + 'px';
+    mtf.style.left = value * 0.5 + 'px';
+    RKR.style.left = valueX - 1 + 'px';
+    logo3.style.right = value *0.5+ 'px';
+    vision1.style.right = value *0.5+ 'px';
+    
+  } )
+
+
+  document.addEventListener("mousemove" , parallax);
+  function parallax(e){
+    this.querySelectorAll('.layer').forEach(function(move) {
+      
+      var moveing_value = move.getAttribute('data-speed');
+      var x = (e.clientX * moveing_value) / 500;
+      var y = (e.clientY * moveing_value) / 500;
+
+      move.style.transform = "translateX(" + x +"px) translateY(" + y +"px)";
+
+      
+    });
+  }
+
+
+
+
+
+
+
+  
+</script>

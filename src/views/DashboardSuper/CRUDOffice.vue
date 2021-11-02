@@ -24,7 +24,7 @@
           </v-col>
         </v-row>
 
-        <v-card class="box-marginlist">
+        <v-card class="box-marginlist" align ="center">
           <v-row>
             <v-col>ลำดับ</v-col>
             <v-col>ชื่อ</v-col>
@@ -34,11 +34,11 @@
           </v-row>
         </v-card>
 
-        <v-row v-for="forms in forms" :key="forms">
-            <v-col>{{ forms.no }}</v-col>
-            <v-col>{{ forms.Fname }}</v-col>
-            <v-col>{{ forms.Lname }}</v-col>
-            <v-col>{{ forms.satatus }}</v-col>
+        <v-row v-for="forms in forms" :key="forms" >
+            <v-col align ="center">{{ forms.no }}</v-col>
+            <v-col align ="center">{{ forms.Fname }}</v-col>
+            <v-col align ="center">{{ forms.Lname }}</v-col>
+            <v-col align ="center">{{ forms.satatus }}</v-col>
             <v-col>
                   <v-btn color="#FFEB3B" class="btn-magin" @click="dialog = !dialog" > เเก้ไขข้อมูล</v-btn>
                   <v-btn color="#F44336" @click="dialogdel = !dialogdel"> ลบข้อมูล</v-btn>
@@ -53,7 +53,7 @@
 
         <v-dialog v-model="dialog" persistent width="800" >
           
-          <v-card >
+          <v-card  align ="center">
             <h1>จัดการข้อมูล  Head Officer</h1>
             
             <v-divider></v-divider>
@@ -101,7 +101,7 @@
         <!-- เพิ่มข้อมูล Head officer -->
         <v-dialog v-model="dialogadd" persistent width="800" >
           
-          <v-card >
+          <v-card  align ="center">
             <h1>เพิ่มข้อมูล Head officer</h1>
             
             <v-divider></v-divider>
@@ -147,9 +147,9 @@
 
         <!-- ลบ Head officer -->
 
-        <v-dialog v-model="dialogdel" persistent width="800" >
+        <v-dialog v-model="dialogdel" persistent width="800"  >
           
-          <v-card >
+          <v-card align ="center">
             <h1>ยืนยัน</h1>
             
             <v-divider></v-divider>
@@ -199,7 +199,11 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: left;
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
   padding: 10px;
 }
 .cardshow {

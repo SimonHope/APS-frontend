@@ -19,6 +19,7 @@
     <NavbarHOF v-if="roluser == 'Hoffice'"  ></NavbarHOF>
     <NavbarOF v-if="roluser == 'officer'"  ></NavbarOF>
     <NavbarSuper v-if="roluser == 'admin'" ></NavbarSuper>
+    
 
     
     

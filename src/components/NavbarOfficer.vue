@@ -45,9 +45,14 @@
       width='300'
     >
       <!-- ส่วนตัวเลือกเมนู -->
-     <v-btn fab width="200" height="200" class="profile">
-       <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
-     </v-btn>
+     <v-row>
+        <v-col align="center">
+          <v-btn fab width="200" height="200" class="profile">
+            <v-img height="100px" width="100px" src="../assets/logo.png">
+            </v-img>
+          </v-btn>
+        </v-col>
+      </v-row>
      <v-divider></v-divider>
      
 
@@ -72,7 +77,7 @@
   
   <!-- popup หน้าต่างกดออก -->
     <v-dialog v-model="slideexit" persistent width="800">
-      <v-card>
+      <v-card align ="center">
         <h1>ออกจากระบบ</h1>
 
         <v-divider></v-divider>

@@ -18,7 +18,7 @@
         <v-divider></v-divider>
 
         <v-row>
-          <v-col v-for="Group in Group" :key="Group.no">
+          <v-col v-for="Group in Group" :key="Group.no" align ="center">
             <v-card width="250" height="300" class="card-magin" color="#BDBDBD">
               <v-row>
                 <v-col>
@@ -38,7 +38,7 @@
 
         <v-dialog v-model="dialog" persistent width="800" >
           
-          <v-card >
+          <v-card  align ="center">
             <h1>จัดการกลุ่ม</h1>
             
             <v-divider></v-divider>
@@ -155,7 +155,11 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: left;
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
   padding: 10px;
 }
 .cardshow {

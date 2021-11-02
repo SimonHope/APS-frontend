@@ -7,27 +7,32 @@
           จัดการแบบฟอร์ม
           <v-divider></v-divider>
         </h1>
-        <v-btn width="300" height="150" class="box-margin">
+        <v-row>
+          <v-col align ="center">
+            <v-btn width="300" height="150" class="box-margin">
           <h2>
             + <br /><br />
             สร้างเอกสารใหม่
-          </h2></v-btn
-        >
+          </h2></v-btn>
+
+          </v-col>
+        </v-row>
+        
 
         <v-card class="box-marginlist">
           <v-row>
-            <v-col>ลำดับ</v-col>
-            <v-col>รายการ</v-col>
-            <v-col>หน่วยงาน</v-col>
-            <v-col>ตัวเลือก</v-col>
+            <v-col align ="center">ลำดับ</v-col>
+            <v-col align ="center">รายการ</v-col>
+            <v-col align ="center">หน่วยงาน</v-col>
+            <v-col align ="center">ตัวเลือก</v-col>
           </v-row>
         </v-card>
 
         <v-card class="box-marginlist">
         <v-row v-for="forms in forms" :key="forms">
-          <v-col>{{ forms.no }}</v-col>
-          <v-col>{{ forms.text }}</v-col>
-          <v-col>{{ forms.agency }}</v-col>
+          <v-col align ="center">{{ forms.no }}</v-col>
+          <v-col align ="center">{{ forms.text }}</v-col>
+          <v-col align ="center">{{ forms.agency }}</v-col>
           <v-col>
           <v-btn color="#FFEB3B" class="btn-magin"> เเก้ไขข้อมูล</v-btn>
           <v-btn color="#F44336"> ลบข้อมูล</v-btn>
@@ -61,7 +66,11 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: left;
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
   padding: 10px;
 }
 .cardshow {

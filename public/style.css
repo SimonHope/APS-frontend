@@ -1,0 +1,129 @@
+body{
+  min-height: 100vh;
+  background: linear-gradient(#ff8d41,#ffffff);
+  overflow: hidden;
+}
+.logo{
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logo1{
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+} 
+
+ ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+ ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+ ul li a:hover,
+ ul li a.active {
+  background: rgb(255, 255, 255) ;
+  color: rgb(0, 0, 0);
+}
+
+section  {
+  
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+section img#moon{
+  mix-blend-mode: screen;
+  z-index: -1000;
+}
+
+
+section img#mtf{
+  z-index: 10;
+}
+section img#mtf1{
+  
+}
+section img#RKR{
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+}
+.text1{
+  position: absolute;
+  color: #ffffff;
+  white-space: nowrap;
+  font-size: 7.5vw;
+  z-index: 9;
+}
+.sec{
+  position: relative;
+  padding: 100px;
+  
+}
+
+.text11{
+  font-size: 100px;
+}
+.headtext1{
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+
+}
+
+h3{
+  text-align: center;
+}
+.article{
+  margin: 10%;
+}

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ecenter">
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">
@@ -30,7 +30,8 @@
                   v-if="active"
                   
                 >
-                  {{forms.text}}
+                <h1>{{forms.text}}</h1>
+                  
                 </div>
               </v-scroll-y-transition>
             </v-card>
@@ -77,10 +78,14 @@ export default {
 
 <style scoped>
 h1{
-  text-align: left;
+  
   padding: 10px;
 }
 .cardshow{
   margin: 8%;
 }
+.ecenter{
+  text-align: center;
+}
+
 </style>

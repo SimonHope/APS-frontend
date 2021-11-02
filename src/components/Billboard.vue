@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-carousel hide-delimiters height="100%" cycle :show-arrows="true" >
+  <v-carousel hide-delimiters height="100%" cycle :show-arrows="false" >
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"

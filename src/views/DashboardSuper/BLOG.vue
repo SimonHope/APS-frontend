@@ -39,8 +39,12 @@ export default {
 </script>
 
 <style scoped>
-h1{
-  text-align: left;
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
   padding: 10px;
 }
 .cardshow{

@@ -1,185 +1,120 @@
 <template>
-  <div >
-<!-- 
+  <div>
+    <!-- 
     <v-row>
       <v-col>
             <v-card class="Billboard" width="100%" height="333px"><Billboard/></v-card>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col>
-        <v-card class="article">
-          <h1>บทความ</h1>
-          <Article/>
-          </v-card>
-      </v-col>
-    </v-row>
+     -->
 
-    <v-row>
-      <v-col>
-        <v-card class="vision"><vision/></v-card>
-
-      </v-col>
-    </v-row>
-
-    
-    
-    <footer class="buttomm"  ><FB/></footer> -->
-    
-    <header>
+    <div class="header">
       <a href="#" class="logo">
-        <div><v-img height="128" width="128" src="../assets/logo1.png"> </v-img></div>
-        APS</a>
-        <v-spacer></v-spacer>
-        
-        <ul>
-          <li><a href="#" class="active" >เข้าสู่ระบบ</a></li>
-          <li><a href="#" >หน้าหลัก</a></li>
-        </ul>
-    </header>
+        <div>
+          <v-img height="128" width="128" src="../assets/logo1.png"> </v-img>
+        </div>
+        APS</a
+      >
+      <v-spacer></v-spacer>
+
+      <ul>
+        <li><a href="/login" class="active">เข้าสู่ระบบ</a></li>
+        <li><a href="/" class="active">หน้าหลัก</a></li>
+      </ul>
+    </div>
     <section>
-      
-      <img src="../assets/star.png" id="stars">
-      <img src="../assets/moon.png" id="moon">
-      <img src="../assets/mtb.png" id="mtb">
-      <h2 class="text1">Hi bitch <br> see you soon...</h2>
-      <img src="../assets/mtf.png" id="mtf">
+      <img src="../assets/star.png" id="stars" class="layer" data-speed="-15">
+      <img src="../assets/moon.png" id="moon" class="layer" data-speed="-9">
+
+      <img src="../assets/mtb.png" id="mtb" class="layer" data-speed="-3">
+
+      <h2 class="text1" id="text"></h2>
+      <img src="../assets/mtf.png" id="mtf" class="layer" data-speed="5">
     </section>
+    <div class="sec">
+      
+        <div class="headtext1">ASP</div>
 
-     
+      <h1>
+        คือบริการแพลตฟอร์มการจัดการเอกสารรูปแบบใหม่
+        ที่จะช่วยอำนวยความสะดวกให้ผู้ใช้เปิดประสบการใหม่
+        ทั้งผู้ใช้บริการและให้บริการ
+      </h1>
 
+      
+    </div>
+
+    <v-row>
+      <v-col align="center">
+        <v-btn elevation="2" fab class="btnvison" width="200" height="200">
+             <v-img src="../assets/Thunder.png" max-height="300" max-width="300"></v-img> 
+             </v-btn>
+        <div class="logo1"> รวดเร็ว </div>
+          <p>ทำทำงานที่รวดเร็ว
+          </p>
+      </v-col>
+      <v-col align="center">
+        <v-btn elevation="2" fab class="btnvison" width="200" height="200">
+             <v-img src="../assets/tracking.png" max-height="300" max-width="70"></v-img>
+             </v-btn>
+        <div class="logo1"> ติดตามได้ </div>
+          <p>สามารถติดตามสถานะการทำข้อมูลเอกสาร
+          </p>
+      </v-col>
+      <v-col align="center">
+        <v-btn elevation="2" fab class="btnvison"  width="200" height="200">
+             <v-img src="../assets/easy.png" max-height="300" max-width="70"></v-img> 
+             </v-btn>
+        <div class="logo1"> สะดวกง่าย </div>
+          <p>ใช้งานงาน เข้าใจง่าย
+          </p>
+      </v-col>
+    </v-row>
+    <v-card class="article" >
+      <Article/>
+      
+    </v-card>
 
     
+
+    <!-- <img src="../assets/RKR.png" id="RKR" /> -->
+
+  
+    
+  
+    
+
+    
+
+    <footer class="buttomm"><FB /></footer>
   </div>
 </template>
 
 <script>
 // import Billboard from '../components/Billboard.vue'
-// import Article from '../components/Grouparticle.vue'
+import Article from '../components/Grouparticle.vue'
 // import vision from '../components/vision.vue'
-// import FB from '../components/Footer.vue'
+import FB from "../components/Footer.vue";
 
-
-  export default {
-    name: 'Homepage',
-    data() {
-      return {
-        menu: [
-      { menu: "1", text: "หน้าหลัก", route: "/" },
-      { menu: "2", text: "เข้าสู่ระบบ", route: "/login" },
-      { menu: "3", text: "เกี่ยวกับ", route: "/about" },
-      { menu: "4", text: "ข้อตกลง เเละ นโยบาย", route: "/rules" },
-    ],
-      }
-    },
-    components: {
-    // Billboard,
-    // Article,
-    // vision,
-    // FB,
-    
+export default {
+  name: "Homepage",
+  data() {
+    return {
+      menu: [
+        { menu: "1", text: "หน้าหลัก", route: "/" },
+        { menu: "2", text: "เข้าสู่ระบบ", route: "/login" },
+        { menu: "3", text: "เกี่ยวกับ", route: "/about" },
+        { menu: "4", text: "ข้อตกลง เเละ นโยบาย", route: "/rules" },
+      ],
+    };
   },
-  }
+  components: {
+    // Billboard,
+    Article,
+    // vision,
+    FB,
+  },
+};
 </script>
 <style scope>
-.Billboard{
-  margin: 2% 0% 20% 0%;
-
-}
-.article{
-  margin: 1% 10% 0% 10%;
-}
-.vision{
-  margin: 1% 10% 0% 10%;
-}
-.topic1{
-  text-align: center;
-  padding: 10px;
-}
-body{
-  min-height: 100vh;
-  background: linear-gradient(#04d0df,#ffffff,#ffffff);
-}
-.logo{
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 2em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-header{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10000;
-} 
-
-header ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-header ul li {
-  list-style: none;
-  margin-left: 20px;
-}
-
-header ul li a {
-  text-decoration: none;
-  padding: 6px 15px;
-  color: #ffffff;
-  border-radius: 20px;
-}
-
-header ul li a:hover,
-header ul li a.active {
-  background: floralwhite ;
-  color: aqua;
-}
-
-section  {
-  
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  padding: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-section img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-section img#moon{
-  mix-blend-mode: screen;
-}
-
-
-section img#mtf{
-  z-index: 10;
-}
-.text1{
-  position: absolute;
-  color: #ffffff;
-  white-space: nowrap;
-  font-size: 7.5vw;
-  z-index: 1000;
-}
-
-
 </style>

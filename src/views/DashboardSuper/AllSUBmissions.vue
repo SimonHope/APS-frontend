@@ -18,8 +18,8 @@
 
         <v-card class="box-marginlist">
           <v-row>
-            <v-col>ลำดับ</v-col>
-            <v-col>รายการ</v-col>
+            <v-col align ="center">ลำดับ</v-col>
+            <v-col align ="center">รายการ</v-col>
           </v-row>
         </v-card>
 
@@ -27,8 +27,8 @@
           <v-expansion-panel v-for="forms in forms" :key="forms">
             <v-expansion-panel-header>
               <v-row>
-                <v-col>{{ forms.no_id }}</v-col>
-                <v-col>{{ forms.list }}</v-col>
+                <v-col align ="center">{{ forms.no_id }}</v-col>
+                <v-col align ="center">{{ forms.list }}</v-col>
               </v-row>
 
               <!-- เเสดงชื่อเอกสาร -->
@@ -53,7 +53,8 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col>
+                
+                <v-col align ="center">
                   <v-btn color="#FFEB3B" class="btn-magin"> เเก้ไขข้อมูล</v-btn>
                   <v-btn color="#F44336"> ลบข้อมูล</v-btn>
                 </v-col>
@@ -98,7 +99,11 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: left;
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
   padding: 10px;
 }
 .cardshow {

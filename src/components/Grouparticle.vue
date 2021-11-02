@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div id="a-center">
+    <v-card>
+      <h3>บทความที่น่าสนใจ</h3>
   <v-sheet
     class="mx-auto"
-    elevation="12"
+    elevation="6"
     max-width="1920"
+    
     
   >
     <v-slide-group
@@ -29,6 +32,7 @@
       </v-slide-item>
     </v-slide-group>
   </v-sheet>
+  </v-card>
   </div>
 </template>
 
@@ -52,6 +56,14 @@
   }
 </script>
 
-<style>
+<style scoped>
+h2{
+  text-align: center;
+  
+}
+h3{
+  font-size: 50px;
+  padding: 3%;
+}
 
 </style>
