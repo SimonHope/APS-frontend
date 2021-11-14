@@ -45,7 +45,7 @@
       <v-row>
         <v-col align="center">
           <v-btn fab width="200" height="200" class="profile">
-            <v-img height="100px" width="100px" src="../assets/logo.png">
+            <v-img class="profile-r" src="../assets/5074620687.jpg">
             </v-img>
           </v-btn>
         </v-col>
@@ -152,5 +152,8 @@ export default {
 }
 .btn-margin {
   margin: 30px;
+}
+.profile-r{
+  border-radius: 90px 900px 900px 900px;
 }
 </style>

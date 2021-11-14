@@ -29,7 +29,7 @@
               </v-progress-circular>
               <h2>เอกสารที่ทำการทั้งหมด</h2>
              
-              <h2>{{ datastu.petition }}</h2>
+              <!-- <h2>{{ datastu.petition }}</h2> -->
 
 
               
@@ -57,7 +57,7 @@
               </v-progress-circular>
               <h2>การรายงานทั้งหมด</h2>
              
-              <h2>{{ datastu.report }}</h2>
+              <!-- <h2>{{ datastu.report }}</h2> -->
 
 
               
@@ -85,7 +85,7 @@
               </v-progress-circular>
               <h2>เอกสารที่กำลังดำเนินการ</h2>
              
-              <h2>{{ datastu.tarcking }}</h2>
+              <!-- <h2>{{ datastu.tarcking }}</h2> -->
 
 
               
