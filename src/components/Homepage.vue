@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div  >
     <!-- 
     <v-row>
       <v-col>
@@ -30,6 +30,7 @@
 
       <h2 class="text1" id="text"></h2>
       <img src="../assets/mtf.png" id="mtf" class="layer" data-speed="5">
+      
     </section>
     <div class="sec">
       

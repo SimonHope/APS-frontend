@@ -15,7 +15,7 @@
       <img src="../assets/mtf.png" data-speed="-3" class="layer">
 
       <div class="header">
-      <a href="#" class="logo">
+      <a  class="logo">
         <div>
           <v-img height="128" width="128" src="../assets/logo1.png"> </v-img>
         </div>

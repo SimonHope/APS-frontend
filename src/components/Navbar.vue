@@ -1,83 +1,13 @@
 <template>
-  <div>
-    <div>
-      <!-- ส่วนของ BAR -->
-      <v-app-bar color="#F86624" fixed app>
-    <v-spacer></v-spacer>
-      <v-btn icon href=#top>
-        <v-img height="128" width="128" src="../assets/logo.png"> </v-img>
-      </v-btn>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
 
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
+
+  <div  class="backgroundbody">
       
-
-
-
-      
-
-      <v-app-bar-nav-icon @click="openmenu = true"> </v-app-bar-nav-icon>
-
-  </v-app-bar> 
-
-  
-
-      
-
-      <!-- ส่วนของ BAR -->
-
-      <!-- เเถบข้างเวลากดเเฮมไบเกอร์ -->
-      <v-navigation-drawer  v-model="openmenu" fixed temporary right app > 
-      <v-list-item-group 
-        v-model="group"
-        active-class="deep-purple--text text--accent-4"
-        
-      >
-
-        <v-list-item 
-        v-for="menu in menu"
-          :key="menu.numforms"
-          router :to="menu.route"
-        >
-          <v-list-item  >
-          <v-list-item-icon>
-            <v-icon >mdi-home</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title >{{menu.text}}</v-list-item-title>
-        </v-list-item> 
-    
-        </v-list-item> 
-        
-      </v-list-item-group>
-      
-
-
-
-    </v-navigation-drawer>
-      <!-- เเถบข้างเวลากดเเฮมไบเกอร์ -->
       <router-view></router-view>
 
-      
-
-
     </div>
-  </div>
+
+    
 </template>
 
 

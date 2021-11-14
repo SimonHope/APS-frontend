@@ -33,6 +33,12 @@ import tarckingAD from '../views/DashboardSuper/Traking.vue'
 import Blog from '../views/DashboardSuper/BLOG.vue'
 //คนดูเเลระบบ
 
+//sหน้าสรเางฟรอม
+import Builder from '../views/formbuilder/builderform.vue'
+
+//sหน้าสรเางฟรอม
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -161,8 +167,13 @@ const routes = [
   
   //คนดูเเลระบบ
 
- 
-
+  //หน้าสร้างฟอร์ม
+  ,
+  {
+    path: '/builder',
+    name: 'builder',
+    component: Builder 
+  }
 
 ]
 
