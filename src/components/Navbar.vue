@@ -1,64 +1,73 @@
 <template>
-<div>
-  <!-- bar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light backgroundcolor">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"
-          ><v-img height="70px" width="200px" src="../assets/logo1.png"></v-img>
-        </a>
-        <button
-          class="navbar-toggler bg-light"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+  <v-app-bar app color="orange" dark>
+    <v-navigation-drawer
+      v-model="sidebar"
+      class="hidden-sm-and-up"
+      absolute
+      temporary
+      app
+    >
+      <v-list>
+        <v-list-item
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <v-fab-transition>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNav"
-          >
-            <ul class="navbar-nav">
-              <li class="text-magin">
-                <v-tab icon   router-link to="/" > <h1>หน้าหลัก</h1> </v-tab>
-              </li>
-              <li class="text-magin">
-                <v-tab icon  router-link to="/login" > <h4>เข้าสู่ระบบ</h4> </v-tab>
-              </li>
-              <li class="text-magin">
-                <v-tab icon  router-link to="/about" > <h4>เกี่ยวกับ</h4></v-tab>
-              </li>
-            </ul>
-          </div>
-        </v-fab-transition>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>{{ item.title }}</v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar-nav-icon
+      class="hidden-sm-and-up"
+      @click.stop="sidebar = !sidebar"
+    ></v-app-bar-nav-icon>
+
+    <v-toolbar-title>
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink"
+          contain
+          src="../assets/logo1.png"
+          transition="scale-transition"
+          width="40"
+        />
+        <v-btn plain text>
+          <router-link to="/" tag="span">
+            {{ appTitle }}
+          </router-link>
+        </v-btn>
       </div>
-    </nav>
-    <!-- bar -->
-  <router-view></router-view>
-</div>
+    </v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-xs-only">
+      <v-btn plain v-for="item in menuItems" :key="item.title" :to="item.path">
+        <v-icon left>{{ item.icon }}</v-icon>
+        {{ item.title }}
+      </v-btn>
+    </v-toolbar-items>
+  </v-app-bar>
 </template>
+
 <script>
 export default {
   name: "Navbar",
-  data: () => ({
-  }),
+  data() {
+    return {
+      appTitle: "Academic Petition Service",
+      sidebar: false,
+      menuItems: [
+        { title: "Home", path: "/", icon: "mdi-home" },
+        { title: "Sign Up", path: "/signup", icon: "mdi-account-plus" },
+        { title: "Log In", path: "/login", icon: "mdi-login" },
+      ],
+    };
+  },
 };
 </script>
-<style>
-.mybody {
-  background: linear-gradient(#ff993371, #f57b007e);
-}
-.backgroundcolor {
-  background-color: #f57c00;
-}
-.text-magin {
-  margin: 20px;
-  color: #ffffff;
-  font-size: 40px;
-}
-</style>
 
+<style></style>

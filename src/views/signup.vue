@@ -1,9 +1,9 @@
 <template>
-  <div class="login">
+  <div class="signup">
     <!-- <v-container fluid>
       <v-layout row wrap class="my-15">
         <v-flex xs12 class="text-xs-center text-center">
-          <h1>Log In</h1>
+          <h1>Sign Up</h1>
         </v-flex>
         <v-flex xs12 sm6 offset-sm3 mt-3>
           <form>
@@ -44,8 +44,26 @@
                   </template>
                 </v-text-field>
               </v-flex>
+              <v-flex>
+                <v-text-field
+                  name="confirmPassword"
+                  label="Confirm Password"
+                  id="confirmPassword"
+                  type="password"
+                  required
+                >
+                  <template v-slot:prepend>
+                    <v-tooltip bottom>
+                      <template v-slot:activator="{ on }">
+                        <v-icon v-on="on"> mdi-key </v-icon>
+                      </template>
+                      Password
+                    </v-tooltip>
+                  </template>
+                </v-text-field>
+              </v-flex>
               <v-flex class="mx-auto" mt-5>
-                <v-btn color="primary" type="submit">Log In</v-btn>
+                <v-btn color="primary" type="submit">Sign Up</v-btn>
               </v-flex>
             </v-layout>
           </form>
@@ -59,7 +77,7 @@
           <v-flex xs12 sm8 md4>
             <v-card class="elevation-12">
               <v-toolbar dark color="primary">
-                <v-toolbar-title>Login</v-toolbar-title>
+                <v-toolbar-title>Sign Up</v-toolbar-title>
               </v-toolbar>
               <v-card-text>
                 <v-form>
@@ -74,6 +92,13 @@
                     prepend-icon="mdi-lock"
                     name="password"
                     label="Password"
+                    type="password"
+                  ></v-text-field>
+                  <v-text-field
+                    id="comfirmpassword"
+                    prepend-icon="mdi-lock"
+                    name="Comfirm Password"
+                    label="Comfirm Password"
                     type="password"
                   ></v-text-field>
                 </v-form>
@@ -91,71 +116,5 @@
 </template>
 
 <script>
-import AuthService from "@/services/AuthService.js";
-export default {
-  name: "login",
-  data() {
-    return {
-      username: "",
-      password: "",
-      msg: "",
-    };
-  },
-  methods: {
-    async login() {
-      try {
-        const credentials = {
-          username: this.username,
-          password: this.password,
-        };
-        console.log(credentials);
-        const response = await AuthService.login(credentials);
-        this.msg = response.msg;
-        const token = response.token;
-        const user = response.user;
-        this.$store.dispatch("login", { token, user });
-        if (user.status == "student") {
-          this.$router.push("/DashboardSTU");
-        } else if (user.status == "officer") {
-          this.$router.push("/DashboardOfficer");
-        } else if (user.status == "agent") {
-          this.$router.push("/DashboardHofficer");
-        } else if (user.status == "admin") {
-          this.$router.push("/DashboarAD");
-        }
-        localStorage.setItem("token", token);
-        localStorage.setItem("UserData", JSON.stringify(user));
-      } catch (error) {
-        this.msg = error.response.data.msg;
-        console.log(error.data);
-      }
-    },
-  },
-};
+export default {};
 </script>
-
-<style scoped>
-.backgroundlogin {
-  background: linear-gradient(#ff993371, #f57b007e);
-}
-.blocklogin {
-  margin: 170px 0px 0px 0px;
-}
-.login-margin{
-  margin: 100px 0px 0px 0px;
-}
-.pic-magin{
-margin: 150px 0px 0px 40px;
-}
-.text-login{
-  font-size: 30px;
-  color: aliceblue;
-  margin: 0px 0px 0px 0px;
-}
-
-.backgroundlogin {
-  min-height: 100vh;
-  background: linear-gradient(#ff8d41, #ffffff);
-  overflow: hidden;
-}
-</style>

@@ -4,7 +4,7 @@
     <v-main>
       <v-card class="cardshow">
         <h1>
-          กระดานข่าวสาร
+          กระดานข่าวสาร Agent
           <v-divider></v-divider>
         </h1>
 
@@ -30,6 +30,8 @@
                 <h1>{{ datastu.petition }}</h1>
               </v-progress-circular>
               <h2>แบบฟอร์มทั้งหมด</h2>
+
+              <h2>{{ datastu.petition }}</h2>
             </v-card>
             <!-- รายงานเอกสารที่ทำไป -->
           </v-col>
@@ -53,6 +55,8 @@
                 <h1>{{ datastu.report }}</h1>
               </v-progress-circular>
               <h2>การรายงานทั้งหมด</h2>
+
+              <h2>{{ datastu.report }}</h2>
             </v-card>
             <!-- รายงานเอกสารที่ทำไป -->
           </v-col>
@@ -77,6 +81,8 @@
                 <h1>{{ datastu.tarcking }}</h1>
               </v-progress-circular>
               <h2>เอกสารที่กำลังดำเนินการ</h2>
+
+              <h2>{{ datastu.tarcking }}</h2>
             </v-card>
             <!-- รายงานเอกสารที่ทำไป -->
           </v-col>
