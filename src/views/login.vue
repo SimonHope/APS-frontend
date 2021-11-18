@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout row wrap>
       <v-flex xs12 class="text-xs-center text-center mt-15">
-        <h1>Sign In</h1>
+        <h1>Log In</h1>
       </v-flex>
       <v-flex xs12 sm6 offset-sm3 mt-3>
         <form>

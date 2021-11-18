@@ -45,4 +45,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+
+.v-application {
+  font-family: "Prompt", sans-serif;
+}
+</style>
