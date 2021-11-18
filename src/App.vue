@@ -4,7 +4,7 @@
     <v-main>
       <router-view></router-view>
     </v-main>
-
+    <Footer />
     <!-- <Navbar v-if="roluser == 'null'" />
     <NavbarStu v-if="roluser == 'student'"></NavbarStu>
     <NavbarHOF v-if="roluser == 'Hoffice'"></NavbarHOF>
@@ -15,6 +15,7 @@
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 // import NavbarStu from "./components/NavbarStudent.vue";
 // import NavbarHOF from "./components/NavbarHOfficer.vue";
 // import NavbarOF from "./components/NavbarOfficer.vue";
@@ -24,6 +25,7 @@ export default {
   name: "App",
   components: {
     Navbar,
+    Footer,
     // NavbarStu,
     // NavbarHOF,
     // NavbarOF,

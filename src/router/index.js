@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import login from '../views/login.vue'
+import signup from '../views/signup.vue'
+
 //นักเรัยน
 import DashboardSTU from '../views/DashboardSTUDENT/Dashboard.vue'
 import petitionSTU from '../views/DashboardSTUDENT/From.vue'
@@ -59,6 +61,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: login
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: signup
   },
   //นักเรียน
   {
