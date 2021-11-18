@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=400px height=200px src="https://www.kmids.ac.th/wp-content/uploads/2021/04/Sub-Logo-KMITL_KMITL-%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B1%E0%B8%87.png" alt="Project logo"></a>
+ <img width=400px height=300px src="src/assets/RKR.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Academic Petition Service Prototype</h3>
@@ -38,7 +38,7 @@ Git clone to your local computer
 ## 🏗️ Project setup
 
 ```
-npm install or yarn install
+npm install
 ```
 
 ## 🏭 Compiles and hot-reloads for development
