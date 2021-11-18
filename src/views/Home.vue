@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!-- <v-carousel height="800">
+    <v-carousel height="95vh">
       <v-carousel-item
         v-for="(item, i) in items"
         :key="i"
@@ -8,11 +8,12 @@
         reverse-transition="fade-transition"
         transition="fade-transition"
       ></v-carousel-item>
-    </v-carousel> -->
+    </v-carousel>
 
-    <v-parallax
+    <!-- <v-parallax
+      height="600"
       dark
-      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+      src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80"
     >
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
@@ -24,110 +25,74 @@
           </h4>
         </v-col>
       </v-row>
-    </v-parallax>
+    </v-parallax> -->
 
-    <v-card class="ma-6" max-width="344">
-      <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        height="200px"
-      ></v-img>
+    <v-jumbotron>
+      <v-container class="my-5" fill-height>
+        <v-layout align-center>
+          <v-flex>
+            <h3 class="display-3">Academic Petition Service</h3>
+            <v-divider class="my-3"></v-divider>
+            <span class="subheading"
+              >Lorem ipsum dolor sit amet, pri veniam forensibus id. Vis
+              maluisset molestiae id, ad semper lobortis cum. At impetus
+              detraxit incorrupte usu, repudiare assueverit ex eum, ne nam
+              essent vocent admodum.Lorem ipsum dolor sit amet, pri veniam
+              forensibus id. Vis maluisset molestiae id, ad semper lobortis cum.
+              At impetus detraxit incorrupte usu, repudiare assueverit ex eum,
+              ne nam essent vocent admodum.Lorem ipsum dolor sit amet, pri
+              veniam forensibus id. Vis maluisset molestiae id, ad semper
+              lobortis cum. At impetus detraxit incorrupte usu, repudiare
+              assueverit ex eum, ne nam essent vocent admodum.</span
+            >
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-jumbotron>
 
-      <v-card-title> Top western road trips </v-card-title>
+    <v-container class="grey lighten-5">
+      <v-row no-gutters>
+        <v-col v-for="n in 3" :key="n" cols="12" sm="4">
+          <v-card class="ma-6" max-width="344">
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              height="200px"
+            ></v-img>
 
-      <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
+            <v-card-title> Top western road trips </v-card-title>
 
-      <v-card-actions>
-        <v-btn color="orange lighten-2" text> Explore </v-btn>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
 
-        <v-spacer></v-spacer>
+            <v-card-actions>
+              <v-btn color="orange lighten-2" text> Explore </v-btn>
 
-        <v-btn icon @click="show = !show">
-          <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
-        </v-btn>
-      </v-card-actions>
+              <v-spacer></v-spacer>
 
-      <v-expand-transition>
-        <div v-show="show">
-          <v-divider></v-divider>
+              <v-btn icon @click="show = !show">
+                <v-icon>{{
+                  show ? "mdi-chevron-up" : "mdi-chevron-down"
+                }}</v-icon>
+              </v-btn>
+            </v-card-actions>
 
-          <v-card-text>
-            I'm a thing. But, like most politicians, he promised more than he
-            could deliver. You won't have time for sleeping, soldier, not with
-            all the bed making you'll be doing. Then we'll go with that data
-            file! Hey, you add a one and two zeros to that or we walk! You're
-            going to do his laundry? I've got to find a way to escape.
-          </v-card-text>
-        </div>
-      </v-expand-transition>
-    </v-card>
-    <v-card class="ma-6" max-width="344">
-      <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        height="200px"
-      ></v-img>
+            <v-expand-transition>
+              <div v-show="show">
+                <v-divider></v-divider>
 
-      <v-card-title> Top western road trips </v-card-title>
-
-      <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
-
-      <v-card-actions>
-        <v-btn color="orange lighten-2" text> Explore </v-btn>
-
-        <v-spacer></v-spacer>
-
-        <v-btn icon @click="show = !show">
-          <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
-        </v-btn>
-      </v-card-actions>
-
-      <v-expand-transition>
-        <div v-show="show">
-          <v-divider></v-divider>
-
-          <v-card-text>
-            I'm a thing. But, like most politicians, he promised more than he
-            could deliver. You won't have time for sleeping, soldier, not with
-            all the bed making you'll be doing. Then we'll go with that data
-            file! Hey, you add a one and two zeros to that or we walk! You're
-            going to do his laundry? I've got to find a way to escape.
-          </v-card-text>
-        </div>
-      </v-expand-transition>
-    </v-card>
-    <v-card class="ma-6" max-width="344">
-      <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        height="200px"
-      ></v-img>
-
-      <v-card-title> Top western road trips </v-card-title>
-
-      <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
-
-      <v-card-actions>
-        <v-btn color="orange lighten-2" text> Explore </v-btn>
-
-        <v-spacer></v-spacer>
-
-        <v-btn icon @click="show = !show">
-          <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
-        </v-btn>
-      </v-card-actions>
-
-      <v-expand-transition>
-        <div v-show="show">
-          <v-divider></v-divider>
-
-          <v-card-text>
-            I'm a thing. But, like most politicians, he promised more than he
-            could deliver. You won't have time for sleeping, soldier, not with
-            all the bed making you'll be doing. Then we'll go with that data
-            file! Hey, you add a one and two zeros to that or we walk! You're
-            going to do his laundry? I've got to find a way to escape.
-          </v-card-text>
-        </div>
-      </v-expand-transition>
-    </v-card>
+                <v-card-text>
+                  I'm a thing. But, like most politicians, he promised more than
+                  he could deliver. You won't have time for sleeping, soldier,
+                  not with all the bed making you'll be doing. Then we'll go
+                  with that data file! Hey, you add a one and two zeros to that
+                  or we walk! You're going to do his laundry? I've got to find a
+                  way to escape.
+                </v-card-text>
+              </div>
+            </v-expand-transition>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
