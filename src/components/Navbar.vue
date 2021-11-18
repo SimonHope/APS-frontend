@@ -1,42 +1,23 @@
 <template>
-  <v-app-bar app color="orange">
-    <!-- <v-navigation-drawer v-model="sidebar" class="hidden-sm-and-up" app>
+  <v-app-bar app color="orange" dark>
+    <v-navigation-drawer
+      v-model="sidebar"
+      class="hidden-sm-and-up"
+      absolute
+      temporary
+      app
+    >
       <v-list>
-        <v-list-tile
+        <v-list-item
           v-for="item in menuItems"
           :key="item.title"
           :to="item.path"
         >
-          <v-list-tile-action>
+          <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer> -->
-
-    <v-navigation-drawer v-model="sidebar" absolute bottom temporary>
-      <v-list nav dense>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item>
-            <v-list-item-title>Foo</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
+          </v-list-item-icon>
+          <v-list-item-content>{{ item.title }}</v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -46,9 +27,21 @@
     ></v-app-bar-nav-icon>
 
     <v-toolbar-title>
-      <router-link to="/" tag="span" style="cursor: pointer">
-        {{ appTitle }}
-      </router-link>
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink"
+          contain
+          src="../assets/logo1.png"
+          transition="scale-transition"
+          width="40"
+        />
+        <v-btn plain text>
+          <router-link to="/" tag="span">
+            {{ appTitle }}
+          </router-link>
+        </v-btn>
+      </div>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-xs-only">
