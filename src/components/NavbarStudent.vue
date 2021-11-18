@@ -45,7 +45,7 @@
       <v-row>
         <v-col align="center">
           <v-btn fab width="200" height="200" class="profile">
-            <v-img class="profile-r" src="../assets/5074620687.jpg">
+            <v-img class="profile-r" width="200" height="200" src="../assets/5074620687.jpg">
             </v-img>
           </v-btn>
         </v-col>
@@ -140,7 +140,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .profile {
   margin: 100px 0px 50px 0px;
 }
@@ -154,6 +154,6 @@ export default {
   margin: 30px;
 }
 .profile-r{
-  border-radius: 90px 900px 900px 900px;
+  border-radius: 60%;
 }
 </style>

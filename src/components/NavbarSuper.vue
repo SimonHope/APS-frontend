@@ -6,7 +6,8 @@
         <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <v-btn fab color="#E53935" icon>
-        <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
+        <v-img class="profile-r" width="200" height="200" src="../assets/5074620687.jpg">
+            </v-img>
       </v-btn>
       <v-spacer></v-spacer>
       <!-- เมนูออก -->
@@ -126,7 +127,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .profile {
   margin: 100px 0px 50px 0px;
 }
@@ -138,5 +139,8 @@ export default {
 }
 .btn-margin {
   margin: 30px;
+}
+.profile-r{
+  border-radius: 60%;
 }
 </style>
