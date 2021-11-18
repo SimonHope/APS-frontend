@@ -9,7 +9,6 @@ pipeline {
             }
         }
         
-        
         stage('Build Production') {
             steps {
                 sh 'npm install'
