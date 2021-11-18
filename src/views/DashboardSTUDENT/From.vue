@@ -1,7 +1,7 @@
 <template>
   <div class="ecenter">
     <!-- ส่วนจัดเเสดง -->
-    <v-main>
+    <v-main >
       <v-card class="cardshow">
         <h1>
       เลือกแบบคำร้อง

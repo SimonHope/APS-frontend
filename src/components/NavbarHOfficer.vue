@@ -161,4 +161,5 @@ export default {
   text-align: center;
   color: aliceblue;
 }
+
 </style>

@@ -1,7 +1,7 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
   <v-app >
-    <v-main>
+    <v-main >
       <v-card class="cardshow">
         <h1>
           จัดการ Group

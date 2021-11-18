@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- ส่วนจัดเเสดง -->
-    <v-main>
+    <v-main >
       <v-card class="cardshow">
         <h1>
           รายงานการส่งทั้งหมด

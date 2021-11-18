@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="backgroundlogin">
     <!-- ส่วนของ BAR -->
     <v-app-bar color="#424242" fixed>
       <v-app-bar-nav-icon @click="drawer = !drawer">
@@ -77,7 +77,7 @@
     </v-navigation-drawer>
     <!-- เเถบข้างเเสดงเมนู -->
 
-    <router-view></router-view>
+    <router-view ></router-view>
 
 
     <!-- popup หน้าต่างกดออก -->
@@ -150,5 +150,8 @@ export default {
 .text-profile{
   text-align: center;
   color: aliceblue;
+}
+.backgroundlogin{
+   background: linear-gradient(#ff993371, #f57b007e);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app >
     <!-- ส่วนของ BAR -->
     <v-app-bar color="#424242" fixed>
       <v-app-bar-nav-icon @click="drawer = !drawer"
@@ -168,5 +168,8 @@ export default {
 .text-profile{
   text-align: center;
   color: aliceblue;
+}
+.bg-role{
+  background-color: aqua;
 }
 </style>

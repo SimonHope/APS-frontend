@@ -1,7 +1,7 @@
 <template>
   <v-app >
     <!-- ส่วนจัดเเสดง -->
-    <v-main>
+    <v-main >
       <v-card class="cardshow">
         <h1>
           จัดการ Heard Officer
