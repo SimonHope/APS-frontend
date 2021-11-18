@@ -19,7 +19,7 @@
           <v-spacer></v-spacer>
 
           <ul>
-            <li><a href="/" class="active">หน้าหลัก</a></li>
+            <li><router-link to="/" class="active">หน้าหลัก</router-link></li>
           </ul>
         </div>
 
@@ -112,7 +112,17 @@ export default {
         const token = response.token;
         const user = response.user;
         this.$store.dispatch("login", { token, user });
-        this.$router.push("/");
+        if (user.status == "student") {
+          this.$router.push("/DashboardSTU");
+        } else if (user.status == "officer") {
+          this.$router.push("/DashboardOfficer");
+        } else if (user.status == "agent") {
+          this.$router.push("/DashboardHofficer");
+        } else if (user.status == "admin") {
+          this.$router.push("/DashboarAD");
+        }
+        localStorage.setItem("token", token);
+        localStorage.setItem("UserData", JSON.stringify(user));
       } catch (error) {
         this.msg = error.response.data.msg;
         console.log(error.data);

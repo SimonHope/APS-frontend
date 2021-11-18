@@ -1,19 +1,21 @@
-
 <template>
   <div>
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">
         <h1>
-          กระดานข่าวสาร
+          กระดานข่าวสาร Admin
           <v-divider></v-divider>
         </h1>
         <v-row>
           <v-col>
             <!-- เอกสารทั้งหมด -->
-            <v-card width="300px" height="400px"
-            v-for="datastu in datastu" :key="datastu"
-            class="cardmagin"
+            <v-card
+              width="300px"
+              height="400px"
+              v-for="datastu in datastu"
+              :key="datastu"
+              class="cardmagin"
             >
               <v-progress-circular
                 :rotate="90"
@@ -23,25 +25,22 @@
                 color="#C62828"
                 class="progressmagin"
               >
-                <h1>{{ datastu.petition }} </h1> 
+                <h1>{{ datastu.petition }}</h1>
               </v-progress-circular>
               <h2>เอกสารทั้งหมด</h2>
-             
+
               <h2>{{ datastu.petition }}</h2>
-
-
-              
             </v-card>
             <!-- เอกสารทั้งหมด -->
-
-            
-
           </v-col>
           <v-col>
             <!-- การรายงานทั้งหมด -->
-            <v-card width="300px" height="400px"
-            v-for="datastu in datastu" :key="datastu"
-            class="cardmagin"
+            <v-card
+              width="300px"
+              height="400px"
+              v-for="datastu in datastu"
+              :key="datastu"
+              class="cardmagin"
             >
               <v-progress-circular
                 :rotate="90"
@@ -51,10 +50,10 @@
                 color="#D81B60"
                 class="progressmagin"
               >
-                <h1>{{ datastu.report }} </h1> 
+                <h1>{{ datastu.report }}</h1>
               </v-progress-circular>
               <h2>การรายงานทั้งหมด</h2>
-             
+
               <h2>{{ datastu.report }}</h2>
             </v-card>
             <!-- การรายงานทั้งหมด -->
@@ -63,9 +62,12 @@
         <v-row>
           <v-col>
             <!-- กลุ่มทั้งหมด -->
-            <v-card width="300px" height="400px"
-            v-for="datastu in datastu" :key="datastu"
-            class="cardmagin"
+            <v-card
+              width="300px"
+              height="400px"
+              v-for="datastu in datastu"
+              :key="datastu"
+              class="cardmagin"
             >
               <v-progress-circular
                 :rotate="90"
@@ -75,22 +77,22 @@
                 color="#448AFF"
                 class="progressmagin"
               >
-                <h1>{{ datastu.tarcking }} </h1> 
+                <h1>{{ datastu.tarcking }}</h1>
               </v-progress-circular>
               <h2>กลุ่มทั้งหมด</h2>
-             
+
               <h2>{{ datastu.tarcking }}</h2>
-
-
-              
             </v-card>
             <!-- กลุ่มทั้งหมด -->
-          </v-col> 
+          </v-col>
           <v-col>
             <!-- Officer ทั้งหมด -->
-            <v-card width="300px" height="400px"
-            v-for="datastu in datastu" :key="datastu"
-            class="cardmagin"
+            <v-card
+              width="300px"
+              height="400px"
+              v-for="datastu in datastu"
+              :key="datastu"
+              class="cardmagin"
             >
               <v-progress-circular
                 :rotate="90"
@@ -100,23 +102,15 @@
                 color="#448AFF"
                 class="progressmagin"
               >
-                <h1>{{ datastu.tarcking }} </h1> 
+                <h1>{{ datastu.tarcking }}</h1>
               </v-progress-circular>
               <h2>Officer ทั้งหมด</h2>
-             
+
               <h2>{{ datastu.tarcking }}</h2>
-
-
-              
             </v-card>
             <!-- Officer ทั้งหมด -->
-          </v-col> 
+          </v-col>
         </v-row>
-
-        
-
-
-
       </v-card>
     </v-main>
     <!-- ส่วนจัดเเสดง -->
@@ -128,17 +122,18 @@ export default {
   name: "DashboardADMIN",
   data() {
     return {
-      datastu:[
-        {id:'01',Fname:"Chayanin Buasala",petition: 50,report:10,tarcking:9,},
-      ]
-      
+      datastu: [
+        {
+          id: "01",
+          Fname: "Chayanin Buasala",
+          petition: 50,
+          report: 10,
+          tarcking: 9,
+        },
+      ],
     };
-    
   },
-  components:{
-    
-  },
-  
+  components: {},
 };
 </script>
 
@@ -154,12 +149,10 @@ h2 {
 .cardshow {
   margin: 8%;
 }
-.progressmagin{
+.progressmagin {
   margin: 20%;
 }
-.cardmagin{
+.cardmagin {
   margin: 8%;
 }
-
-
 </style>
