@@ -9,7 +9,7 @@
           <v-divider></v-divider>
         </h1>
         <v-row>
-          <v-col>
+          <v-col align="center">
             <!-- เอกสารทั้งหมด -->
             <v-card width="300px" height="400px"
             v-for="datastu in datastu" :key="datastu"
@@ -27,7 +27,7 @@
               </v-progress-circular>
               <h2>เอกสารทั้งหมด</h2>
              
-              <h2>{{ datastu.petition }}</h2>
+              
 
 
               
@@ -37,7 +37,7 @@
             
 
           </v-col>
-          <v-col>
+          <v-col align="center">
             <!-- การรายงานทั้งหมด -->
             <v-card width="300px" height="400px"
             v-for="datastu in datastu" :key="datastu"
@@ -55,13 +55,13 @@
               </v-progress-circular>
               <h2>การรายงานทั้งหมด</h2>
              
-              <h2>{{ datastu.report }}</h2>
+              
             </v-card>
             <!-- การรายงานทั้งหมด -->
           </v-col>
         </v-row>
         <v-row>
-          <v-col>
+          <v-col align="center">
             <!-- กลุ่มทั้งหมด -->
             <v-card width="300px" height="400px"
             v-for="datastu in datastu" :key="datastu"
@@ -79,14 +79,14 @@
               </v-progress-circular>
               <h2>กลุ่มทั้งหมด</h2>
              
-              <h2>{{ datastu.tarcking }}</h2>
+              
 
 
               
             </v-card>
             <!-- กลุ่มทั้งหมด -->
           </v-col> 
-          <v-col>
+          <v-col align="center">
             <!-- Officer ทั้งหมด -->
             <v-card width="300px" height="400px"
             v-for="datastu in datastu" :key="datastu"
@@ -104,7 +104,7 @@
               </v-progress-circular>
               <h2>Officer ทั้งหมด</h2>
              
-              <h2>{{ datastu.tarcking }}</h2>
+              
 
 
               

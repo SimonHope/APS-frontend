@@ -1,13 +1,12 @@
 <template>
   <v-app>
     <!-- ส่วนของ BAR -->
-    <v-app-bar color="#E53935" fixed>
+    <v-app-bar color="#424242" fixed>
       <v-app-bar-nav-icon @click="drawer = !drawer">
         <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <v-btn fab color="#E53935" icon>
-        <v-img class="profile-r" width="200" height="200" src="../assets/5074620687.jpg">
-            </v-img>
+        <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
       <!-- เมนูออก -->
@@ -39,14 +38,22 @@
 
     <!-- เเถบข้างเเสดงเมนู -->
 
-    <v-navigation-drawer v-model="drawer" app color="#E53935" width="300">
+    <v-navigation-drawer v-model="drawer" app color="#424242" width="300">
       <!-- ส่วนตัวเลือกเมนู -->
       <v-row>
         <v-col align="center">
           <v-btn fab width="200" height="200" class="profile">
-            <v-img height="100px" width="100px" src="../assets/logo.png">
+            <v-img class="profile-r" width="200" height="200" src="../assets/5074620687.jpg">
             </v-img>
           </v-btn>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col class="text-profile" align="center">
+          ชื่อ :       <br>
+          สถานะ : 
+          
         </v-col>
       </v-row>
       <v-divider></v-divider>
@@ -120,14 +127,14 @@ export default {
       { menu: "7", text: "จัดการ บทความ", route: "/Blog",icon:'book', },
     ],
     menuseting: [
-      { menu: "1", text: "เกี่ยวกับ", route: "/about" },
+      { menu: "1", text: "เกี่ยวกับ", route: "/aboutme" },
       { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
   }),
 };
 </script>
 
-<style scope>
+<style>
 .profile {
   margin: 100px 0px 50px 0px;
 }
@@ -140,7 +147,8 @@ export default {
 .btn-margin {
   margin: 30px;
 }
-.profile-r{
-  border-radius: 60%;
+.text-profile{
+  text-align: center;
+  color: aliceblue;
 }
 </style>

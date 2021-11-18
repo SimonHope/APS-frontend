@@ -29,6 +29,9 @@
               <li class="text-magin">
                 <v-tab icon  router-link to="/login" > เข้าสู่ระบบ</v-tab>
               </li>
+              <li class="text-magin">
+                <v-tab icon  router-link to="/about" > เกี่ยวกับ</v-tab>
+              </li>
             </ul>
           </div>
         </v-fab-transition>

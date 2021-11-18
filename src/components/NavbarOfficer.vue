@@ -2,10 +2,10 @@
 
   <v-app>
   <!-- ส่วนของ BAR -->
-  <v-app-bar color="#536DFE" fixed >
+  <v-app-bar color="#424242" fixed >
     <v-app-bar-nav-icon @click="drawer = !drawer"> <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-btn fab color="#536DFE"  icon>
+      <v-btn fab color="#424242"  icon>
         <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
@@ -42,7 +42,7 @@
     <v-navigation-drawer
       v-model="drawer"
       app
-      color="#536DFE"
+      color="#424242"
       width='300'
     >
       <!-- ส่วนตัวเลือกเมนู -->
@@ -53,6 +53,14 @@
             </v-img>
             
           </v-btn>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col class="text-profile" align="center">
+          ชื่อ :       <br>
+          สถานะ : 
+          
         </v-col>
       </v-row>
      <v-divider></v-divider>
@@ -123,7 +131,7 @@ export default {
         {menu:'4',text:'สถานะเอกสาร/คำร้อง', route:'/tarckingOfficer',icon:'bullseye-arrow'},
       ],
       menuseting: [
-      { menu: "1", text: "เกี่ยวกับ", route: "/about" },
+      { menu: "1", text: "เกี่ยวกับ", route: "/aboutme" },
       { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
   }),
@@ -145,5 +153,9 @@ export default {
 }
 .profile-r{
   border-radius: 60%;
+}
+.text-profile{
+  text-align: center;
+  color: aliceblue;
 }
 </style>

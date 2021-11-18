@@ -1,12 +1,12 @@
 <template>
   <v-app>
     <!-- ส่วนของ BAR -->
-    <v-app-bar color="#F86624" fixed>
+    <v-app-bar color="#424242" fixed>
       <v-app-bar-nav-icon @click="drawer = !drawer"
         ><v-icon color="#FFFFFF">mdi-menu</v-icon>
       </v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <v-btn fab color="#F86624" icon>
+      <v-btn fab color="#424242" icon>
         <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
@@ -40,7 +40,7 @@
 
     <!-- เเถบข้างเเสดงเมนู -->
 
-    <v-navigation-drawer v-model="drawer" app color="#F86624" width="300">
+    <v-navigation-drawer v-model="drawer" app color="#424242" width="300">
       <!-- ส่วนตัวเลือกเมนู -->
       <v-row>
         <v-col align="center">
@@ -48,6 +48,15 @@
             <v-img class="profile-r" width="200" height="200" src="../assets/5074620687.jpg">
             </v-img>
           </v-btn>
+          
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col class="text-profile" align="center">
+          ชื่อ :       <br>
+          สถานะ : 
+          
         </v-col>
       </v-row>
 
@@ -133,7 +142,7 @@ export default {
       },
     ],
     menuseting: [
-      { menu: "1", text: "เกี่ยวกับ", route: "/about" },
+      { menu: "1", text: "เกี่ยวกับ", route: "/aboutme" },
       { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
   }),
@@ -155,5 +164,9 @@ export default {
 }
 .profile-r{
   border-radius: 60%;
+}
+.text-profile{
+  text-align: center;
+  color: aliceblue;
 }
 </style>

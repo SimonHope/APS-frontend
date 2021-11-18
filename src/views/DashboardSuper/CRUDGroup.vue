@@ -19,7 +19,7 @@
 
         <v-row>
           <v-col v-for="Group in Group" :key="Group.no" align ="center">
-            <v-card width="250" height="300" class="card-magin" color="#BDBDBD">
+            <v-card width="250" height="350" class="card-magin" color="#BDBDBD">
               <v-row>
                 <v-col>
                   <v-btn fab width="90" height="90" class="Gprofile-margin"

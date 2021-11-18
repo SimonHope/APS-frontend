@@ -51,7 +51,7 @@ export default {
     },
   data() {
     return {
-      roluser:'Student',
+      roluser:'admin',
     }
   },
 

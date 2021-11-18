@@ -12,7 +12,7 @@
           
         </v-row>
         <v-row>
-          <v-col>
+          <v-col align ="center">
             <!-- รายงานเอกสารที่ทำไป -->
             <v-card width="300px" height="400px"
             v-for="datastu in datastu" :key="datastu"
@@ -30,7 +30,7 @@
               </v-progress-circular>
               <h2>แบบฟอร์มทั้งหมด</h2>
              
-              <h2>{{ datastu.petition }}</h2>
+              
 
 
               
@@ -40,7 +40,7 @@
             
 
           </v-col>
-          <v-col>
+          <v-col align ="center">
             <!-- รายงานเอกสารที่ทำไป -->
             <v-card width="300px" height="400px"
             v-for="datastu in datastu" :key="datastu"
@@ -58,7 +58,7 @@
               </v-progress-circular>
               <h2>การรายงานทั้งหมด</h2>
              
-              <h2>{{ datastu.report }}</h2>
+              
 
 
               
@@ -68,7 +68,7 @@
 
           </v-col>
 
-          <v-col>
+          <v-col align ="center">
             <!-- รายงานเอกสารที่ทำไป -->
             <v-card width="300px" height="400px"
             v-for="datastu in datastu" :key="datastu"
@@ -86,7 +86,7 @@
               </v-progress-circular>
               <h2>เอกสารที่กำลังดำเนินการ</h2>
              
-              <h2>{{ datastu.tarcking }}</h2>
+              
 
 
               

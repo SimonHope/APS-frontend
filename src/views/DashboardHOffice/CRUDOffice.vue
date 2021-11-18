@@ -51,9 +51,9 @@
 
         <!-- ส่วนจัดเเสดงเวลากดเเก้ไข -->
 
-        <v-dialog v-model="dialog" persistent width="800" >
+        <v-dialog v-model="dialog" persistent width="800"  >
           
-          <v-card >
+          <v-card align ="center" >
             <h1>จัดการข้อมูล  Officer</h1>
             
             <v-divider></v-divider>
@@ -101,7 +101,7 @@
         <!-- เพิ่มข้อมูล Head officer -->
         <v-dialog v-model="dialogadd" persistent width="800" >
           
-          <v-card >
+          <v-card align ="center">
             <h1>เพิ่มข้อมูล Head officer</h1>
             
             <v-divider></v-divider>
@@ -149,7 +149,7 @@
 
         <v-dialog v-model="dialogdel" persistent width="800" >
           
-          <v-card >
+          <v-card  align ="center">
             <h1>ยืนยัน</h1>
             
             <v-divider></v-divider>
