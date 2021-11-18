@@ -62,8 +62,9 @@ export default {
       sidebar: false,
       menuItems: [
         { title: "Home", path: "/", icon: "mdi-home" },
-        { title: "Sign Up", path: "/signup", icon: "mdi-account-plus" },
-        { title: "Log In", path: "/login", icon: "mdi-login" },
+        { title: "About", path: "/About", icon: "mdi-information-outline" },
+        { title: "Sign Up", path: "/Signup", icon: "mdi-account-plus" },
+        { title: "Log In", path: "/Login", icon: "mdi-login" },
       ],
     };
   },

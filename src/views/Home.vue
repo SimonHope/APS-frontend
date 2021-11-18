@@ -15,9 +15,9 @@
 
     <v-jumbotron>
       <v-container class="my-16">
-        <v-layout align-center>
+        <v-layout>
           <v-flex>
-            <h3 class="display-3">Academic Petition Service</h3>
+            <h3 class="display-3 text-center">Academic Petition Service</h3>
             <v-divider class="my-3"></v-divider>
             <span class="subheading"
               >Lorem ipsum dolor sit amet, pri veniam forensibus id. Vis
@@ -37,7 +37,7 @@
     </v-jumbotron>
 
     <v-container class="grey lighten-5">
-      <h3 class="display-6">Feature</h3>
+      <h3 class="display-6 text-center">Feature</h3>
       <v-row no-gutters>
         <v-col md="4">
           <v-card class="ma-6" max-width="344">

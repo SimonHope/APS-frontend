@@ -5,17 +5,16 @@
         <h1 class="textlogo">เกี่ยวกับเรา</h1>
 
         <h2 class="textlogo1">
-          ผู้พัฒนา <br>
+          ผู้พัฒนา <br />
           นายชญานิน บัวสละ
-          <br>  		
+          <br />
           นายณัฐภูมิ ล้อมเขตร
-          <br>
-				ผู้ช่วยศาสตราจารย์อัครเดช วัชระภูพงษ์ 	อาจารย์ที่ปรึกษา
-
+          <br />
+          ผู้ช่วยศาสตราจารย์อัครเดช วัชระภูพงษ์ อาจารย์ที่ปรึกษา
         </h2>
 
         <h2 class="textlogo1">
-          สถานที่ <br>
+          สถานที่ <br />
           สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง ชั้น 2
           อาคารกรมหลวงนราธิวาสราชนครินทร์ เลขที่ 1 ซอยฉลองกรุง 1 แขวงลาดกระบัง
           เขตลาดกระบัง
@@ -48,18 +47,13 @@
         </section>
       </v-col>
     </v-row>
-
-    <footer class="FB"><FB /></footer>
   </v-app>
 </template>
 
 <script>
-import FB from "../components/Footer.vue";
 export default {
   name: "Home",
-  components: {
-    FB,
-  },
+  components: {},
 };
 </script>
 <style scoped>
