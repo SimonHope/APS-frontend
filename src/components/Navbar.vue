@@ -24,13 +24,13 @@
           >
             <ul class="navbar-nav">
               <li class="text-magin">
-                <v-tab icon  router-link to="/" > หน้าหลัก</v-tab>
+                <v-tab icon   router-link to="/" > <h1>หน้าหลัก</h1> </v-tab>
               </li>
               <li class="text-magin">
-                <v-tab icon  router-link to="/login" > เข้าสู่ระบบ</v-tab>
+                <v-tab icon  router-link to="/login" > <h4>เข้าสู่ระบบ</h4> </v-tab>
               </li>
               <li class="text-magin">
-                <v-tab icon  router-link to="/about" > เกี่ยวกับ</v-tab>
+                <v-tab icon  router-link to="/about" > <h4>เกี่ยวกับ</h4></v-tab>
               </li>
             </ul>
           </div>
@@ -58,6 +58,7 @@ export default {
 .text-magin {
   margin: 20px;
   color: #ffffff;
+  font-size: 40px;
 }
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  <v-app style="background: linear-gradient(#ff993371, #f57b007e);">
     <!-- ส่วนของ BAR -->
     <v-app-bar color="#424242" fixed>
       <v-app-bar-nav-icon @click="drawer = !drawer"
@@ -35,11 +35,9 @@
       </v-menu>
       <!-- เมนูออก -->
     </v-app-bar>
-
     <!-- ส่วนของ BAR -->
 
     <!-- เเถบข้างเเสดงเมนู -->
-
     <v-navigation-drawer v-model="drawer" app color="#424242" width="300">
       <!-- ส่วนตัวเลือกเมนู -->
       <v-row>
@@ -81,7 +79,6 @@
     </v-navigation-drawer>
     <!-- เเถบข้างเเสดงเมนู -->
     <router-view></router-view>
-
     <!-- popup หน้าต่างกดออก -->
     <v-dialog v-model="slideexit" persistent width="800">
       <v-card align ="center">

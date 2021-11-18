@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  
     <!-- ส่วนจัดเเสดง -->
     <v-main>
       <v-card class="cardshow">
@@ -18,9 +18,10 @@
             
           </v-col>
           <v-col align ="right">
-            <v-btn  class="box-margin" color="#4CAF50" @click="dialogadd = !dialogadd">
-          <h2>+ เพิ่มรายชื่อใหม่</h2>
-          </v-btn>
+            <v-btn  class="btn-magin"   color="#4CAF50" width="" height="50"  @click="dialogadd = !dialogadd">
+              <v-icon  >mdi-account</v-icon>
+              <h4>เพิ่มรายชื่อใหม่</h4>
+            </v-btn>
           </v-col>
         </v-row>
 
@@ -40,8 +41,20 @@
             <v-col align ="center" >{{ forms.Lname }}</v-col>
             <v-col align ="center">{{ forms.satatus }}</v-col>
             <v-col>
-                  <v-btn color="#FFEB3B" class="btn-magin" @click="dialog = !dialog" > เเก้ไข</v-btn>
-                  <v-btn color="#F44336" @click="dialogdel = !dialogdel"> ลบ</v-btn>
+                  <v-row>
+            <v-col align="center">
+              <v-btn
+                color="#FFEB3B"
+                class="btn-magin"
+                @click="dialog = !dialog"
+              >
+                เเก้ไขข้อมูล</v-btn
+              >
+              <v-btn color="#F44336" @click="dialogdel = !dialogdel">
+                ลบข้อมูล</v-btn
+              >
+            </v-col>
+          </v-row>
             </v-col>
         </v-row>
 
@@ -98,11 +111,11 @@
         </v-dialog>
         <!-- ส่วนจัดเเสดงเวลากดเเก้ไข -->
 
-        <!-- เพิ่มข้อมูล Head officer -->
+        <!-- เพิ่มข้อมูล officer -->
         <v-dialog v-model="dialogadd" persistent width="800" >
           
           <v-card align ="center">
-            <h1>เพิ่มข้อมูล Head officer</h1>
+            <h1>เพิ่มข้อมูล officer</h1>
             
             <v-divider></v-divider>
             <v-btn fab width="250" height="250" left class="text-pprofile-magin">fuck</v-btn>
@@ -145,7 +158,7 @@
           </v-card>
         </v-dialog>
 
-        <!-- ลบ Head officer -->
+        <!-- ลบ  officer -->
 
         <v-dialog v-model="dialogdel" persistent width="800" >
           
@@ -167,7 +180,7 @@
         </v-dialog>
 
 
-        <!-- ลบ Head officer -->
+        <!-- ลบ  officer -->
 
 
 
@@ -176,7 +189,7 @@
       </v-card>
     </v-main>
     <!-- ส่วนจัดเเสดง -->
-  </v-app>
+  
 </template>
 
 <script>

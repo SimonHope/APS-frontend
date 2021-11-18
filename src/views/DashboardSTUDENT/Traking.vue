@@ -25,50 +25,19 @@
             <v-expansion-panel-content>
               <!-- เเสดงเนื้อหาข้างใน -->
 
-              <!-- <v-row>
-                <v-col>
-                  <v-btn
-                    fab disabled
-                    class="tarkingbtn"
-                    v-for="listtracking in listtracking.pointracking"
-                    :key="listtracking.pointracking"
-                  >
-                    <v-icon>mdi-home</v-icon>
-                    
-                  </v-btn>
-                  <v-btn
-                      fab
-                      class="checkingbtn"
-                      color="#43A047"
-                      v-for="listtracking in listtracking.checktracking"
-                      :key="listtracking.checktracking"
-                    >
-                    </v-btn>
-
-                  
-                    
-                  
-                </v-col>
-              </v-row> -->
-
-              <v-app id="inspire">
+              <v-container id="inspire">
                 <v-stepper alt-labels>
                   <v-stepper-header>
-                    <v-stepper-step 
-                    step="1"
-                    v-for="listtracking in listtracking.pointracking"
-                    :key="listtracking.pointracking"
-                    
-                    > รับข้อมูล </v-stepper-step>
-                    
-
-                    
-
-
-                  
+                    <v-stepper-step
+                      step="1"
+                      v-for="listtracking in listtracking.pointracking"
+                      :key="listtracking.pointracking"
+                    >
+                      รับข้อมูล
+                    </v-stepper-step>
                   </v-stepper-header>
                 </v-stepper>
-              </v-app>
+              </v-container>
 
               <!-- เเสดงเนื้อหาข้างใน -->
             </v-expansion-panel-content>

@@ -1,6 +1,6 @@
 <template>
 
-  <v-app>
+  <v-app style="background: linear-gradient(#1b63ff71, #00bcf57e);">
   <!-- ส่วนของ BAR -->
   <v-app-bar color="#424242" fixed >
     <v-app-bar-nav-icon @click="drawer = !drawer"> <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon>
@@ -157,5 +157,8 @@ export default {
 .text-profile{
   text-align: center;
   color: aliceblue;
+}
+.dsfsd{
+  background: linear-gradient(#a41bff71, #1000f57e);
 }
 </style>

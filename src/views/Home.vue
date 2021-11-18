@@ -37,6 +37,7 @@
 </template>
 
 <script>
+
 import FB from "../components/Footer.vue";
 export default {
   name: "Home",
@@ -46,6 +47,10 @@ export default {
 };
 </script>
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+
 .mybody {
   background: linear-gradient(#ff993371, #f57b007e);
 }
@@ -55,10 +60,12 @@ export default {
 .text-magin {
   margin: 20px;
   color: #ffffff;
+  
 }
 .textlogo {
   font-size: 50px;
   margin: 200px 0px 90px 99px;
+  font-family: 'Prompt', sans-serif;
 }
 .btn-text {
   font-size: 30px;

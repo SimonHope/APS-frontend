@@ -1,5 +1,5 @@
 <template>
-  <v-app class="backgroundlogin">
+  <v-app style="background: linear-gradient(#ff1b1b71, #f57b007e);">
     <!-- ส่วนของ BAR -->
     <v-app-bar color="#424242" fixed>
       <v-app-bar-nav-icon @click="drawer = !drawer">
@@ -121,7 +121,7 @@ export default {
     menu: [
       { menu: "1", text: "Dashboard", route: "/DashboarAD",icon:'home', },
       { menu: "2", text: "จัดการ Group", route: "/Group",icon:'account-group', },
-      { menu: "3", text: "จัดการ Froms", route: "/FormsAD",icon:'form-select', },
+      { menu: "3", text: "Froms ทั้งหมดใครระบบ", route: "/FormsAD",icon:'form-select', },
       { menu: "4", text: "จัดการ Office", route: "/OfficerAD",icon:'account-check', },
       { menu: "5", text: "จัดการ HeadOffice", route: "/HofficerAD",icon:'account-star', },
       { menu: "7", text: "จัดการ บทความ", route: "/Blog",icon:'book', },
@@ -152,6 +152,6 @@ export default {
   color: aliceblue;
 }
 .backgroundlogin{
-   background: linear-gradient(#ff993371, #f57b007e);
+   background: linear-gradient(#ff1b1b71, #f57b007e);
 }
 </style>

@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 10000;
+  font-family: 'Prompt', sans-serif;
 } 
 
  ul {
@@ -30,12 +31,7 @@
   border-radius: 20px;
 }
 
- ul li a:hover,
- ul li a.active {
-  background: rgb(255, 255, 255) ;
-  color: rgb(0, 0, 0);
-  
-}
+
 
 section  {
   

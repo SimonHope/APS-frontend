@@ -62,11 +62,20 @@
                 </v-col>
               </v-row>
               <!-- ช่อง password -->
+              <v-row>
+                <v-col>
+                  <v-btn color="primary" dark> เข้าสู่ระบบ </v-btn>
 
-              <v-btn color="primary" dark> เข้าสู่ระบบ </v-btn>
-              <br />
-              <h3>หรือ</h3>
-              <v-btn color="error" dark> ลืมรหัสผ่าน </v-btn>
+                </v-col>
+                <v-col>
+                  <v-btn color="error" dark> ลืมรหัสผ่าน </v-btn>
+                </v-col>
+              </v-row>
+
+              
+              
+              
+              
             </v-container>
           </v-form>
           <!-- //ส่วนการกรอก การเข้าใช้งานระบบ -->

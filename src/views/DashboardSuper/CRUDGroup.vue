@@ -1,6 +1,5 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <v-app >
     <v-main >
       <v-card class="cardshow">
         <h1>
@@ -87,7 +86,7 @@
         </v-dialog>
       </v-card>
     </v-main>
-  </v-app>
+  
   <!-- ส่วนจัดเเสดง -->
 </template>
 
