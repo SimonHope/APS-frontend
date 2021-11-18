@@ -1,21 +1,18 @@
 <template>
-  <v-app>
+  <div>
     <Navbar />
-    <v-main>
-      <router-view></router-view>
-    </v-main>
-    <Footer />
-    <!-- <Navbar v-if="roluser == 'null'" />
-    <NavbarStu v-if="roluser == 'student'"></NavbarStu>
+    <!-- <NavbarStu v-if="roluser == 'student'"></NavbarStu>
     <NavbarHOF v-if="roluser == 'Hoffice'"></NavbarHOF>
     <NavbarOF v-if="roluser == 'officer'"></NavbarOF>
     <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper> -->
-  </v-app>
+    <Footer />
+    
+  </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+// import Footer from "./components/Footer.vue";
 // import NavbarStu from "./components/NavbarStudent.vue";
 // import NavbarHOF from "./components/NavbarHOfficer.vue";
 // import NavbarOF from "./components/NavbarOfficer.vue";
@@ -25,7 +22,7 @@ export default {
   name: "App",
   components: {
     Navbar,
-    Footer,
+    // Footer,
     // NavbarStu,
     // NavbarHOF,
     // NavbarOF,
@@ -51,4 +48,5 @@ export default {
 * {
   font-family: 'Prompt', sans-serif;
 }
+
 </style>

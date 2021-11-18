@@ -15,8 +15,8 @@
 
               <v-list-item-content>
                 <v-list-item-title
-                  >1 ซอย ฉลองกรุง 1 แขวง ลาดกระบัง<br />เขตลาดกระบัง
-                  กรุงเทพมหานคร 10520</v-list-item-title
+                  >1 Chalong Krung, 1 Alley, Lat Krabang, Bangkok 10520<br />
+                  </v-list-item-title
                 >
                 <v-list-item-subtitle>Location</v-list-item-subtitle>
               </v-list-item-content>
@@ -29,8 +29,8 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>(650) 555-1234</v-list-item-title>
-                <v-list-item-subtitle>Mobile</v-list-item-subtitle>
+                <v-list-item-title>โทรศัพท์ 0 2329 8000 - 0 2329 8099 </v-list-item-title>
+                <v-list-item-subtitle>โทรสาร 0 2329 8106</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-list-item>
@@ -41,7 +41,7 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>aps@example.com</v-list-item-title>
+                <v-list-item-title>pr.kmitl@kmitl.ac.th</v-list-item-title>
                 <v-list-item-subtitle>Email</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -50,11 +50,7 @@
             <h2 class="h2">Academic Petition Service</h2>
             <v-divider></v-divider>
             <p>
-              Lorem ipsum dolor sit amet, pri veniam forensibus id. Vis
-              maluisset molestiae id, ad semper lobortis cum. At impetus
-              detraxit incorrupte usu, repudiare assueverit ex eum, ne nam
-              essent vocent admodum.Lorem ipsum dolor sit amet, pri veniam
-              forensibus id
+              This project “Academic Request Service Model System” was prepared. To study and develop technology systems for students and related personnel Easier to use in everyday
             </p>
           </v-col>
           <v-col md="4" class="pa-15">

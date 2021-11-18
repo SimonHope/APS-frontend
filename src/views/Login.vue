@@ -1,59 +1,6 @@
 <template>
-  <div class="login">
-    <!-- <v-container fluid>
-      <v-layout row wrap class="my-15">
-        <v-flex xs12 class="text-xs-center text-center">
-          <h1>Log In</h1>
-        </v-flex>
-        <v-flex xs12 sm6 offset-sm3 mt-3>
-          <form>
-            <v-layout column>
-              <v-flex>
-                <v-text-field
-                  name="email"
-                  label="Email"
-                  id="email"
-                  type="email"
-                  required
-                >
-                  <template v-slot:prepend>
-                    <v-tooltip bottom>
-                      <template v-slot:activator="{ on }">
-                        <v-icon v-on="on"> mdi-account </v-icon>
-                      </template>
-                      Email
-                    </v-tooltip>
-                  </template>
-                </v-text-field>
-              </v-flex>
-              <v-flex>
-                <v-text-field
-                  name="password"
-                  label="Password"
-                  id="password"
-                  type="password"
-                  required
-                >
-                  <template v-slot:prepend>
-                    <v-tooltip bottom>
-                      <template v-slot:activator="{ on }">
-                        <v-icon v-on="on"> mdi-key </v-icon>
-                      </template>
-                      Password
-                    </v-tooltip>
-                  </template>
-                </v-text-field>
-              </v-flex>
-              <v-flex class="mx-auto" mt-5>
-                <v-btn color="primary" type="submit">Log In</v-btn>
-              </v-flex>
-            </v-layout>
-          </form>
-        </v-flex>
-      </v-layout>
-    </v-container> -->
-
-    <v-content class="mb-16">
+  <div class="backgroundlogin">
+    <!-- <v-content class="mb-16">
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4>
@@ -86,7 +33,91 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
+    </v-content> -->
+
+    <v-main>
+      <v-row>
+        <v-col align="center">
+          <v-card width="1200" height="600" class="card-login">
+            <v-row>
+              <v-col class="color">
+                <v-card color="#f57c00" class="pic-magin">
+                  <v-img
+                    height="300px"
+                    width="500px"
+                    src="../assets/RKR.png"
+                  ></v-img>
+                  <div class="text-login">Academic Petition Service</div>
+                </v-card>
+              </v-col>
+
+              <v-col>
+                <h1 class="margin-login">เข้าสู่ระบบ</h1>
+
+                <!-- ช่อง U-id -->
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="firstname"
+                      label="U-id"
+                      type="username"
+                      class="textfield-margin"
+                    >
+                      <template v-slot:prepend>
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{ on }">
+                            <v-icon v-on="on"> mdi-account </v-icon>
+                          </template>
+                          ใส่รหัสผ่านตามที่หน่วยงานของท่านได้เเจ้งไว้!
+                        </v-tooltip>
+                      </template>
+                    </v-text-field>
+                  </v-col>
+                </v-row>
+                <!-- ช่อง U-id -->
+
+                <!-- ช่อง pass -->
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="lastname"
+                      label="Password"
+                      type="password"
+                      class="textfield-margin"
+                    >
+                      <template v-slot:prepend>
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{ on }">
+                            <v-icon v-on="on"> mdi-lock </v-icon>
+                          </template>
+                          ใส่รหัสผ่าน
+                        </v-tooltip>
+                      </template>
+                    </v-text-field>
+                  </v-col>
+                </v-row>
+                <!-- ช่อง pass -->
+                <v-row>
+                  <v-col align="center">
+                    <v-btn color="primary" width="300" right dark>
+                      เข้าสู่ระบบ
+                    </v-btn>
+                  </v-col>
+                </v-row>
+
+                <v-row>
+                  <v-col align="center">
+                    ท่านลืมรหัสผ่านหรือเปล่า
+                    
+                    <v-btn text color="error"> ลืมรหัสผ่าน </v-btn>
+                  </v-col>
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-main>
   </div>
 </template>
 
@@ -141,15 +172,15 @@ export default {
 .blocklogin {
   margin: 170px 0px 0px 0px;
 }
-.login-margin{
+.login-margin {
   margin: 100px 0px 0px 0px;
 }
-.pic-magin{
-margin: 150px 0px 0px 40px;
+.pic-magin {
+  margin: 100px 0px 0px 40px;
 }
-.text-login{
+.text-login {
   font-size: 30px;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   margin: 0px 0px 0px 0px;
 }
 
@@ -158,4 +189,15 @@ margin: 150px 0px 0px 40px;
   background: linear-gradient(#ff8d41, #ffffff);
   overflow: hidden;
 }
+.card-login {
+  margin: 100px 0px 0px 0px;
+}
+.textfield-margin {
+  margin: 0px 30px 0px 0px;
+}
+.margin-login {
+  margin: 100px 0px 40px 0px;
+}
+.color{}
+
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <v-app-bar app color="orange" dark>
+<v-app>
+  <v-app-bar app color="orange" dark  fixed >
     <v-navigation-drawer
       v-model="sidebar"
       class="hidden-sm-and-up"
@@ -28,17 +29,19 @@
 
     <v-toolbar-title>
       <div class="d-flex align-center">
-        <v-img
+        
+        <v-btn  text  width="100"
+          height="60" >
+          <router-link to="/" tag="span">
+            <v-img
           alt="Vuetify Logo"
           class="shrink"
           contain
-          src="../assets/logo1.png"
+          src="../assets/loginnavbar.png"
           transition="scale-transition"
-          width="40"
+          width="100"
+          height="100%"
         />
-        <v-btn plain text>
-          <router-link to="/" tag="span">
-            {{ appTitle }}
           </router-link>
         </v-btn>
       </div>
@@ -51,6 +54,11 @@
       </v-btn>
     </v-toolbar-items>
   </v-app-bar>
+
+
+  <router-view></router-view>
+
+  </v-app>
 </template>
 
 <script>
@@ -58,7 +66,7 @@ export default {
   name: "Navbar",
   data() {
     return {
-      appTitle: "Academic Petition Service",
+      
       sidebar: false,
       menuItems: [
         { title: "Home", path: "/", icon: "mdi-home" },
@@ -71,4 +79,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
