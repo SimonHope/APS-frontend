@@ -167,6 +167,6 @@ export default {
   color: aliceblue;
 }
 .bg-role{
-  background-color: aqua;
+ 
 }
 </style>
