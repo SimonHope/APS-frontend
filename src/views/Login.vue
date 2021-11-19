@@ -91,7 +91,7 @@
             <!-- ช่อง pass -->
             <v-row>
               <v-col align="center">
-                <v-btn color="primary" width="300" right dark>
+                <v-btn color="primary"  right dark>
                   เข้าสู่ระบบ
                 </v-btn>
               </v-col>
