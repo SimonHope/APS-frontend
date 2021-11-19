@@ -1,32 +1,30 @@
 <template>
   <div>
-    <Navbar />
-    <!-- <NavbarStu v-if="roluser == 'student'"></NavbarStu>
+    <Navbar v-if="roluser == 'null'"/>
+    <NavbarStu v-if="roluser == 'student'"></NavbarStu>
     <NavbarHOF v-if="roluser == 'Hoffice'"></NavbarHOF>
     <NavbarOF v-if="roluser == 'officer'"></NavbarOF>
-    <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper> -->
-    <Footer />
-    
+    <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper>
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
 // import Footer from "./components/Footer.vue";
-// import NavbarStu from "./components/NavbarStudent.vue";
-// import NavbarHOF from "./components/NavbarHOfficer.vue";
-// import NavbarOF from "./components/NavbarOfficer.vue";
-// import NavbarSuper from "./components/NavbarSuper.vue";
+import NavbarStu from "./components/NavbarStudent.vue";
+import NavbarHOF from "./components/NavbarHOfficer.vue";
+import NavbarOF from "./components/NavbarOfficer.vue";
+import NavbarSuper from "./components/NavbarSuper.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
     // Footer,
-    // NavbarStu,
-    // NavbarHOF,
-    // NavbarOF,
-    // NavbarSuper,
+    NavbarStu,
+    NavbarHOF,
+    NavbarOF,
+    NavbarSuper,
   },
   beforeCreate() {},
   data() {
