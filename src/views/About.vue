@@ -2,9 +2,9 @@
   <v-app class="mybody">
     <v-row>
       <v-col>
-        <h1 class="textlogo">เกี่ยวกับเรา</h1>
+        <h1 class="text-about">เกี่ยวกับเรา</h1>
 
-        <h2 class="textlogo1">
+        <h2 class="text-dev">
           ผู้พัฒนา <br />
           นายชญานิน บัวสละ
           <br />
@@ -13,7 +13,7 @@
           ผู้ช่วยศาสตราจารย์อัครเดช วัชระภูพงษ์ อาจารย์ที่ปรึกษา
         </h2>
 
-        <h2 class="textlogo1">
+        <h2 class="text-place">
           สถานที่ <br />
           สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง ชั้น 2
           อาคารกรมหลวงนราธิวาสราชนครินทร์ เลขที่ 1 ซอยฉลองกรุง 1 แขวงลาดกระบัง
@@ -23,6 +23,8 @@
         <br />
       </v-col>
       <v-col>
+
+
         <section>
           <img
             src="../assets/vision1.png"
@@ -71,9 +73,17 @@ export default {
   margin: 20px;
   color: #ffffff;
 }
-.textlogo {
+.text-about {
   font-size: 50px;
-  margin: 200px 0px 90px 99px;
+  margin: 200px 0px 10px 100px;
+}
+.text-dev {
+  font-size: 20px;
+  margin: 0px 0px 10px 100px;
+}
+.text-place {
+  font-size: 20px;
+  margin: 0px 0px 101px 100px;
 }
 .img-magin {
   margin: 0px 0px 10px 0px;
