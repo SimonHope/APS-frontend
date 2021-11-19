@@ -134,7 +134,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .profile {
   margin: 100px 0px 50px 0px;
 }

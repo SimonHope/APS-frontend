@@ -1,7 +1,7 @@
 <template>
   
     <!-- ส่วนจัดเเสดง -->
-    <v-main>
+    <v-main >
       <v-card class="cardshow">
         <h1>
           กระดานข่าวสาร
