@@ -5,7 +5,7 @@
         <h1 class="textlogo">สร้างเอกสาร หรือ ติดตามคำร้องได้ง่ายๆ ด้วย</h1>
         <v-img height="300px" width="700px" src="../assets/RKR.png"></v-img>
           <br>
-        <v-btn class="btn-text" width="400px" height="100px" color="#f57c00" router-link to="/login" > <h1>เริ่มต้นใช้งานกันเลย!</h1> </v-btn>
+        <v-btn class="btn-text"  height="100px" color="#f57c00" router-link to="/login" > <h2>เริ่มต้นใช้งานกันเลย!</h2> </v-btn>
 
 
       </v-col>
@@ -126,10 +126,13 @@ export default {
   margin: 150px 10px 50px 10px;
 }
 .mybody {
-  background: linear-gradient(#ff993371, #f57b007e);
+  background: linear-gradient(#ff993371, #ffca95);
   
 }
 .btn-text{
   font-size: 48px;
+}
+h2{
+  color: aliceblue;
 }
 </style>
