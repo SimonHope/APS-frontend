@@ -1,22 +1,19 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=400px height=200px src="https://www.kmids.ac.th/wp-content/uploads/2021/04/Sub-Logo-KMITL_KMITL-%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B1%E0%B8%87.png" alt="Project logo"></a>
+ <img width=400px height=300px src="src/assets/RKR.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">academicpetition</h3>
+<h3 align="center">Academic Petition Service Prototype</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> This is frontend part from system
     <br> 
 </p>
 
@@ -27,88 +24,52 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+โปรเจค Academic Petition Service Prototype จัดทำขึ้นเพื่อเป็นต้นการสร้างเอกสาร(Form builder) ส่งเอกสารคำร้องภายในองค์และสามารถอนุมัติผ่านอีเมลล์ได้
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+Git clone to your local computer
 
-### Prerequisites
-
-What things you need to install the software and how to install them.
+## 🏗️ Project setup
 
 ```
-Give examples
+npm install
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+## 🏭 Compiles and hot-reloads for development
 
 ```
-Give the example
+npm run serve
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+### Compiles and builds for production
+
+```
+npm run build
+```
+
+## 🧰 Usage <a name="usage"></a>
+
+- HTML
+- CSS
+- Javascript
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
+- [Axios](https://axios-http.com/) - Promise based HTTP
 - [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Vuetify](https://vuetifyjs.com/) - Material Design Framework
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@SimonHope](https://github.com/SimonHope) - Developer
+- [@chayaninSep13](https://github.com/chayaninSep13) - Newbie Developer
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+See also the list of [contributors](https://github.com/SimonHope/APS-frontend/graphs/contributors) who participated in this project.
