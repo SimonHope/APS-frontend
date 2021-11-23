@@ -1,5 +1,6 @@
 <template>
   <v-app class="mybody">
+    <Navbar />
     <v-row>
       <v-col>
         <h1 class="text-about">เกี่ยวกับเรา</h1>
@@ -23,8 +24,6 @@
         <br />
       </v-col>
       <v-col>
-
-
         <section>
           <img
             src="../assets/vision1.png"
@@ -54,12 +53,14 @@
 </template>
 
 <script>
+import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 export default {
   name: "Home",
   components: {
+    Navbar,
     Footer,
-  }
+  },
 };
 </script>
 <style scoped>

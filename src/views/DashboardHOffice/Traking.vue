@@ -1,57 +1,60 @@
 <template>
-  <div>
-    <!-- ส่วนจัดเเสดง -->
-    <v-main>
-      <v-card class="cardshow">
-        <h1>
-          สถานะเอกสาร / คำร้อง
-          <v-divider></v-divider>
-        </h1>
+  <!-- ส่วนจัดเเสดง -->
+  <div id="TrackingHOffice">
+    <NavbarHOF />
+    <v-card class="cardshow">
+      <h1>
+        สถานะเอกสาร / คำร้อง
+        <v-divider></v-divider>
+      </h1>
 
-        <!-- วนเเสดงรายการสถาณะเอสาร -->
+      <!-- วนเเสดงรายการสถาณะเอสาร -->
 
-        <v-expansion-panels>
-          <v-expansion-panel
-            v-for="listtracking in listtracking"
-            :key="listtracking.num"
-          >
-            <v-expansion-panel-header>
-              {{ listtracking.title }}
-              <!-- เเสดงชื่อเอกสาร -->
-              <v-spacer></v-spacer>
-              {{ listtracking.checktracking }} / {{ listtracking.pointracking }}
-              <!-- เเสดงขั้นนตอน-->
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <!-- เเสดงเนื้อหาข้างใน -->
+      <v-expansion-panels>
+        <v-expansion-panel
+          v-for="listtracking in listtracking"
+          :key="listtracking.num"
+        >
+          <v-expansion-panel-header>
+            {{ listtracking.title }}
+            <!-- เเสดงชื่อเอกสาร -->
+            <v-spacer></v-spacer>
+            {{ listtracking.checktracking }} / {{ listtracking.pointracking }}
+            <!-- เเสดงขั้นนตอน-->
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <!-- เเสดงเนื้อหาข้างใน -->
 
-              <v-container id="inspire">
-                <v-stepper alt-labels>
-                  <v-stepper-header>
-                    <v-stepper-step
-                      step="1"
-                      v-for="listtracking in listtracking.pointracking"
-                      :key="listtracking.pointracking"
-                    >
-                      รับข้อมูล
-                    </v-stepper-step>
-                  </v-stepper-header>
-                </v-stepper>
-              </v-container>
+            <v-container id="inspire">
+              <v-stepper alt-labels>
+                <v-stepper-header>
+                  <v-stepper-step
+                    step="1"
+                    v-for="listtracking in listtracking.pointracking"
+                    :key="listtracking.pointracking"
+                  >
+                    รับข้อมูล
+                  </v-stepper-step>
+                </v-stepper-header>
+              </v-stepper>
+            </v-container>
 
-              <!-- เเสดงเนื้อหาข้างใน -->
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-card>
-    </v-main>
-    <!-- ส่วนจัดเเสดง -->
+            <!-- เเสดงเนื้อหาข้างใน -->
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-card>
   </div>
+  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
+import NavbarHOF from "../../components/NavbarHOfficer.vue";
 export default {
   name: "TrackingHOffice",
+  components: {
+    NavbarHOF,
+  },
   data() {
     return {
       listtracking: [

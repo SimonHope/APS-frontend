@@ -1,8 +1,9 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <v-main>
+  <div id="Trackingofficer">
+    <NavbarOF />
     <v-card class="cardshow">
-      <h1>
+      <h1 class="text-center">
         สถานะเอกสาร / คำร้อง
         <v-divider></v-divider>
       </h1>
@@ -24,33 +25,36 @@
           <v-expansion-panel-content>
             <!-- เเสดงเนื้อหาข้างใน -->
 
-
             <v-container id="inspire">
-                <v-stepper alt-labels>
-                  <v-stepper-header>
-                    <v-stepper-step
-                      step="1"
-                      v-for="listtracking in listtracking.pointracking"
-                      :key="listtracking.pointracking"
-                    >
-                      รับข้อมูล
-                    </v-stepper-step>
-                  </v-stepper-header>
-                </v-stepper>
-              </v-container>
+              <v-stepper alt-labels>
+                <v-stepper-header>
+                  <v-stepper-step
+                    step="1"
+                    v-for="listtracking in listtracking.pointracking"
+                    :key="listtracking.pointracking"
+                  >
+                    รับข้อมูล
+                  </v-stepper-step>
+                </v-stepper-header>
+              </v-stepper>
+            </v-container>
 
             <!-- เเสดงเนื้อหาข้างใน -->
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
     </v-card>
-  </v-main>
+  </div>
   <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
+import NavbarOF from "../../components/NavbarOfficer.vue";
 export default {
   name: "Trackingofficer",
+  components: {
+    NavbarOF,
+  },
   data() {
     return {
       listtracking: [

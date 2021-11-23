@@ -1,40 +1,6 @@
 <template>
-  <!-- <v-content class="mb-16">
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-          <v-flex xs12 sm8 md4>
-            <v-card class="elevation-12">
-              <v-toolbar dark color="primary">
-                <v-toolbar-title>Login</v-toolbar-title>
-              </v-toolbar>
-              <v-card-text>
-                <v-form>
-                  <v-text-field
-                    prepend-icon="mdi-account"
-                    name="email"
-                    label="Email"
-                    type="text"
-                  ></v-text-field>
-                  <v-text-field
-                    id="password"
-                    prepend-icon="mdi-lock"
-                    name="password"
-                    label="Password"
-                    type="password"
-                  ></v-text-field>
-                </v-form>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary" to="/">Login</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content> -->
-
   <v-main class="bg-login">
+    <Navbar />
     <v-row class="frame-login">
       <v-col align="center">
         <v-row>
@@ -46,12 +12,12 @@
           <v-col class="bg-color-logo-formslogin">
             <h1 class="margin-login">เข้าสู่ระบบ</h1>
 
-            <!-- ช่อง U-id -->
+            <!-- ช่อง Email -->
             <v-row>
               <v-col>
                 <v-text-field
-                  v-model="firstname"
-                  label="U-id"
+                  v-model="username"
+                  label="Username"
                   type="username"
                   class="textfield-margin"
                 >
@@ -72,7 +38,7 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  v-model="lastname"
+                  v-model="password"
                   label="Password"
                   type="password"
                   class="textfield-margin"
@@ -91,7 +57,7 @@
             <!-- ช่อง pass -->
             <v-row>
               <v-col align="center">
-                <v-btn color="primary"  right dark>
+                <v-btn color="primary" @click="login" width="300" right dark>
                   เข้าสู่ระบบ
                 </v-btn>
               </v-col>
@@ -99,7 +65,7 @@
 
             <v-row>
               <v-col align="center">
-                ท่านลืมรหัสผ่านหรือเปล่า
+                ท่านลืมรหัสผ่านหรือเปล่า?
 
                 <v-btn text color="error" @click="dialogforgot = !dialogforgot">
                   ลืมรหัสผ่าน
@@ -115,33 +81,31 @@
 
     <v-dialog v-model="dialogforgot" persistent width="500">
       <v-card align="center">
-        <br>
+        <br />
         <h1 class="h1-forgot">ลืมรหัสผ่าน</h1>
-        <v-img  width="500px" src="../assets/iforgotpass.png"></v-img>
-        
+        <v-img width="500px" src="../assets/iforgotpass.png"></v-img>
 
         <v-text-field
-                  v-model="forgotEmail"
-                  label="ใส่ E-mail ที่ท่านลงทะเบียน"
-                  type="E-mail"
-                  class="email-forgot-margin"
-                >
-                  <template v-slot:prepend>
-                    <v-tooltip bottom>
-                      <template v-slot:activator="{ on }">
-                        <v-icon v-on="on"> mdi-lock </v-icon>
-                      </template>
-                      ใส่ E-mail ที่ท่านลงทะเบียน
-                    </v-tooltip>
-                  </template>
-                </v-text-field>
-
+          v-model="forgotEmail"
+          label="ใส่ E-mail ที่ท่านลงทะเบียน"
+          type="E-mail"
+          class="email-forgot-margin"
+        >
+          <template v-slot:prepend>
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on }">
+                <v-icon v-on="on"> mdi-lock </v-icon>
+              </template>
+              ใส่ E-mail ที่ท่านลงทะเบียน
+            </v-tooltip>
+          </template>
+        </v-text-field>
 
         <v-divider></v-divider>
         <v-btn color="green darken-1" text @click="submit">
           ตกลง
         </v-btn>
-        <v-btn color="red darken-1" text @click="dialogforgot = false;">
+        <v-btn color="red darken-1" text @click="dialogforgot = false">
           ฉันพอเริ่มจำรหัสผ่านได้เเล้ว!
         </v-btn>
       </v-card>
@@ -156,6 +120,7 @@
 </template>
 
 <script>
+import Navbar from "../components/Navbar.vue";
 import AuthService from "@/services/AuthService.js";
 export default {
   name: "login",
@@ -167,6 +132,9 @@ export default {
       dialogforgot: false,
       timeout: 2000,
     };
+  },
+  components: {
+    Navbar,
   },
   methods: {
     async login() {
@@ -185,7 +153,7 @@ export default {
           this.$router.push("/DashboardSTU");
         } else if (user.status == "officer") {
           this.$router.push("/DashboardOfficer");
-        } else if (user.status == "agent") {
+        } else if (user.status == "chief") {
           this.$router.push("/DashboardHofficer");
         } else if (user.status == "admin") {
           this.$router.push("/DashboarAD");
@@ -198,18 +166,16 @@ export default {
       }
     },
 
-    submit: function () {
+    submit: function() {
       this.dialogforgot = false;
       this.snackbar = true;
     },
   },
- 
-  
 };
 </script>
 
 <style scoped>
-.email-forgot-margin{
+.email-forgot-margin {
   margin: 0px 10px 0px 10px;
 }
 .blocklogin {
@@ -228,6 +194,7 @@ export default {
 }
 .bg-login {
   background-color: #f7c5a8;
+  height: 100%;
 }
 .card-login {
   margin: 100px 0px 0px 0px;

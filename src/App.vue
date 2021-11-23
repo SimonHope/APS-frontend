@@ -1,30 +1,33 @@
 <template>
-  <div>
-    <Navbar v-if="roluser == 'null'"/>
-    <NavbarStu v-if="roluser == 'student'"></NavbarStu>
-    <NavbarHOF v-if="roluser == 'Hoffice'"></NavbarHOF>
-    <NavbarOF v-if="roluser == 'officer'"></NavbarOF>
-    <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper>
-  </div>
+  <v-app>
+    <div>
+      <!-- <NavbarHOF v-if="roluser == 'null'"></NavbarHOF> -->
+      <!-- <NavbarHOF v-if="roluser == 'officer'"></NavbarHOF> -->
+      <!-- <NavbarHOF v-if="roluser == 'chief'"></NavbarHOF> -->
+      <!-- <NavbarOF v-if="roluser == 'officer'"></NavbarOF> -->
+      <!-- <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper> -->
+    </div>
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-// import Footer from "./components/Footer.vue";
-import NavbarStu from "./components/NavbarStudent.vue";
-import NavbarHOF from "./components/NavbarHOfficer.vue";
-import NavbarOF from "./components/NavbarOfficer.vue";
-import NavbarSuper from "./components/NavbarSuper.vue";
+// import Navbar from "./components/Navbar.vue";
+// import NavbarStudent from "./components/NavbarStudent.vue";
+// import NavbarOF from "./components/NavbarOfficer.vue";
+// import NavbarHOF from "./components/NavbarHOfficer.vue";
+// import NavbarSuper from "./components/NavbarSuper.vue";
 
 export default {
   name: "App",
   components: {
-    Navbar,
-    // Footer,
-    NavbarStu,
-    NavbarHOF,
-    NavbarOF,
-    NavbarSuper,
+    // Navbar,
+    // NavbarStudent,
+    // NavbarOF,
+    // NavbarHOF,
+    // NavbarSuper,
   },
   beforeCreate() {},
   data() {
@@ -41,10 +44,9 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
 
 * {
-  font-family: 'Prompt', sans-serif;
+  font-family: "Prompt", sans-serif;
 }
-
 </style>

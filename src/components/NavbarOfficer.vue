@@ -1,11 +1,12 @@
 <template>
-
-  <v-app style="background: linear-gradient(#1b63ff71, #00bcf57e);">
-  <!-- ส่วนของ BAR -->
-  <v-app-bar color="#424242" fixed >
-    <v-app-bar-nav-icon @click="drawer = !drawer"> <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon>
+  <v-main>
+    <!-- ส่วนของ BAR -->
+    <v-app-bar color="#424242" fixed>
+      <v-app-bar-nav-icon @click="drawer = !drawer">
+        <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon
+      >
       <v-spacer></v-spacer>
-      <v-btn fab color="#424242"  icon>
+      <v-btn fab color="#424242" icon>
         <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
@@ -33,61 +34,56 @@
         </v-list>
       </v-menu>
       <!-- เมนูออก -->
-  </v-app-bar>
-  
-  <!-- ส่วนของ BAR -->
+    </v-app-bar>
+    <!-- ส่วนของ BAR -->
 
-  <!-- เเถบข้างเเสดงเมนู -->
-    
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      color="#424242"
-      width='300'
-    >
+    <!-- เเถบข้างเเสดงเมนู -->
+    <v-navigation-drawer v-model="drawer" app color="#424242" width="300">
       <!-- ส่วนตัวเลือกเมนู -->
-     <v-row>
+      <v-row>
         <v-col align="center">
           <v-btn fab width="200" height="200" class="profile">
-            <v-img class="profile-r" width="200" height="200" src="../assets/5074620687.jpg">
+            <v-img
+              class="profile-r"
+              width="200"
+              height="200"
+              src="../assets/5074620687.jpg"
+            >
             </v-img>
-            
           </v-btn>
         </v-col>
       </v-row>
 
       <v-row>
         <v-col class="text-profile" align="center">
-          ชื่อ :       <br>
-          สถานะ : 
-          
+          ชื่อ : <br />
+          สถานะ :
         </v-col>
       </v-row>
-     <v-divider></v-divider>
-     
+      <v-divider></v-divider>
 
-
-        <v-list-item 
+      <v-list-item
         v-for="menu in menu"
-          :key="menu.numforms"
-          router :to="menu.route"
-        >
-          <v-list-item  >
+        :key="menu.numforms"
+        router
+        :to="menu.route"
+      >
+        <v-list-item>
           <v-list-item-icon>
-            <v-icon color="#FFFFFF" > mdi-{{ menu.icon }}</v-icon>
+            <v-icon color="#FFFFFF"> mdi-{{ menu.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-title class="text-color">{{menu.text}}</v-list-item-title>
-        </v-list-item> 
-    
-        </v-list-item> 
+          <v-list-item-title class="text-color">{{
+            menu.text
+          }}</v-list-item-title>
+        </v-list-item>
+      </v-list-item>
       <!-- ส่วนตัวเลือกเมนู -->
     </v-navigation-drawer>
-  <!-- เเถบข้างเเสดงเมนู -->
-  <router-view></router-view>
-  
-  <!-- popup หน้าต่างกดออก -->
+    <!-- เเถบข้างเเสดงเมนู -->
+
+    <!-- popup หน้าต่างกดออก -->
     <v-dialog v-model="slideexit" persistent width="800">
-      <v-card align ="center">
+      <v-card align="center">
         <h1>ออกจากระบบ</h1>
 
         <v-divider></v-divider>
@@ -101,12 +97,7 @@
         <br />
 
         <v-divider></v-divider>
-        <v-btn
-          color="green darken-1"
-          @click="slideexit = false"
-          to="/"
-          class="btn-margin"
-        >
+        <v-btn color="green darken-1" @click="logout" class="btn-margin">
           ตกลง
         </v-btn>
 
@@ -114,51 +105,79 @@
       </v-card>
     </v-dialog>
     <!-- popup หน้าต่างกดออก -->
-  
-  </v-app>
+  </v-main>
 </template>
 
 <script>
-
+import AuthService from "@/services/AuthService.js";
 export default {
-    name:"NavbarOffice",
-    data: () => ({
+  name: "NavbarOffice",
+  data: () => ({
     drawer: null,
     slideexit: false,
-    menu : [
-        {menu:'1',text:'Dashboard', route:'/DashboardOfficer',icon:'home'},
-        {menu:'2',text:'จัดการ Froms', route:'/petitionOfficer',icon:'file-document'},
-        {menu:'4',text:'สถานะเอกสาร/คำร้อง', route:'/tarckingOfficer',icon:'bullseye-arrow'},
-      ],
-      menuseting: [
+    menu: [
+      {
+        menu: "1",
+        text: "Dashboard",
+        route: "/DashboardOfficer",
+        icon: "home",
+      },
+      {
+        menu: "2",
+        text: "จัดการ Froms",
+        route: "/petitionOfficer",
+        icon: "file-document",
+      },
+      {
+        menu: "4",
+        text: "สถานะเอกสาร/คำร้อง",
+        route: "/tarckingOfficer",
+        icon: "bullseye-arrow",
+      },
+    ],
+    menuseting: [
       { menu: "1", text: "เกี่ยวกับ", route: "/aboutme" },
       { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
   }),
-}
+  async created() {
+    if (!this.$store.getters.isLoggedIn) {
+      this.$router.push("/login");
+    }
+    this.username = this.$store.getters.getUser.username;
+    this.secretMessage = await AuthService.getSecretContent();
+  },
+  methods: {
+    logout() {
+      localStorage.clear();
+      this.$store.dispatch("logout");
+      this.$router.push("/login");
+    },
+  },
+};
 </script>
 
 <style scope>
-.profile{
+.profile {
   margin: 100px 0px 50px 0px;
 }
-.navback{
+.navback {
   z-index: -1;
 }
-.text-color{
+.text-color {
   color: aliceblue;
 }
 .btn-margin {
   margin: 30px;
 }
-.profile-r{
+.profile-r {
   border-radius: 60%;
 }
-.text-profile{
+.text-profile {
   text-align: center;
   color: aliceblue;
 }
-.dsfsd{
+.dsfsd {
   background: linear-gradient(#a41bff71, #1000f57e);
 }
 </style>

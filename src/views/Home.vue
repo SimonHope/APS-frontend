@@ -1,21 +1,43 @@
 <template>
-  <v-main class="mybody">
+  <v-app class="mybody">
+    <Navbar />
     <v-row>
       <v-col align="center">
         <h1 class="textlogo">สร้างเอกสาร หรือ ติดตามคำร้องได้ง่ายๆ ด้วย</h1>
         <v-img height="300px" width="700px" src="../assets/RKR.png"></v-img>
-          <br>
-        <v-btn class="btn-text"  height="100px" color="#f57c00" router-link to="/login" > <h2>เริ่มต้นใช้งานกันเลย!</h2> </v-btn>
-
-
+        <br />
+        <v-btn
+          class="btn-text"
+          height="100px"
+          color="#f57c00"
+          router-link
+          to="/login"
+        >
+          <h2>เริ่มต้นใช้งานกันเลย!</h2>
+        </v-btn>
       </v-col>
-      <v-col >
+      <v-col>
         <section>
-        <img src="../assets/vision1.png" id="mtf" class="layer" data-speed="-9" />
-        <img src="../assets/vision2.png" id="mtf" class="layer" data-speed="8" />
-        <img src="../assets/vision3.png" id="mtf" class="layer" data-speed="0.9" />
-        <img src="../assets/mtf.png" id="mtf" class="layer" data-speed="-5" />
-         <img src="../assets/mtb.png" id="mtb" class="layer" data-speed="-3">
+          <img
+            src="../assets/vision1.png"
+            id="mtf"
+            class="layer"
+            data-speed="-9"
+          />
+          <img
+            src="../assets/vision2.png"
+            id="mtf"
+            class="layer"
+            data-speed="8"
+          />
+          <img
+            src="../assets/vision3.png"
+            id="mtf"
+            class="layer"
+            data-speed="0.9"
+          />
+          <img src="../assets/mtf.png" id="mtf" class="layer" data-speed="-5" />
+          <img src="../assets/mtb.png" id="mtb" class="layer" data-speed="-3" />
         </section>
       </v-col>
     </v-row>
@@ -27,7 +49,10 @@
             <h3 class="display-3 text-center">Academic Petition Service</h3>
             <v-divider class="my-3"></v-divider>
             <span class="subheading"
-              >โครงงาน “ระบบต้นแบบการบริการคำร้องทางวิชาการ” นี้ถูกจัดทำขึ้น เพื่อศึกษาและพัฒนาระบบเทคโนโลยีให้นักศึกษา และ บุคลากรที่เกี่ยวข้อง นำไปใช้งานได้ง่ายขึ้นร่วมกับการทำงานเกี่ยวกับเอกสารคำร้อง</span
+              >โครงงาน “ระบบต้นแบบการบริการคำร้องทางวิชาการ” นี้ถูกจัดทำขึ้น
+              เพื่อศึกษาและพัฒนาระบบเทคโนโลยีให้นักศึกษา และ
+              บุคลากรที่เกี่ยวข้อง
+              นำไปใช้งานได้ง่ายขึ้นร่วมกับการทำงานเกี่ยวกับเอกสารคำร้อง</span
             >
           </v-flex>
         </v-layout>
@@ -48,7 +73,8 @@
             </v-card-title>
 
             <v-card-subtitle>
-              ด้วยบริการที่ ไม่ต้องใช้คนเดินเรื่องเอกสารคำร้อง ส่งเเล้วถึงเป้าหมาย
+              ด้วยบริการที่ ไม่ต้องใช้คนเดินเรื่องเอกสารคำร้อง
+              ส่งเเล้วถึงเป้าหมาย
             </v-card-subtitle>
           </v-card>
         </v-col>
@@ -103,36 +129,34 @@
       </v-row>
     </v-parallax>
     <Footer />
-  </v-main>
-    
+  </v-app>
 </template>
 
 <script>
+import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 export default {
   name: "home",
   data() {
-    return {
-     
-    };
+    return {};
   },
   components: {
+    Navbar,
     Footer,
   },
 };
 </script>
-<style  scoped>
-.textlogo{
+<style scoped>
+.textlogo {
   margin: 150px 10px 50px 10px;
 }
 .mybody {
   background: linear-gradient(#ff993371, #ffca95);
-  
 }
-.btn-text{
+.btn-text {
   font-size: 48px;
 }
-h2{
+h2 {
   color: aliceblue;
 }
 </style>

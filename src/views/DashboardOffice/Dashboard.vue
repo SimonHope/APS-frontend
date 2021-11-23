@@ -1,13 +1,12 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <v-main>
+  <div id="DashboardOffice">
+    <NavbarOF />
     <v-card class="cardshow">
-      <h1>
-        กระดานข่าวสาร
+      <h1 class="text-center">
+        กระดานข่าวสาร officer
         <v-divider></v-divider>
       </h1>
-
-      <v-row> </v-row>
       <v-row>
         <v-col align="center">
           <!-- รายงานเอกสารที่ทำไป -->
@@ -55,7 +54,6 @@
           </v-card>
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
-
         <v-col align="center">
           <!-- รายงานเอกสารที่ทำไป -->
           <v-card
@@ -81,13 +79,17 @@
         </v-col>
       </v-row>
     </v-card>
-  </v-main>
+  </div>
   <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
+import NavbarOF from "../../components/NavbarOfficer.vue";
 export default {
   name: "DashboardOffice",
+  components: {
+    NavbarOF,
+  },
   data() {
     return {
       datastu: [
@@ -101,7 +103,6 @@ export default {
       ],
     };
   },
-  components: {},
 };
 </script>
 

@@ -1,78 +1,76 @@
 <template>
-  <div>
-    <!-- ส่วนจัดเเสดง -->
-    <v-main >
-      <v-card class="cardshow">
-        <h1>
-          รายงานการส่งทั้งหมด
-          <v-divider></v-divider>
-        </h1>
+  <!-- ส่วนจัดเเสดง -->
+  <div id="Viewallsubmission">
+    <NavbarSuper />
+    <v-card class="cardshow">
+      <h1>
+        รายงานการส่งทั้งหมด
+        <v-divider></v-divider>
+      </h1>
+      <v-row>
+        <v-col align="center" v-if="forms.length">
+          <v-btn class="btn-magin" width="150" height="50">
+            <v-icon>mdi-file</v-icon>
+            <h1>{{ forms.length }}</h1>
+          </v-btn>
+        </v-col>
+      </v-row>
+
+      <v-card class="box-marginlist">
         <v-row>
-          <v-col align="center" v-if="forms.length">
-            <v-btn class="btn-magin" width="150" height="50">
-              <v-icon>mdi-file</v-icon>
-              <h1>{{ forms.length }}</h1>
-            </v-btn>
-          </v-col>
+          <v-col align="center">ลำดับ</v-col>
+          <v-col align="center">รายการ</v-col>
         </v-row>
-
-        <v-card class="box-marginlist">
-          <v-row>
-            <v-col align ="center">ลำดับ</v-col>
-            <v-col align ="center">รายการ</v-col>
-          </v-row>
-        </v-card>
-
-        <v-expansion-panels>
-          <v-expansion-panel v-for="forms in forms" :key="forms">
-            <v-expansion-panel-header>
-              <v-row>
-                <v-col align ="center">{{ forms.no_id }}</v-col>
-                <v-col align ="center">{{ forms.list }}</v-col>
-              </v-row>
-
-              <!-- เเสดงชื่อเอกสาร -->
-
-              <!-- เเสดงขั้นนตอน-->
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <!-- เเสดงเนื้อหาข้างใน -->
-              <v-row>
-                <v-col
-                  v-for="forms in forms.pointracking"
-                  :key="forms.pointracking"
-                  v-model="forms.pointracking"
-                >
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col>
-                  
-
-                  
-                </v-col>
-              </v-row>
-              <v-row>
-                
-                <v-col align ="center">
-                  <v-btn color="#FFEB3B" class="btn-magin"> เเก้ไขข้อมูล</v-btn>
-                  <v-btn color="#F44336"> ลบข้อมูล</v-btn>
-                </v-col>
-              </v-row>
-
-              <!-- เเสดงเนื้อหาข้างใน -->
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
       </v-card>
-    </v-main>
-    <!-- ส่วนจัดเเสดง -->
+
+      <v-expansion-panels>
+        <v-expansion-panel v-for="forms in forms" :key="forms">
+          <v-expansion-panel-header>
+            <v-row>
+              <v-col align="center">{{ forms.no_id }}</v-col>
+              <v-col align="center">{{ forms.list }}</v-col>
+            </v-row>
+
+            <!-- เเสดงชื่อเอกสาร -->
+
+            <!-- เเสดงขั้นนตอน-->
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <!-- เเสดงเนื้อหาข้างใน -->
+            <v-row>
+              <v-col
+                v-for="forms in forms.pointracking"
+                :key="forms.pointracking"
+                v-model="forms.pointracking"
+              >
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col> </v-col>
+            </v-row>
+            <v-row>
+              <v-col align="center">
+                <v-btn color="#FFEB3B" class="btn-magin"> เเก้ไขข้อมูล</v-btn>
+                <v-btn color="#F44336"> ลบข้อมูล</v-btn>
+              </v-col>
+            </v-row>
+
+            <!-- เเสดงเนื้อหาข้างใน -->
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-card>
   </div>
+  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
+import NavbarSuper from "../../components/NavbarSuper.vue";
 export default {
-  name: "VIWEALLSUBMITADMIN",
+  name: "Viewallsubmission",
+  components: {
+    NavbarSuper,
+  },
   data() {
     return {
       forms: [
@@ -93,7 +91,6 @@ export default {
       ],
     };
   },
-  components: {},
 };
 </script>
 
@@ -119,4 +116,3 @@ h2 {
   margin: 3%;
 }
 </style>
-

@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: linear-gradient(#ff993371, #f57b007e);">
+  <v-main>
     <!-- ส่วนของ BAR -->
     <v-app-bar color="#424242" fixed>
       <v-app-bar-nav-icon @click="drawer = !drawer"
@@ -43,18 +43,21 @@
       <v-row>
         <v-col align="center">
           <v-btn fab width="200" height="200" class="profile">
-            <v-img class="profile-r" width="200" height="200" src="../assets/5074620687.jpg">
+            <v-img
+              class="profile-r"
+              width="200"
+              height="200"
+              src="../assets/5074620687.jpg"
+            >
             </v-img>
           </v-btn>
-          
         </v-col>
       </v-row>
 
       <v-row>
         <v-col class="text-profile" align="center">
-          ชื่อ :       <br>
-          สถานะ : 
-          
+          ชื่อ : <br />
+          สถานะ :
         </v-col>
       </v-row>
 
@@ -78,10 +81,10 @@
       <!-- ส่วนตัวเลือกเมนู -->
     </v-navigation-drawer>
     <!-- เเถบข้างเเสดงเมนู -->
-    <router-view></router-view>
+
     <!-- popup หน้าต่างกดออก -->
     <v-dialog v-model="slideexit" persistent width="800">
-      <v-card align ="center">
+      <v-card align="center">
         <h1>ออกจากระบบ</h1>
 
         <v-divider></v-divider>
@@ -95,12 +98,7 @@
         <br />
 
         <v-divider></v-divider>
-        <v-btn
-          color="green darken-1"
-          @click="slideexit = false"
-          to="/"
-          class="btn-margin"
-        >
+        <v-btn color="green darken-1" @click="logout" class="btn-margin">
           ตกลง
         </v-btn>
 
@@ -108,10 +106,11 @@
       </v-card>
     </v-dialog>
     <!-- popup หน้าต่างกดออก -->
-  </v-app>
+  </v-main>
 </template>
 
 <script>
+import AuthService from "@/services/AuthService.js";
 export default {
   name: "NavbarStudent",
   data: () => ({
@@ -142,7 +141,23 @@ export default {
       { menu: "1", text: "เกี่ยวกับ", route: "/aboutme" },
       { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
+    usrname: "",
+    secretMessage: "",
   }),
+  async created() {
+    if (!this.$store.getters.isLoggedIn) {
+      this.$router.push("/login");
+    }
+    this.username = this.$store.getters.getUser.username;
+    this.secretMessage = await AuthService.getSecretContent();
+  },
+  methods: {
+    logout() {
+      localStorage.clear();
+      this.$store.dispatch("logout");
+      this.$router.push("/login");
+    },
+  },
 };
 </script>
 
@@ -159,14 +174,13 @@ export default {
 .btn-margin {
   margin: 30px;
 }
-.profile-r{
+.profile-r {
   border-radius: 60%;
 }
-.text-profile{
+.text-profile {
   text-align: center;
   color: aliceblue;
 }
-.bg-role{
- 
+.bg-role {
 }
 </style>

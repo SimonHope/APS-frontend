@@ -1,6 +1,7 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <v-main>
+  <div id="Chiefmanagement">
+    <NavbarSuper />
     <v-card class="cardshow">
       <h1>
         จัดการ Heard Officer
@@ -179,13 +180,17 @@
 
       <!-- ลบ Head officer -->
     </v-card>
-  </v-main>
+  </div>
   <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
+import NavbarSuper from "../../components/NavbarSuper.vue";
 export default {
-  name: "CRUDHOFFICEbyADMIN",
+  name: "Chiefmanagement",
+  components: {
+    NavbarSuper,
+  },
   data() {
     return {
       forms: [
@@ -197,7 +202,6 @@ export default {
       dialogdel: false,
     };
   },
-  components: {},
 };
 </script>
 
