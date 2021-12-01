@@ -1,23 +1,21 @@
 <template>
-  <!-- ส่วนจัดเเสดง -->
-  <div id="Blogmanagement">
-    <NavbarSuper />
-    <v-card class="cardshow">
-      <h1>
-        จัดการบทความ
+  <div id="AdminProfile">
+    <NavbarAdmin />
+    <v-card class="cardmargin">
+      <h1 class="text-center">
+        โปรไฟล์
         <v-divider></v-divider>
       </h1>
     </v-card>
   </div>
-  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarSuper from "../../components/NavbarAdmin.vue";
+import NavbarAdmin from "../../components/NavbarAdmin.vue";
 export default {
-  name: "Blogmanagement",
+  name: "AdminProfile",
   components: {
-    NavbarSuper,
+    NavbarAdmin,
   },
   data() {
     return {};
@@ -26,15 +24,7 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
-}
-h2 {
-  text-align: center;
-  padding: 10px;
-}
-.cardshow {
-  margin: 8%;
+.cardmargin {
+  margin: 2%;
 }
 </style>

@@ -1,52 +1,33 @@
 <template>
-  <v-main>
-    <!-- ส่วนของ BAR -->
-    <v-app-bar color="#424242" fixed>
-      <v-app-bar-nav-icon @click="drawer = !drawer"
-        ><v-icon color="#FFFFFF">mdi-menu</v-icon>
+  <div id="NavbarChief">
+    <!-- Navbar -->
+    <v-app-bar color="#FFA726">
+      <v-app-bar-nav-icon @click="drawer = !drawer">
+        <v-icon color="#FFFFFF">
+          mdi-menu
+        </v-icon>
       </v-app-bar-nav-icon>
-      <v-spacer></v-spacer>
-      <v-btn fab color="#424242" icon>
-        <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
+      <v-btn icon disabled>
+        <v-img height="160px" width="160px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
-
-      <!-- เมนูออก -->
-      <v-menu offset-y open-on-hover>
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn color="#FFFFFF" dark v-bind="attrs" v-on="on" icon>
-            <v-icon>mdi-cog-outline</v-icon>
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item @click="slideexit = !slideexit">
-            <v-list-item-title>ออกจากระบบ</v-list-item-title>
-          </v-list-item>
-          <v-divider></v-divider>
-          <v-list-item
-            v-for="menuseting in menuseting"
-            :key="menuseting.no"
-            router
-            :to="menuseting.route"
-          >
-            <v-list-item-title>{{ menuseting.text }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-      <!-- เมนูออก -->
+      <div class="text-white title mr-4">Last login:{{ lastlogin }}</div>
+      <v-btn elevation="2" color="error" @click="slideexit = !slideexit">
+        Logout
+      </v-btn>
     </v-app-bar>
-    <!-- ส่วนของ BAR -->
+    <!-- Navbar -->
 
-    <!-- เเถบข้างเเสดงเมนู -->
+    <!-- Sidebar -->
     <v-navigation-drawer v-model="drawer" app color="#424242" width="300">
       <!-- ส่วนตัวเลือกเมนู -->
       <v-row>
         <v-col align="center">
-          <v-btn fab width="200" height="200" class="profile">
+          <v-btn fab width="auto" height="auto" class="mt-15">
             <v-img
-              class="profile-r"
-              width="200"
-              height="200"
+              class="rounded-circle"
+              width="150"
+              height="150"
               src="../assets/5074620687.jpg"
             >
             </v-img>
@@ -55,7 +36,7 @@
       </v-row>
 
       <v-row>
-        <v-col class="text-profile" align="center">
+        <v-col class="text-white" align="center">
           ชื่อ : <br />
           สถานะ :
         </v-col>
@@ -70,51 +51,49 @@
       >
         <v-list-item>
           <v-list-item-icon>
-            <v-icon color="#FFFFFF"> mdi-{{ menu.icon }}</v-icon>
+            <v-icon color="#FFFFFF">mdi-{{ menu.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-title class="text-color">{{
+          <v-list-item-title class="text-white">{{
             menu.text
           }}</v-list-item-title>
         </v-list-item>
       </v-list-item>
       <!-- ส่วนตัวเลือกเมนู -->
     </v-navigation-drawer>
-    <!-- เเถบข้างเเสดงเมนู -->
+    <!-- Sidebar -->
 
-    <!-- popup หน้าต่างกดออก -->
-    <v-dialog v-model="slideexit" persistent width="800">
-      <v-card align="center">
+    <!-- Dialog confirm -->
+    <v-dialog v-model="slideexit" width="700">
+      <v-card align="center" class="pa-10">
         <h1>ออกจากระบบ</h1>
-
         <v-divider></v-divider>
-        <br />
-        <v-btn fab width="150" height="150" left class="text-pprofile-magin">
-          <v-icon>mdi-emoticon-cry-outline</v-icon>
-        </v-btn>
-        <br />
-        <br />
-        <h2>กด "ตกลง" เพื่อนยืนยันการออกจากระบบ</h2>
-        <br />
-
+        <h3>กด "ตกลง" เพื่อยืนยันการออกจากระบบ</h3>
         <v-divider></v-divider>
-        <v-btn color="green darken-1" @click="logout" class="btn-margin">
+        <v-btn color="green darken-1" class="text-white mr-5" @click="logout">
           ตกลง
         </v-btn>
 
-        <v-btn color="red darken-1" @click="slideexit = false"> ยกเลิก </v-btn>
+        <v-btn
+          color="red darken-1"
+          class="text-white"
+          @click="slideexit = false"
+        >
+          ยกเลิก
+        </v-btn>
       </v-card>
     </v-dialog>
-    <!-- popup หน้าต่างกดออก -->
-  </v-main>
+    <!-- Dialog confirm -->
+  </div>
 </template>
 
 <script>
 import AuthService from "@/services/AuthService.js";
 export default {
-  name: "NavbarOffice",
+  name: "NavbarChief",
   data: () => ({
     drawer: null,
     slideexit: false,
+    lastlogin: "12 October 2021",
     menu: [
       {
         menu: "1",
@@ -163,24 +142,4 @@ export default {
 };
 </script>
 
-<style scope>
-.profile-r {
-  border-radius: 60%;
-}
-.profile {
-  margin: 100px 0px 50px 0px;
-}
-.navback {
-  z-index: -1;
-}
-.text-color {
-  color: aliceblue;
-}
-.btn-margin {
-  margin: 30px;
-}
-.text-profile {
-  text-align: center;
-  color: aliceblue;
-}
-</style>
+<style scope></style>

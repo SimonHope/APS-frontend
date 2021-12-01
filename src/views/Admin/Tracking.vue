@@ -1,66 +1,70 @@
 <template>
-  <div>
+  <div id="AdminTracking">
+    <NavbarAdmin />
     <!-- ส่วนจัดเเสดง -->
-    <v-main >
-      <v-card class="cardshow">
-        <h1>
-          สถานะเอกสาร / คำร้อง
-          <v-divider></v-divider>
-        </h1>
 
-        <!-- วนเเสดงรายการสถาณะเอสาร -->
+    <v-card class="cardshow">
+      <h1 class="text-center">
+        สถานะเอกสาร / คำร้อง
+        <v-divider></v-divider>
+      </h1>
 
-        <v-expansion-panels>
-          <v-expansion-panel
-            v-for="listtracking in listtracking"
-            :key="listtracking.num"
-          >
-            <v-expansion-panel-header>
-              {{ listtracking.title }}
-              <!-- เเสดงชื่อเอกสาร -->
-              <v-spacer></v-spacer>
-              {{ listtracking.checktracking }} / {{ listtracking.pointracking }}
-              <!-- เเสดงขั้นนตอน-->
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <!-- เเสดงเนื้อหาข้างใน -->
+      <!-- วนเเสดงรายการสถาณะเอสาร -->
 
-              <v-row>
-                <v-col>
-                  <v-btn
-                    fab disabled
-                    class="tarkingbtn"
-                    v-for="listtracking in listtracking.pointracking"
-                    :key="listtracking.pointracking"
-                  >
-                    <v-icon>mdi-home</v-icon>
-                    
-                  </v-btn>
-                  <v-btn
-                      fab
-                      class="checkingbtn"
-                      color="#43A047"
-                      v-for="listtracking in listtracking.checktracking"
-                      :key="listtracking.checktracking"
-                    >
-                    </v-btn>
-                </v-col>
-              </v-row>
-              
+      <v-expansion-panels>
+        <v-expansion-panel
+          v-for="listtracking in listtracking"
+          :key="listtracking.num"
+        >
+          <v-expansion-panel-header>
+            {{ listtracking.title }}
+            <!-- เเสดงชื่อเอกสาร -->
+            <v-spacer></v-spacer>
+            {{ listtracking.checktracking }} / {{ listtracking.pointracking }}
+            <!-- เเสดงขั้นนตอน-->
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <!-- เเสดงเนื้อหาข้างใน -->
 
-              <!-- เเสดงเนื้อหาข้างใน -->
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-card>
-    </v-main>
+            <v-row>
+              <v-col>
+                <v-btn
+                  fab
+                  disabled
+                  class="tarkingbtn"
+                  v-for="listtracking in listtracking.pointracking"
+                  :key="listtracking.pointracking"
+                >
+                  <v-icon>mdi-home</v-icon>
+                </v-btn>
+                <v-btn
+                  fab
+                  class="checkingbtn"
+                  color="#43A047"
+                  v-for="listtracking in listtracking.checktracking"
+                  :key="listtracking.checktracking"
+                >
+                </v-btn>
+              </v-col>
+            </v-row>
+
+            <!-- เเสดงเนื้อหาข้างใน -->
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-card>
+
     <!-- ส่วนจัดเเสดง -->
   </div>
 </template>
 
 <script>
+import NavbarAdmin from "../../components/NavbarAdmin.vue";
 export default {
-  name: "TrackingADMIN",
+  name: "AdminTracking",
+  components: {
+    NavbarAdmin,
+  },
   data() {
     return {
       listtracking: [
@@ -74,16 +78,8 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
-}
-h2 {
-  text-align: center;
-  padding: 10px;
-}
 .cardshow {
-  margin: 8%;
+  margin: 2%;
 }
 .trackcrad {
   text-align: center;
@@ -96,7 +92,5 @@ h2 {
 }
 .checkingbtn {
   margin: 10px;
-  
 }
-
 </style>

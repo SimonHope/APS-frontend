@@ -1,17 +1,16 @@
 <template>
-  <!-- ส่วนจัดเเสดง -->
-  <div id="Secretarymanagement">
-    <NavbarSuper />
-    <v-card class="cardshow">
+  <div id="AdminSecretaryManagement">
+    <NavbarAdmin />
+    <v-card class="cardmargin">
       <h1 class="text-center p-4">
-        สถานะคำร้อง
+        จัดการ Secretary
         <v-divider></v-divider>
       </h1>
       <v-row>
-        <v-col align="center" v-if="desserts.length">
+        <v-col align="center" v-if="members.length">
           <v-btn width="150" height="50">
             <v-icon>mdi-account</v-icon>
-            <h1>{{ desserts.length }}</h1>
+            <div class="title">{{ members.length }}</div>
           </v-btn>
         </v-col>
       </v-row>
@@ -25,11 +24,12 @@
         >
         </v-text-field>
       </v-card-title>
-      <v-data-table :headers="headers" :items="desserts" :search="search">
-        <template v-slot:item="desserts">
+      <v-data-table :headers="headers" :items="members" :search="search">
+        <template v-slot:item="members">
           <tr>
-            <td>{{ desserts.item.name }}</td>
-            <td>{{ desserts.item.calories }}</td>
+            <td>{{ members.item.name }}</td>
+            <td>{{ members.item.calories }}</td>
+            <td>{{ members.item.fat }}</td>
             <td>
               <v-btn
                 fab
@@ -55,31 +55,30 @@
       </v-data-table>
     </v-card>
   </div>
-
-  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarSuper from "../../components/NavbarAdmin.vue";
+import NavbarAdmin from "../../components/NavbarAdmin.vue";
 export default {
-  name: "Groupmanagement",
+  name: "SecretaryManagement",
   components: {
-    NavbarSuper,
+    NavbarAdmin,
   },
   data() {
     return {
       search: "",
       headers: [
         {
-          text: "Dessert (100g serving)",
+          text: "ลำดับ",
           align: "start",
-          value: "name",
-          width: 500,
+          value: "count",
+          width: 100,
         },
-        { text: "Calories", width: 350, value: "calories" },
+        { text: "ชื่อ-นามสกุล", width: 350, value: "calories" },
+        { text: "หน่วยงาน", width: 350, value: "calories" },
         { text: "Action", align: "center", width: 100, value: "iron" },
       ],
-      desserts: [
+      members: [
         {
           name: "Frozen Yogurt",
           calories: 159,
@@ -170,31 +169,7 @@ export default {
 </script>
 
 <style scoped>
-.cardshow {
-  margin: 8%;
-}
-.card-magin {
-  margin: 10%;
-}
-.Gprofile-margin {
-  margin: 10%;
-}
-.btn-magin {
-  margin: 3%;
-}
-.btn-groupmargin {
-  margin: 3%;
-}
-.box-margin {
-  margin: 10px 0px 10px 0px;
-}
-.Gprofile-margin1 {
-  margin: 50%;
-}
-.Gprofile-marginin {
-  margin: 30%;
-}
-.text-pprofile-magin {
-  margin: 5%;
+.cardmargin {
+  margin: 2%;
 }
 </style>

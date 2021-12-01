@@ -1,247 +1,175 @@
 <template>
-  <!-- ส่วนจัดเเสดง -->
-  <div id="Chiefmanagement">
-    <NavbarSuper />
-    <v-card class="cardshow">
-      <h1>
-        จัดการ Heard Officer
+  <div id="AdminChiefManagement">
+    <NavbarAdmin />
+    <v-card class="cardmargin">
+      <h1 class="text-center p-4">
+        จัดการ Chief
         <v-divider></v-divider>
       </h1>
       <v-row>
-        <v-col align="right" v-if="forms.length">
-          <v-btn class="btn-magin" width="150" height="50">
+        <v-col align="center" v-if="members.length">
+          <v-btn width="150" height="50">
             <v-icon>mdi-account</v-icon>
-            <h1>{{ forms.length }}</h1>
-          </v-btn>
-        </v-col>
-        <v-col>
-          <v-btn
-            class="btn-magin"
-            color="#4CAF50"
-            width=""
-            height="50"
-            @click="dialogadd = !dialogadd"
-          >
-            <v-icon>mdi-account</v-icon>
-            <h4>เพิ่มรายชื่อใหม่</h4>
+            <div class="title">{{ members.length }}</div>
           </v-btn>
         </v-col>
       </v-row>
-
-      <v-card class="box-marginlist" align="center">
-        <v-row>
-          <v-col>ลำดับ</v-col>
-          <v-col>ชื่อ</v-col>
-          <v-col>นามสกุล</v-col>
-          <v-col>สถานะ</v-col>
-          <v-col>ตัวเลือก</v-col>
-        </v-row>
-      </v-card>
-
-      <v-row v-for="forms in forms" :key="forms">
-        <v-col align="center">{{ forms.no }}</v-col>
-        <v-col align="center">{{ forms.Fname }}</v-col>
-        <v-col align="center">{{ forms.Lname }}</v-col>
-        <v-col align="center">{{ forms.satatus }}</v-col>
-        <v-col>
-          <v-row>
-            <v-col align="center">
+      <v-card-title>
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+        >
+        </v-text-field>
+      </v-card-title>
+      <v-data-table :headers="headers" :items="members" :search="search">
+        <template v-slot:item="members">
+          <tr>
+            <td>{{ members.item.name }}</td>
+            <td>{{ members.item.calories }}</td>
+            <td>{{ members.item.fat }}</td>
+            <td>
               <v-btn
-                color="#FFEB3B"
-                class="btn-magin"
-                @click="dialog = !dialog"
+                fab
+                plain
+                small
+                color="yellow darken-3"
+                @click="onButtonClick(row.item)"
               >
-                เเก้ไขข้อมูล</v-btn
+                <v-icon>mdi-account-edit</v-icon>
+              </v-btn>
+              <v-btn
+                fab
+                plain
+                small
+                color="red"
+                @click="onButtonClick(row.item)"
               >
-              <v-btn color="#F44336" @click="dialogdel = !dialogdel">
-                ลบข้อมูล</v-btn
-              >
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-
-      <!-- ส่วนจัดเเสดงเวลากดเเก้ไข -->
-
-      <v-dialog v-model="dialog" persistent width="800">
-        <v-card align="center">
-          <h1>จัดการข้อมูล Head Officer</h1>
-
-          <v-divider></v-divider>
-          <v-btn fab width="250" height="250" left class="text-pprofile-magin"
-            >fuck</v-btn
-          >
-
-          <v-text-field
-            label="ชื่อ"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-
-          <v-text-field
-            label="นามสกุล"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-          <v-text-field
-            label="หน่วยงาน"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-
-          <v-textarea
-            label="คำอธิบาย"
-            auto-grow
-            outlined
-            rows="1"
-            row-height="15"
-            class="text-pprofile-magin"
-          ></v-textarea>
-          <v-divider></v-divider>
-          <v-btn color="green darken-1" text @click="dialog = false">
-            ตกลง
-          </v-btn>
-          <v-btn color="red darken-1" text @click="dialog = false">
-            ยกเลิก
-          </v-btn>
-        </v-card>
-      </v-dialog>
-      <!-- ส่วนจัดเเสดงเวลากดเเก้ไข -->
-
-      <!-- เพิ่มข้อมูล Head officer -->
-      <v-dialog v-model="dialogadd" persistent width="800">
-        <v-card align="center">
-          <h1>เพิ่มข้อมูล Head officer</h1>
-
-          <v-divider></v-divider>
-          <v-btn fab width="250" height="250" left class="text-pprofile-magin"
-            >fuck</v-btn
-          >
-
-          <v-text-field
-            label="ชื่อ"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-
-          <v-text-field
-            label="นามสกุล"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-          <v-text-field
-            label="หน่วยงาน"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-
-          <v-textarea
-            label="คำอธิบาย"
-            auto-grow
-            outlined
-            rows="1"
-            row-height="15"
-            class="text-pprofile-magin"
-          ></v-textarea>
-          <v-divider></v-divider>
-          <v-btn color="green darken-1" text @click="dialogadd = false">
-            ตกลง
-          </v-btn>
-          <v-btn color="red darken-1" text @click="dialogadd = false">
-            ยกเลิก
-          </v-btn>
-        </v-card>
-      </v-dialog>
-
-      <!-- ลบ Head officer -->
-
-      <v-dialog v-model="dialogdel" persistent width="800">
-        <v-card align="center">
-          <h1>ยืนยัน</h1>
-
-          <v-divider></v-divider>
-          <h2>ต้องการลบข้อมูลของ {{ "ตรงนี้ใส่ index คนที่จะลบ" }}</h2>
-
-          <v-divider></v-divider>
-          <v-btn color="green darken-1" text @click="dialogdel = false">
-            ตกลง
-          </v-btn>
-          <v-btn color="red darken-1" text @click="dialogdel = false">
-            ยกเลิก
-          </v-btn>
-        </v-card>
-      </v-dialog>
-
-      <!-- ลบ Head officer -->
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </td>
+          </tr>
+        </template>
+      </v-data-table>
     </v-card>
   </div>
-  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarSuper from "../../components/NavbarAdmin.vue";
+import NavbarAdmin from "../../components/NavbarAdmin.vue";
 export default {
-  name: "Chiefmanagement",
+  name: "AdminChiefManagement",
   components: {
-    NavbarSuper,
+    NavbarAdmin,
   },
   data() {
     return {
-      forms: [
-        { no: "1", Fname: "ชญานิน", Lname: "บัวสละ", satatus: "H-Officer" },
-        { no: "2", Fname: "ชญานิน", Lname: "บัวสละ", satatus: "H-Officer" },
+      search: "",
+      headers: [
+        {
+          text: "ลำดับ",
+          align: "start",
+          value: "count",
+          width: 100,
+        },
+        { text: "ชื่อ-นามสกุล", width: 350, value: "calories" },
+        { text: "หน่วยงาน", width: 350, value: "calories" },
+        { text: "Action", align: "center", width: 100, value: "iron" },
       ],
-      dialog: false,
-      dialogadd: false,
-      dialogdel: false,
+      members: [
+        {
+          name: "Frozen Yogurt",
+          calories: 159,
+          fat: 6.0,
+          carbs: 24,
+          protein: 4.0,
+          iron: `f`,
+        },
+        {
+          name: "Ice cream sandwich",
+          calories: 237,
+          fat: 9.0,
+          carbs: 37,
+          protein: 4.3,
+          iron: "1%",
+        },
+        {
+          name: "Eclair",
+          calories: 262,
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          iron: "7%",
+        },
+        {
+          name: "Cupcake",
+          calories: 305,
+          fat: 3.7,
+          carbs: 67,
+          protein: 4.3,
+          iron: "8%",
+        },
+        {
+          name: "Gingerbread",
+          calories: 356,
+          fat: 16.0,
+          carbs: 49,
+          protein: 3.9,
+          iron: "16%",
+        },
+        {
+          name: "Jelly bean",
+          calories: 375,
+          fat: 0.0,
+          carbs: 94,
+          protein: 0.0,
+          iron: "0%",
+        },
+        {
+          name: "Lollipop",
+          calories: 392,
+          fat: 0.2,
+          carbs: 98,
+          protein: 0,
+          iron: "2%",
+        },
+        {
+          name: "Honeycomb",
+          calories: 408,
+          fat: 3.2,
+          carbs: 87,
+          protein: 6.5,
+          iron: "45%",
+        },
+        {
+          name: "Donut",
+          calories: 452,
+          fat: 25.0,
+          carbs: 51,
+          protein: 4.9,
+          iron: "22%",
+        },
+        {
+          name: "KitKat",
+          calories: 518,
+          fat: 26.0,
+          carbs: 65,
+          protein: 7,
+          iron: "6%",
+        },
+      ],
     };
   },
+  computed: {},
+
+  methods: {},
 };
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
-}
-h2 {
-  text-align: center;
-  padding: 10px;
-}
-.cardshow {
-  margin: 8%;
-}
-.box-margin {
-  margin: 3%;
-}
-.box-marginlist {
-  margin: 0px 0px 10px 0px;
-}
-.btn-magin {
-  margin: 3%;
-}
-.btn-groupmargin {
-  margin: 3%;
-}
-.box-margin {
-  margin: 10px 0px 10px 0px;
-}
-.Gprofile-margin1 {
-  margin: 50%;
-}
-.Gprofile-marginin {
-  margin: 30%;
-}
-.text-pprofile-magin {
-  margin: 5%;
-}
-.background-1 {
-  background-color: rgb(80, 82, 85);
+.cardmargin {
+  margin: 2%;
 }
 </style>

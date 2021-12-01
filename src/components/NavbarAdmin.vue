@@ -1,49 +1,31 @@
 <template>
-  <v-main>
-    <!-- ส่วนของ BAR -->
-    <v-app-bar color="#424242" fixed>
+  <div id="NavbarAdmin">
+    <!-- Navbar -->
+    <v-app-bar color="#FFA726">
       <v-app-bar-nav-icon @click="drawer = !drawer">
-        <v-icon color="#FFFFFF">mdi-menu</v-icon></v-app-bar-nav-icon
-      >
-      <v-spacer></v-spacer>
-      <v-btn fab color="#E53935" icon>
-        <v-img height="100px" width="100px" src="../assets/logo.png"> </v-img>
+        <v-icon color="#FFFFFF">
+          mdi-menu
+        </v-icon>
+      </v-app-bar-nav-icon>
+      <v-btn icon disabled>
+        <v-img height="160px" width="160px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
-      <!-- เมนูออก -->
-      <v-menu offset-y open-on-hover>
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn color="#FFFFFF" dark v-bind="attrs" v-on="on" icon>
-            <v-icon>mdi-cog-outline</v-icon>
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item @click="slideexit = !slideexit">
-            <v-list-item-title>ออกจากระบบ</v-list-item-title>
-          </v-list-item>
-          <v-divider></v-divider>
-          <v-list-item
-            v-for="menuseting in menuseting"
-            :key="menuseting.no"
-            router
-            :to="menuseting.route"
-          >
-            <v-list-item-title>{{ menuseting.text }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-      <!-- เมนูออก -->
+      <div class="text-white title mr-4">Last login:{{ lastlogin }}</div>
+      <v-btn elevation="2" color="error" @click="slideexit = !slideexit">
+        Logout
+      </v-btn>
     </v-app-bar>
-    <!-- ส่วนของ BAR -->
+    <!-- Navbar -->
 
-    <!-- เเถบข้างเเสดงเมนู -->
+    <!-- Sidebar -->
     <v-navigation-drawer v-model="drawer" app color="#424242" width="300">
       <!-- ส่วนตัวเลือกเมนู -->
       <v-row>
         <v-col align="center">
           <v-btn fab width="auto" height="auto" class="mt-15">
             <v-img
-              class="profile-r"
+              class="rounded-circle"
               width="150"
               height="150"
               src="../assets/5074620687.jpg"
@@ -54,7 +36,7 @@
       </v-row>
 
       <v-row>
-        <v-col class="text-profile" align="center">
+        <v-col class="text-white" align="center">
           ชื่อ : <br />
           สถานะ :
         </v-col>
@@ -71,80 +53,97 @@
           <v-list-item-icon>
             <v-icon color="#FFFFFF">mdi-{{ menu.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-title class="text-color">{{
+          <v-list-item-title class="text-white">{{
             menu.text
           }}</v-list-item-title>
         </v-list-item>
       </v-list-item>
       <!-- ส่วนตัวเลือกเมนู -->
     </v-navigation-drawer>
-    <!-- เเถบข้างเเสดงเมนู -->
+    <!-- Sidebar -->
 
-    <!-- popup หน้าต่างกดออก -->
-    <v-dialog v-model="slideexit" persistent width="800">
-      <v-card align="center">
+    <!-- Dialog confirm -->
+    <v-dialog v-model="slideexit" width="700">
+      <v-card align="center" class="pa-10">
         <h1>ออกจากระบบ</h1>
-
         <v-divider></v-divider>
-        <br />
-        <v-btn fab width="150" height="150" left class="text-pprofile-magin">
-          <v-icon>mdi-emoticon-cry-outline</v-icon>
-        </v-btn>
-        <br />
-        <br />
-        <h2>กด "ตกลง" เพื่อนยืนยันการออกจากระบบ</h2>
-        <br />
-
+        <h3>กด "ตกลง" เพื่อยืนยันการออกจากระบบ</h3>
         <v-divider></v-divider>
-        <v-btn color="green darken-1" @click="logout" class="btn-margin">
+        <v-btn color="green darken-1" class="text-white mr-5" @click="logout">
           ตกลง
         </v-btn>
 
-        <v-btn color="red darken-1" @click="slideexit = false"> ยกเลิก </v-btn>
+        <v-btn
+          color="red darken-1"
+          class="text-white"
+          @click="slideexit = false"
+        >
+          ยกเลิก
+        </v-btn>
       </v-card>
     </v-dialog>
-    <!-- popup หน้าต่างกดออก -->
-  </v-main>
+    <!-- Dialog confirm -->
+  </div>
 </template>
 
 <script>
 import AuthService from "@/services/AuthService.js";
 export default {
-  name: "NavbarOffice",
+  name: "NavbarAdmin",
   data: () => ({
     drawer: null,
     slideexit: false,
+    lastlogin: "12 October 2021",
     menu: [
-      { menu: "1", text: "Dashboard", route: "/DashboarAD", icon: "home" },
+      {
+        menu: "1",
+        text: "Dashboard",
+        route: "/AdminDashboard",
+        icon: "home",
+      },
       {
         menu: "2",
         text: "ติดตามสถานะคำร้อง/ปัญหา",
-        route: "/Group",
+        route: "/AdminTracking",
         icon: "account-group",
       },
       {
         menu: "3",
-        text: "Froms ทั้งหมดใครระบบ",
-        route: "/FormsAD",
+        text: "การอนุมัติ",
+        route: "/AdminViewApproval",
         icon: "form-select",
       },
       {
         menu: "4",
-        text: "จัดการ Office",
-        route: "/OfficerAD",
+        text: "การรายงานปัญหา",
+        route: "/AdminViewReport",
         icon: "account-check",
       },
       {
         menu: "5",
-        text: "จัดการ HeadOffice",
-        route: "/HofficerAD",
+        text: "จัดการ Chief",
+        route: "/AdminChiefManagement",
         icon: "account-star",
       },
-      { menu: "7", text: "จัดการ บทความ", route: "/Blog", icon: "book" },
-    ],
-    menuseting: [
-      { menu: "1", text: "เกี่ยวกับ", route: "/aboutme" },
-      { menu: "2", text: "ตั้งค่า", route: "/seting" },
+      {
+        menu: "6",
+        text: "จัดการ Secretary",
+        route: "/AdminSecretaryManagement",
+        icon: "book",
+      },
+      {
+        menu: "7",
+        text: "จัดการ Officer",
+        route: "/AdminOfficerManagement",
+        icon: "book",
+      },
+      {
+        menu: "8",
+        text: "จัดการ User",
+        route: "/AdminUserManagement",
+        icon: "book",
+      },
+      { menu: "9", text: "โปรไฟล์", route: "/AdminProfile", icon: "book" },
     ],
   }),
   async created() {
@@ -164,21 +163,4 @@ export default {
 };
 </script>
 
-<style scope>
-.profile {
-  margin: 100px 0px 50px 0px;
-}
-.navback {
-  z-index: 2;
-}
-.text-color {
-  color: aliceblue;
-}
-.btn-margin {
-  margin: 30px;
-}
-
-.backgroundlogin {
-  background: linear-gradient(#ff1b1b71, #f57b007e);
-}
-</style>
+<style scope></style>
