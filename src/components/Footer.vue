@@ -3,7 +3,7 @@
     <v-footer dark padless>
       <v-container fluid>
         <v-row>
-          <v-col md="4" class="pa-15">
+          <v-col md="4">
             <h2>ติดต่อเรา</h2>
             <v-divider></v-divider>
             <v-list-item>
@@ -15,9 +15,9 @@
 
               <v-list-item-content>
                 <v-list-item-title
-                  >1 Chalong Krung, 1 Alley, Lat Krabang, Bangkok 10520<br />
-                  </v-list-item-title
-                >
+                  >1 ซอย ฉลองกรุง 1 แขวงลาดกระบัง <br />เขตลาดกระบัง
+                  กรุงเทพมหานคร 10520
+                </v-list-item-title>
                 <v-list-item-subtitle>Location</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -29,8 +29,8 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>โทรศัพท์ 0 2329 8000 - 0 2329 8099 </v-list-item-title>
-                <v-list-item-subtitle>โทรสาร 0 2329 8106</v-list-item-subtitle>
+                <v-list-item-title>02 329 8000 </v-list-item-title>
+                <v-list-item-subtitle>Mobile</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-list-item>
@@ -46,14 +46,16 @@
               </v-list-item-content>
             </v-list-item>
           </v-col>
-          <v-col md="4" class="pa-15">
+          <v-col md="4">
             <h2 class="h2">Academic Petition Service</h2>
             <v-divider></v-divider>
             <p>
-              This project “Academic Request Service Model System” was prepared. To study and develop technology systems for students and related personnel Easier to use in everyday
+              This project “Academic Request Service Model System” was prepared.
+              To study and develop technology systems for students and related
+              personnel Easier to use in everyday
             </p>
           </v-col>
-          <v-col md="4" class="pa-15">
+          <v-col md="4">
             <h2 class="h2">แผนที่</h2>
             <v-divider></v-divider>
             <iframe
@@ -88,9 +90,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.text-center {
-  text-align: center;
-  height: 100%;
-}
-</style>
+<style></style>

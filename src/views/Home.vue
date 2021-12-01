@@ -1,7 +1,7 @@
 <template>
-  <v-app class="mybody">
+  <v-app>
     <Navbar />
-    <v-row>
+    <v-row class="mybody">
       <v-col align="center">
         <h1 class="textlogo">สร้างเอกสาร หรือ ติดตามคำร้องได้ง่ายๆ ด้วย</h1>
         <v-img height="300px" width="700px" src="../assets/RKR.png"></v-img>
@@ -13,7 +13,7 @@
           router-link
           to="/login"
         >
-          <h2>เริ่มต้นใช้งานกันเลย!</h2>
+          <h2 class="text-white">เริ่มต้นใช้งานกันเลย!</h2>
         </v-btn>
       </v-col>
       <v-col>
@@ -59,7 +59,7 @@
       </v-container>
     </div>
 
-    <v-container class="grey lighten-5">
+    <v-container class="grey lighten-5 mb-16">
       <h3 class="display-6 text-center">Feature</h3>
       <v-row no-gutters>
         <v-col md="4">
