@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import NavbarSuper from "../../components/NavbarSuper.vue";
+import NavbarSuper from "../../components/NavbarAdmin.vue";
 export default {
   name: "Blogmanagement",
   components: {

@@ -1,15 +1,15 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <div id="DashboardSTU">
-    <NavbarStu />
+  <div id="DashboardADMIN">
+    <NavbarSuper />
     <v-card class="cardshow">
       <h1>
-        กระดานข่าวสาร student
+        กระดานข่าวสาร Admin
         <v-divider></v-divider>
       </h1>
       <v-row>
-        <v-col>
-          <!-- รายงานเอกสารที่ทำไป -->
+        <v-col align="center">
+          <!-- เอกสารทั้งหมด -->
           <v-card
             width="300px"
             height="400px"
@@ -27,14 +27,14 @@
             >
               <h1>{{ datastu.petition }}</h1>
             </v-progress-circular>
-            <h2>เอกสารที่ทำการทั้งหมด</h2>
+            <h2>เอกสารทั้งหมด</h2>
 
-            <!-- <h2>{{ datastu.petition }}</h2> -->
+            <h2>{{ datastu.petition }}</h2>
           </v-card>
-          <!-- รายงานเอกสารที่ทำไป -->
+          <!-- เอกสารทั้งหมด -->
         </v-col>
-        <v-col>
-          <!-- รายงานเอกสารที่ทำไป -->
+        <v-col align="center">
+          <!-- การรายงานทั้งหมด -->
           <v-card
             width="300px"
             height="400px"
@@ -54,13 +54,14 @@
             </v-progress-circular>
             <h2>การรายงานทั้งหมด</h2>
 
-            <!-- <h2>{{ datastu.report }}</h2> -->
+            <h2>{{ datastu.report }}</h2>
           </v-card>
-          <!-- รายงานเอกสารที่ทำไป -->
+          <!-- การรายงานทั้งหมด -->
         </v-col>
-
-        <v-col>
-          <!-- รายงานเอกสารที่ทำไป -->
+      </v-row>
+      <v-row>
+        <v-col align="center">
+          <!-- กลุ่มทั้งหมด -->
           <v-card
             width="300px"
             height="400px"
@@ -78,11 +79,36 @@
             >
               <h1>{{ datastu.tarcking }}</h1>
             </v-progress-circular>
-            <h2>เอกสารที่กำลังดำเนินการ</h2>
+            <h2>กลุ่มทั้งหมด</h2>
 
-            <!-- <h2>{{ datastu.tarcking }}</h2> -->
+            <h2>{{ datastu.tarcking }}</h2>
           </v-card>
-          <!-- รายงานเอกสารที่ทำไป -->
+          <!-- กลุ่มทั้งหมด -->
+        </v-col>
+        <v-col>
+          <!-- Officer ทั้งหมด -->
+          <v-card
+            width="300px"
+            height="400px"
+            v-for="datastu in datastu"
+            :key="datastu"
+            class="cardmagin"
+          >
+            <v-progress-circular
+              :rotate="90"
+              :size="180"
+              :width="15"
+              :value="datastu.report"
+              color="#448AFF"
+              class="progressmagin"
+            >
+              <h1>{{ datastu.tarcking }}</h1>
+            </v-progress-circular>
+            <h2>Officer ทั้งหมด</h2>
+
+            <h2>{{ datastu.tarcking }}</h2>
+          </v-card>
+          <!-- Officer ทั้งหมด -->
         </v-col>
       </v-row>
     </v-card>
@@ -91,11 +117,11 @@
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarStudent.vue";
+import NavbarSuper from "../../components/NavbarAdmin.vue";
 export default {
-  name: "DashboardSTU",
+  name: "DashboardADMIN",
   components: {
-    NavbarStu,
+    NavbarSuper,
   },
   data() {
     return {
@@ -108,7 +134,6 @@ export default {
           tarcking: 9,
         },
       ],
-      username: "",
     };
   },
 };
@@ -131,8 +156,5 @@ h2 {
 }
 .cardmagin {
   margin: 8%;
-}
-.bg-role {
-  background-color: aqua;
 }
 </style>

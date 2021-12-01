@@ -7,7 +7,7 @@
         เลือกแบบคำร้อง
         <v-divider></v-divider>
       </h1>
-      
+
       <v-item-group>
         <v-container>
           <v-row>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarStudent.vue";
+import NavbarStu from "../../components/NavbarUser.vue";
 export default {
   name: "FormsSTU",
   components: {

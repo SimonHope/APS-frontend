@@ -1,15 +1,15 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <div id="DashboardADMIN">
-    <NavbarSuper />
+  <div id="DashboardHOffice">
+    <NavbarHOF />
     <v-card class="cardshow">
       <h1>
-        กระดานข่าวสาร Admin
+        กระดานข่าวสาร Chief
         <v-divider></v-divider>
       </h1>
       <v-row>
-        <v-col align="center">
-          <!-- เอกสารทั้งหมด -->
+        <v-col>
+          <!-- รายงานเอกสารที่ทำไป -->
           <v-card
             width="300px"
             height="400px"
@@ -27,14 +27,14 @@
             >
               <h1>{{ datastu.petition }}</h1>
             </v-progress-circular>
-            <h2>เอกสารทั้งหมด</h2>
+            <h2>แบบฟอร์มทั้งหมด</h2>
 
             <h2>{{ datastu.petition }}</h2>
           </v-card>
-          <!-- เอกสารทั้งหมด -->
+          <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
-        <v-col align="center">
-          <!-- การรายงานทั้งหมด -->
+        <v-col>
+          <!-- รายงานเอกสารที่ทำไป -->
           <v-card
             width="300px"
             height="400px"
@@ -56,37 +56,11 @@
 
             <h2>{{ datastu.report }}</h2>
           </v-card>
-          <!-- การรายงานทั้งหมด -->
+          <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
-      </v-row>
-      <v-row>
-        <v-col align="center">
-          <!-- กลุ่มทั้งหมด -->
-          <v-card
-            width="300px"
-            height="400px"
-            v-for="datastu in datastu"
-            :key="datastu"
-            class="cardmagin"
-          >
-            <v-progress-circular
-              :rotate="90"
-              :size="180"
-              :width="15"
-              :value="datastu.report"
-              color="#448AFF"
-              class="progressmagin"
-            >
-              <h1>{{ datastu.tarcking }}</h1>
-            </v-progress-circular>
-            <h2>กลุ่มทั้งหมด</h2>
 
-            <h2>{{ datastu.tarcking }}</h2>
-          </v-card>
-          <!-- กลุ่มทั้งหมด -->
-        </v-col>
         <v-col>
-          <!-- Officer ทั้งหมด -->
+          <!-- รายงานเอกสารที่ทำไป -->
           <v-card
             width="300px"
             height="400px"
@@ -104,11 +78,11 @@
             >
               <h1>{{ datastu.tarcking }}</h1>
             </v-progress-circular>
-            <h2>Officer ทั้งหมด</h2>
+            <h2>เอกสารที่กำลังดำเนินการ</h2>
 
             <h2>{{ datastu.tarcking }}</h2>
           </v-card>
-          <!-- Officer ทั้งหมด -->
+          <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
       </v-row>
     </v-card>
@@ -117,11 +91,11 @@
 </template>
 
 <script>
-import NavbarSuper from "../../components/NavbarSuper.vue";
+import NavbarHOF from "../../components/NavbarChief.vue";
 export default {
-  name: "DashboardADMIN",
+  name: "DashboardHOffice",
   components: {
-    NavbarSuper,
+    NavbarHOF,
   },
   data() {
     return {

@@ -43,7 +43,7 @@
   <!-- ส่วนจัดเเสดง -->
 </template>
 <script>
-import NavbarHOF from "../../components/NavbarHOfficer.vue";
+import NavbarHOF from "../../components/NavbarChief.vue";
 export default {
   name: "Formmanagementchief",
   components: {

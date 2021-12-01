@@ -1,6 +1,6 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <div id="Groupmanagement">
+  <div id="Secretarymanagement">
     <NavbarSuper />
     <v-card class="cardshow">
       <h1 class="text-center p-4">
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import NavbarSuper from "../../components/NavbarSuper.vue";
+import NavbarSuper from "../../components/NavbarAdmin.vue";
 export default {
   name: "Groupmanagement",
   components: {

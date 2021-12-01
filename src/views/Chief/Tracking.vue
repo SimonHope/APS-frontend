@@ -1,9 +1,9 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <div id="Trackingofficer">
-    <NavbarOF />
+  <div id="TrackingHOffice">
+    <NavbarHOF />
     <v-card class="cardshow">
-      <h1 class="text-center">
+      <h1>
         สถานะเอกสาร / คำร้อง
         <v-divider></v-divider>
       </h1>
@@ -49,11 +49,11 @@
 </template>
 
 <script>
-import NavbarOF from "../../components/NavbarOfficer.vue";
+import NavbarHOF from "../../components/NavbarChief.vue";
 export default {
-  name: "Trackingofficer",
+  name: "TrackingHOffice",
   components: {
-    NavbarOF,
+    NavbarHOF,
   },
   data() {
     return {
@@ -69,7 +69,11 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: left;
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
   padding: 10px;
 }
 .cardshow {
@@ -86,7 +90,5 @@ h1 {
 }
 .checkingbtn {
   margin: 10px;
-}
-.top-pic {
 }
 </style>

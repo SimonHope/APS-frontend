@@ -15,10 +15,10 @@
 
 <script>
 // import Navbar from "./components/Navbar.vue";
-// import NavbarStudent from "./components/NavbarStudent.vue";
+// import NavbarStudent from "./components/NavbarUser.vue";
 // import NavbarOF from "./components/NavbarOfficer.vue";
-// import NavbarHOF from "./components/NavbarHOfficer.vue";
-// import NavbarSuper from "./components/NavbarSuper.vue";
+// import NavbarHOF from "./components/NavbarChief.vue";
+// import NavbarSuper from "./components/NavbarAdmin.vue";
 
 export default {
   name: "App",

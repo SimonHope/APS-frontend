@@ -1,10 +1,10 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <div id="DashboardHOffice">
-    <NavbarHOF />
+  <div id="DashboardSTU">
+    <NavbarStu />
     <v-card class="cardshow">
       <h1>
-        กระดานข่าวสาร Agent
+        กระดานข่าวสาร student
         <v-divider></v-divider>
       </h1>
       <v-row>
@@ -27,9 +27,9 @@
             >
               <h1>{{ datastu.petition }}</h1>
             </v-progress-circular>
-            <h2>แบบฟอร์มทั้งหมด</h2>
+            <h2>เอกสารที่ทำการทั้งหมด</h2>
 
-            <h2>{{ datastu.petition }}</h2>
+            <!-- <h2>{{ datastu.petition }}</h2> -->
           </v-card>
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
@@ -54,7 +54,7 @@
             </v-progress-circular>
             <h2>การรายงานทั้งหมด</h2>
 
-            <h2>{{ datastu.report }}</h2>
+            <!-- <h2>{{ datastu.report }}</h2> -->
           </v-card>
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
@@ -80,7 +80,7 @@
             </v-progress-circular>
             <h2>เอกสารที่กำลังดำเนินการ</h2>
 
-            <h2>{{ datastu.tarcking }}</h2>
+            <!-- <h2>{{ datastu.tarcking }}</h2> -->
           </v-card>
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
@@ -91,11 +91,11 @@
 </template>
 
 <script>
-import NavbarHOF from "../../components/NavbarHOfficer.vue";
+import NavbarStu from "../../components/NavbarUser.vue";
 export default {
-  name: "DashboardHOffice",
+  name: "DashboardSTU",
   components: {
-    NavbarHOF,
+    NavbarStu,
   },
   data() {
     return {
@@ -108,6 +108,7 @@ export default {
           tarcking: 9,
         },
       ],
+      username: "",
     };
   },
 };
@@ -130,5 +131,8 @@ h2 {
 }
 .cardmagin {
   margin: 8%;
+}
+.bg-role {
+  background-color: aqua;
 }
 </style>

@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarStudent.vue";
+import NavbarStu from "../../components/NavbarUser.vue";
 export default {
   name: "ReportSTU",
   components: {

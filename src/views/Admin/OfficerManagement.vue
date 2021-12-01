@@ -1,7 +1,7 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
   <div id="Officermanagement">
-    <NavbarHOF />
+    <NavbarSuper />
     <v-card class="cardshow">
       <h1>
         จัดการ Officer
@@ -28,13 +28,13 @@
         </v-col>
       </v-row>
 
-      <v-card class="box-marginlist">
+      <v-card class="box-marginlist" align="center">
         <v-row>
-          <v-col align="center">ลำดับ</v-col>
-          <v-col align="center">ชื่อ</v-col>
-          <v-col align="center">นามสกุล</v-col>
-          <v-col align="center">สถานะ</v-col>
-          <v-col align="center">ตัวเลือก</v-col>
+          <v-col>ลำดับ</v-col>
+          <v-col>ชื่อ</v-col>
+          <v-col>นามสกุล</v-col>
+          <v-col>สถานะ</v-col>
+          <v-col>ตัวเลือก</v-col>
         </v-row>
       </v-card>
 
@@ -69,7 +69,7 @@
 
           <v-divider></v-divider>
           <v-btn fab width="250" height="250" left class="text-pprofile-magin"
-            >Image</v-btn
+            >fuck</v-btn
           >
 
           <v-text-field
@@ -114,7 +114,7 @@
       <!-- เพิ่มข้อมูล officer -->
       <v-dialog v-model="dialogadd" persistent width="800">
         <v-card align="center">
-          <h1>เพิ่มข้อมูล officer</h1>
+          <h1>เพิ่มข้อมูล Head officer</h1>
 
           <v-divider></v-divider>
           <v-btn fab width="250" height="250" left class="text-pprofile-magin"
@@ -178,18 +178,18 @@
         </v-card>
       </v-dialog>
 
-      <!-- ลบ  officer -->
+      <!-- ลบ officer -->
     </v-card>
   </div>
   <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarHOF from "../../components/NavbarHOfficer.vue";
+import NavbarSuper from "../../components/NavbarAdmin.vue";
 export default {
   name: "Officermanagement",
   components: {
-    NavbarHOF,
+    NavbarSuper,
   },
   data() {
     return {
@@ -240,5 +240,8 @@ h2 {
 }
 .text-pprofile-magin {
   margin: 5%;
+}
+.background-1 {
+  background-color: rgb(80, 82, 85);
 }
 </style>

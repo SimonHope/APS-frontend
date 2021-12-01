@@ -151,13 +151,15 @@ export default {
         const user = response.user;
         this.$store.dispatch("login", { token, user });
         if (user.status == "user") {
-          this.$router.push("/DashboardSTU");
+          this.$router.push("/UserDashboard");
         } else if (user.status == "officer") {
-          this.$router.push("/DashboardOfficer");
+          this.$router.push("/OfficerDashboard");
         } else if (user.status == "chief") {
-          this.$router.push("/DashboardHofficer");
+          this.$router.push("/ChiefDashboard");
+        } else if (user.status == "secretary") {
+          this.$router.push("/SecretaryDashboard");
         } else if (user.status == "admin") {
-          this.$router.push("/DashboarAD");
+          this.$router.push("/AdminDashboard");
         }
         localStorage.setItem("token", token);
         localStorage.setItem("UserData", JSON.stringify(user));
