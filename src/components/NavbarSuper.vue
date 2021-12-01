@@ -41,11 +41,11 @@
       <!-- ส่วนตัวเลือกเมนู -->
       <v-row>
         <v-col align="center">
-          <v-btn fab width="200" height="200" class="profile">
+          <v-btn fab width="auto" height="auto" class="mt-15">
             <v-img
               class="profile-r"
-              width="200"
-              height="200"
+              width="150"
+              height="150"
               src="../assets/5074620687.jpg"
             >
             </v-img>
@@ -108,6 +108,7 @@
 </template>
 
 <script>
+import AuthService from "@/services/AuthService.js";
 export default {
   name: "NavbarOffice",
   data: () => ({
@@ -117,7 +118,7 @@ export default {
       { menu: "1", text: "Dashboard", route: "/DashboarAD", icon: "home" },
       {
         menu: "2",
-        text: "จัดการ Group",
+        text: "ติดตามสถานะคำร้อง/ปัญหา",
         route: "/Group",
         icon: "account-group",
       },
@@ -176,10 +177,7 @@ export default {
 .btn-margin {
   margin: 30px;
 }
-.text-profile {
-  text-align: center;
-  color: aliceblue;
-}
+
 .backgroundlogin {
   background: linear-gradient(#ff1b1b71, #f57b007e);
 }

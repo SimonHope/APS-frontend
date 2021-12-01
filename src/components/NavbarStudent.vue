@@ -120,18 +120,24 @@ export default {
       { menu: "1", text: "Dashboard", route: "/DashboardSTU", icon: "home" },
       {
         menu: "2",
-        text: "คำร้อง / ยื่นคำร้อง",
+        text: "ส่งคำร้อง",
         route: "/petitionSTU",
         icon: "file-document",
       },
       {
         menu: "3",
-        text: "รายงานเสนอเเนะ",
+        text: "ติดตามสถานะคำร้อง/ปัญหา",
         route: "/reportSTU",
         icon: "alert-octagon",
       },
       {
         menu: "4",
+        text: "รายงานปัญหาไม่ระบุตัวตน",
+        route: "/reportSTU",
+        icon: "alert-octagon",
+      },
+      {
+        menu: "5",
         text: "สถานะเอกสาร/คำร้อง",
         route: "/tarckingSTU",
         icon: "bullseye-arrow",
@@ -180,7 +186,5 @@ export default {
 .text-profile {
   text-align: center;
   color: aliceblue;
-}
-.bg-role {
 }
 </style>

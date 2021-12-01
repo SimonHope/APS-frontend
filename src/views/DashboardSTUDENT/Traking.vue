@@ -3,8 +3,51 @@
   <div id="TrackingSTU">
     <NavbarStu />
     <v-card class="cardshow">
-      <h1>
-        สถานะเอกสาร / คำร้อง
+      <h1 class="text-center pa-5">
+        สถานะคำร้อง
+        <v-divider></v-divider>
+      </h1>
+
+      <!-- วนเเสดงรายการสถาณะเอสาร -->
+
+      <v-expansion-panels>
+        <v-expansion-panel
+          v-for="listtracking in listtracking"
+          :key="listtracking.num"
+        >
+          <v-expansion-panel-header>
+            {{ listtracking.title }}
+            <!-- เเสดงชื่อเอกสาร -->
+            <v-spacer></v-spacer>
+            {{ listtracking.checktracking }} / {{ listtracking.pointracking }}
+            <!-- เเสดงขั้นนตอน-->
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <!-- เเสดงเนื้อหาข้างใน -->
+
+            <v-container id="inspire">
+              <v-stepper alt-labels>
+                <v-stepper-header>
+                  <v-stepper-step
+                    step="1"
+                    v-for="listtracking in listtracking.pointracking"
+                    :key="listtracking.pointracking"
+                  >
+                    รับข้อมูล
+                  </v-stepper-step>
+                </v-stepper-header>
+              </v-stepper>
+            </v-container>
+
+            <!-- เเสดงเนื้อหาข้างใน -->
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-card>
+
+    <v-card class="cardshow">
+      <h1 class="text-center pa-5">
+        สถานะการรายงานปัญหาแบบไม่ระบุตัวตน
         <v-divider></v-divider>
       </h1>
 
@@ -68,29 +111,7 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
-}
-h2 {
-  text-align: center;
-  padding: 10px;
-}
 .cardshow {
   margin: 8%;
-}
-.trackcrad {
-  text-align: center;
-}
-.text-right {
-  text-align: left;
-}
-.tarkingbtn {
-  margin: 10px;
-}
-.checkingbtn {
-  margin: 10px;
-}
-.top-pic {
 }
 </style>

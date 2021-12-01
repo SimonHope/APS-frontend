@@ -3,85 +3,56 @@
   <div id="Groupmanagement">
     <NavbarSuper />
     <v-card class="cardshow">
-      <h1>
-        จัดการ Group
+      <h1 class="text-center p-4">
+        สถานะคำร้อง
         <v-divider></v-divider>
       </h1>
       <v-row>
-        <v-col align="center" v-if="Group.length">
-          <v-btn class="btn-magin" width="150" height="50">
+        <v-col align="center" v-if="desserts.length">
+          <v-btn width="150" height="50">
             <v-icon>mdi-account</v-icon>
-            <h1>{{ Group.length }}</h1>
+            <h1>{{ desserts.length }}</h1>
           </v-btn>
         </v-col>
       </v-row>
-      <v-divider></v-divider>
-
-      <v-row>
-        <v-col v-for="Group in Group" :key="Group.no" align="center">
-          <v-card width="250" height="350" class="card-magin" color="#BDBDBD">
-            <v-row>
-              <v-col>
-                <v-btn fab width="90" height="90" class="Gprofile-margin"
-                  ><v-icon> mdi-{{ Group.icon }}</v-icon>
-                </v-btn>
-                <h2>{{ Group.name }}</h2>
-                <v-btn color="#FFD740" @click="dialog = !dialog"
-                  >จัดการกลุ่ม</v-btn
-                >
-              </v-col>
-            </v-row>
-          </v-card>
-        </v-col>
-      </v-row>
-
-      <v-dialog v-model="dialog" persistent width="800">
-        <v-card align="center">
-          <h1>จัดการกลุ่ม</h1>
-
-          <v-divider></v-divider>
-          <v-btn fab width="250" height="250" left class="text-pprofile-magin"
-            >fuck</v-btn
-          >
-
-          <v-text-field
-            label="ชื่อกลุ่ม"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-
-          <v-text-field
-            label="หน่วยงาน"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-          <v-text-field
-            label="หน่วยงาน"
-            outlined
-            readonly
-            class="text-pprofile-magin"
-          ></v-text-field>
-
-          <v-textarea
-            label="คำอธิบาย"
-            auto-grow
-            outlined
-            rows="1"
-            row-height="15"
-            class="text-pprofile-magin"
-          ></v-textarea>
-
-          <v-divider></v-divider>
-          <v-btn color="green darken-1" text @click="dialog = false">
-            ตกลง
-          </v-btn>
-          <v-btn color="red darken-1" text @click="dialog = false">
-            ยกเลิก
-          </v-btn>
-        </v-card>
-      </v-dialog>
+      <v-card-title>
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+        >
+        </v-text-field>
+      </v-card-title>
+      <v-data-table :headers="headers" :items="desserts" :search="search">
+        <template v-slot:item="desserts">
+          <tr>
+            <td>{{ desserts.item.name }}</td>
+            <td>{{ desserts.item.calories }}</td>
+            <td>
+              <v-btn
+                fab
+                plain
+                small
+                color="yellow darken-3"
+                @click="onButtonClick(row.item)"
+              >
+                <v-icon>mdi-account-edit</v-icon>
+              </v-btn>
+              <v-btn
+                fab
+                plain
+                small
+                color="red"
+                @click="onButtonClick(row.item)"
+              >
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </td>
+          </tr>
+        </template>
+      </v-data-table>
     </v-card>
   </div>
 
@@ -97,72 +68,108 @@ export default {
   },
   data() {
     return {
-      Group: [
-        { no: 1, name: "สำนักศึกษาทั่วไป", icon: "account", color: "#4CAF50" },
+      search: "",
+      headers: [
         {
-          no: 2,
-          name: "สำนักงานคอมพิวเตอร์ สจล.",
-          icon: "emoticon-poop",
-          color: "",
+          text: "Dessert (100g serving)",
+          align: "start",
+          value: "name",
+          width: 500,
         },
-        { no: 3, name: "สำนักถังเช่า", icon: "cross-bolnisi", color: "" },
-        {
-          no: 4,
-          name: "ชนเผ่าวูกาลูลู",
-          icon: "arrow-projectile-multiple",
-          color: "",
-        },
-        { no: 5, name: "ชมรมคนเหงา 2021", icon: "car-child-seat", color: "" },
+        { text: "Calories", width: 350, value: "calories" },
+        { text: "Action", align: "center", width: 100, value: "iron" },
       ],
-      dialog: false,
-      desserts: [],
-      editedIndex: -1,
-      editedItem: {
-        no: 0,
-        name: "",
-        icon: "",
-      },
+      desserts: [
+        {
+          name: "Frozen Yogurt",
+          calories: 159,
+          fat: 6.0,
+          carbs: 24,
+          protein: 4.0,
+          iron: `f`,
+        },
+        {
+          name: "Ice cream sandwich",
+          calories: 237,
+          fat: 9.0,
+          carbs: 37,
+          protein: 4.3,
+          iron: "1%",
+        },
+        {
+          name: "Eclair",
+          calories: 262,
+          fat: 16.0,
+          carbs: 23,
+          protein: 6.0,
+          iron: "7%",
+        },
+        {
+          name: "Cupcake",
+          calories: 305,
+          fat: 3.7,
+          carbs: 67,
+          protein: 4.3,
+          iron: "8%",
+        },
+        {
+          name: "Gingerbread",
+          calories: 356,
+          fat: 16.0,
+          carbs: 49,
+          protein: 3.9,
+          iron: "16%",
+        },
+        {
+          name: "Jelly bean",
+          calories: 375,
+          fat: 0.0,
+          carbs: 94,
+          protein: 0.0,
+          iron: "0%",
+        },
+        {
+          name: "Lollipop",
+          calories: 392,
+          fat: 0.2,
+          carbs: 98,
+          protein: 0,
+          iron: "2%",
+        },
+        {
+          name: "Honeycomb",
+          calories: 408,
+          fat: 3.2,
+          carbs: 87,
+          protein: 6.5,
+          iron: "45%",
+        },
+        {
+          name: "Donut",
+          calories: 452,
+          fat: 25.0,
+          carbs: 51,
+          protein: 4.9,
+          iron: "22%",
+        },
+        {
+          name: "KitKat",
+          calories: 518,
+          fat: 26.0,
+          carbs: 65,
+          protein: 7,
+          iron: "6%",
+        },
+      ],
     };
   },
-  computed: {
-    formTitle() {
-      return this.editedIndex === -1 ? "Edit Item" : "Edit Item";
-    },
-  },
+  computed: {},
 
-  methods: {
-    initialize() {
-      this.desserts = [
-        { no: 1, name: "สำนักศึกษาทั่วไป", icon: "account", color: "#4CAF50" },
-        {
-          no: 2,
-          name: "สำนักงานคอมพิวเตอร์ สจล.",
-          icon: "emoticon-poop",
-          color: "",
-        },
-        { no: 3, name: "สำนักถังเช่า", icon: "cross-bolnisi", color: "" },
-        {
-          no: 4,
-          name: "ชนเผ่าวูกาลูลู",
-          icon: "arrow-projectile-multiple",
-          color: "",
-        },
-        { no: 5, name: "ชมรมคนเหงา 2021", icon: "car-child-seat", color: "" },
-      ];
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
-}
-h2 {
-  text-align: center;
-  padding: 10px;
-}
 .cardshow {
   margin: 8%;
 }

@@ -32,13 +32,13 @@ export default {
   beforeCreate() {},
   data() {
     return {
-      roluser: "null",
+      // roluser: "null",
     };
   },
   created() {
-    let tempdata = JSON.parse(localStorage.getItem("UserData"));
-    console.log(tempdata.status);
-    this.roluser = tempdata.status;
+    // let tempdata = JSON.parse(localStorage.getItem("UserData"));
+    // console.log(tempdata.status);
+    // this.roluser = tempdata.status;
   },
 };
 </script>

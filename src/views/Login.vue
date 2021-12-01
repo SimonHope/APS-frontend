@@ -6,7 +6,7 @@
         <v-row>
           <v-col class="bg-color-logo">
             <v-img height="300px" width="500px" src="../assets/RKR.png"></v-img>
-            <div class="text-login">Academic Petition Service</div>
+            <div class="text-login text-white">Academic Petition Service</div>
           </v-col>
 
           <v-col class="bg-color-logo-formslogin">
@@ -16,9 +16,9 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  v-model="username"
-                  label="Username"
-                  type="username"
+                  v-model="email"
+                  label="Email"
+                  type="email"
                   class="textfield-margin"
                 >
                   <template v-slot:prepend>
@@ -126,9 +126,11 @@ export default {
   name: "login",
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
       msg: "",
+      forgotEmail: "",
+      snackbar: false,
       dialogforgot: false,
       timeout: 2000,
     };
@@ -140,16 +142,15 @@ export default {
     async login() {
       try {
         const credentials = {
-          username: this.username,
+          email: this.email,
           password: this.password,
         };
-        console.log(credentials);
         const response = await AuthService.login(credentials);
         this.msg = response.msg;
         const token = response.token;
         const user = response.user;
         this.$store.dispatch("login", { token, user });
-        if (user.status == "student") {
+        if (user.status == "user") {
           this.$router.push("/DashboardSTU");
         } else if (user.status == "officer") {
           this.$router.push("/DashboardOfficer");
@@ -189,8 +190,6 @@ export default {
 }
 .text-login {
   font-size: 30px;
-  color: rgb(0, 0, 0);
-  margin: 0px 0px 0px 0px;
 }
 .bg-login {
   background-color: #f7c5a8;

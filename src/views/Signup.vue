@@ -6,7 +6,7 @@
         <v-row>
           <v-col class="bg-color-logo">
             <v-img height="300px" width="500px" src="../assets/RKR.png"></v-img>
-            <div class="text-login">Academic Petition Service</div>
+            <div class="text-login text-white">Academic Petition Service</div>
           </v-col>
 
           <v-col class="bg-color-logo-formslogin">
@@ -16,7 +16,7 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  v-model="firstname"
+                  v-model="email"
                   label="E-mail"
                   type="username"
                   class="textfield-margin"
@@ -38,7 +38,7 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  v-model="lastname"
+                  v-model="password"
                   label="Password"
                   type="password"
                   class="textfield-margin"
@@ -60,7 +60,7 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  v-model="lastname"
+                  v-model="confirmPassword"
                   label="confirm password"
                   type="password"
                   class="textfield-margin"
@@ -106,7 +106,11 @@ import Navbar from "../components/Navbar.vue";
 export default {
   name: "signup",
   data() {
-    return {};
+    return {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    };
   },
   components: {
     Navbar,
@@ -126,8 +130,6 @@ export default {
 }
 .text-login {
   font-size: 30px;
-  color: rgb(0, 0, 0);
-  margin: 0px 0px 0px 0px;
 }
 .bg-login {
   background-color: #f7c5a8;

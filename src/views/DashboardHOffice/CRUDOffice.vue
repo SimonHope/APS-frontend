@@ -241,6 +241,4 @@ h2 {
 .text-pprofile-magin {
   margin: 5%;
 }
-.background-1 {
-}
 </style>

@@ -42,7 +42,7 @@
       </v-col>
     </v-row>
 
-    <v-jumbotron>
+    <div>
       <v-container class="my-16">
         <v-layout>
           <v-flex>
@@ -57,7 +57,7 @@
           </v-flex>
         </v-layout>
       </v-container>
-    </v-jumbotron>
+    </div>
 
     <v-container class="grey lighten-5">
       <h3 class="display-6 text-center">Feature</h3>
@@ -155,8 +155,5 @@ export default {
 }
 .btn-text {
   font-size: 48px;
-}
-h2 {
-  color: aliceblue;
 }
 </style>
