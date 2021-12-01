@@ -4,84 +4,42 @@
     <NavbarStu />
     <v-card class="cardshow">
       <h1>
-        กระดานข่าวสาร student
+        Dashboard
         <v-divider></v-divider>
       </h1>
       <v-row>
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
-          <v-card
-            width="300px"
-            height="400px"
-            v-for="datastu in datastu"
-            :key="datastu"
-            class="cardmagin"
-          >
-            <v-progress-circular
-              :rotate="90"
-              :size="180"
-              :width="15"
-              :value="datastu.petition"
-              color="#C62828"
-              class="progressmagin"
-            >
-              <h1>{{ datastu.petition }}</h1>
-            </v-progress-circular>
-            <h2>เอกสารที่ทำการทั้งหมด</h2>
 
-            <!-- <h2>{{ datastu.petition }}</h2> -->
-          </v-card>
+          <b-card img-src="https://firebasestorage.googleapis.com/v0/b/imgatm.appspot.com/o/Docicon.png?alt=media&token=125027dd-476a-486f-b7c0-89cb888466a8" img-alt="Card image" img-left class="mb-3 box-margin">
+            <b-card-text>
+              คำร้องที่ส่ง
+            </b-card-text>
+          </b-card>
+          
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
-          <v-card
-            width="300px"
-            height="400px"
-            v-for="datastu in datastu"
-            :key="datastu"
-            class="cardmagin"
-          >
-            <v-progress-circular
-              :rotate="90"
-              :size="180"
-              :width="15"
-              :value="datastu.report"
-              color="#D81B60"
-              class="progressmagin"
-            >
-              <h1>{{ datastu.report }}</h1>
-            </v-progress-circular>
-            <h2>การรายงานทั้งหมด</h2>
 
-            <!-- <h2>{{ datastu.report }}</h2> -->
-          </v-card>
+          <b-card img-src="https://firebasestorage.googleapis.com/v0/b/imgatm.appspot.com/o/Docicon.png?alt=media&token=125027dd-476a-486f-b7c0-89cb888466a8" img-alt="Card image" img-left class="mb-3 box-margin">
+            <b-card-text>
+              รายงานปัญหา
+            </b-card-text>
+          </b-card>
+         
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
 
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
-          <v-card
-            width="300px"
-            height="400px"
-            v-for="datastu in datastu"
-            :key="datastu"
-            class="cardmagin"
-          >
-            <v-progress-circular
-              :rotate="90"
-              :size="180"
-              :width="15"
-              :value="datastu.report"
-              color="#448AFF"
-              class="progressmagin"
-            >
-              <h1>{{ datastu.tarcking }}</h1>
-            </v-progress-circular>
-            <h2>เอกสารที่กำลังดำเนินการ</h2>
 
-            <!-- <h2>{{ datastu.tarcking }}</h2> -->
-          </v-card>
+          <b-card img-src="https://firebasestorage.googleapis.com/v0/b/imgatm.appspot.com/o/Docicon.png?alt=media&token=125027dd-476a-486f-b7c0-89cb888466a8" img-alt="Card image" img-left class="mb-3 box-margin">
+            <b-card-text>
+              คำร้องที่สำเร็จ
+            </b-card-text>
+          </b-card>
+         
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
       </v-row>
@@ -124,15 +82,9 @@ h2 {
   padding: 10px;
 }
 .cardshow {
-  margin: 8%;
+  margin: 2%;
 }
-.progressmagin {
-  margin: 20%;
-}
-.cardmagin {
-  margin: 8%;
-}
-.bg-role {
-  background-color: aqua;
+.box-margin{
+  margin: 5%;
 }
 </style>

@@ -58,6 +58,6 @@ h2 {
   padding: 10px;
 }
 .cardshow {
-  margin: 8%;
+  margin: 2%;
 }
 </style>

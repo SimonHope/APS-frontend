@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <div>
-      <!-- <NavbarHOF v-if="roluser == 'null'"></NavbarHOF> -->
-      <!-- <NavbarHOF v-if="roluser == 'officer'"></NavbarHOF> -->
-      <!-- <NavbarHOF v-if="roluser == 'chief'"></NavbarHOF> -->
-      <!-- <NavbarOF v-if="roluser == 'officer'"></NavbarOF> -->
-      <!-- <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper> -->
+      <!-- <Navbar v-if="roluser == 'null'"></Navbar>
+      <NavbarStudent v-if="roluser == 'User'"></NavbarStudent>
+      <NavbarHOF v-if="roluser == 'chief'"></NavbarHOF>
+      <NavbarOF v-if="roluser == 'officer'"></NavbarOF>
+      <NavbarSuper v-if="roluser == 'admin'"></NavbarSuper> -->
     </div>
     <v-main>
       <router-view />
@@ -32,7 +32,7 @@ export default {
   beforeCreate() {},
   data() {
     return {
-      // roluser: "null",
+      roluser: "User",
     };
   },
   created() {

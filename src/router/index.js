@@ -55,6 +55,8 @@ import AdminViewReport from '../views/Admin/ViewReport.vue'
 
 //Formbuilder
 import Builder from '../views/formbuilder/builderform.vue'
+import Sentpentition from '../views/Other/Sentpentition.vue'
+
 //Formbuilder
 
 
@@ -251,13 +253,20 @@ const routes = [
   },
   //Admin
 
-  //Formbuilder
+  //Other
   {
     path: '/builder',
     name: 'builder',
     component: Builder 
-  }
-  //Formbuilder
+  },
+  {
+    path: '/Sentpentition',
+    name: 'Sentpentition',
+    component: Sentpentition 
+  },
+  //Other
+
+  
 ]
 
 const router = new VueRouter({
