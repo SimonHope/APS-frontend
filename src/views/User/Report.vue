@@ -1,63 +1,97 @@
 <template>
-  <!-- ส่วนจัดเเสดง -->
-  <div id="ReportSTU">
-    <NavbarStu />
-    <v-card class="cardshow">
+  <div id="UserReport" class="bg-color">
+    <NavbarUser />
+    <v-card class="cardmargin">
       <h1 class="text-center p-3">
-        รายงานเสนอเเนะ
+        รายงานปัญหาไม่ระบุตัวตน
         <v-divider></v-divider>
       </h1>
 
-      <v-form v-model="valid">
+      <v-form>
         <v-container>
-          <v-select :items="items" label="เลือกหัวข้อ"></v-select>
-          <v-textarea
-            solo
-            name="input-7-4"
-            label="ใส่เหตุผลในการรายงาน"
-          ></v-textarea>
-          <v-btn dark color="#2E7D32" @click="submit"> ส่งรายงาน </v-btn>
+          <v-row>
+            <v-col cols="12">
+              <v-text-field
+                label="หัวข้อปัญหา"
+                placeholder="ระบุหัวข้อปัญหา"
+                v-model="report_title"
+              ></v-text-field>
+            </v-col>
+            <v-col cols="12">
+              <v-textarea
+                solo
+                name="input-7-4"
+                label="ระบุรายละเอียดปัญหา"
+                v-model="report_detail"
+              ></v-textarea>
+            </v-col>
+            <v-col cols="12" class="text-center">
+              <v-btn dark x-large color="#2E7D32" @click="sentreport">
+                ส่งรายงาน
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-container>
       </v-form>
     </v-card>
     <!-- ป้ายเเจ้งเตือน -->
-    <v-snackbar v-model="snackbar" :timeout="timeout" color="#2E7D32">
-      {{ text }}
+    <v-snackbar v-model="snackbar" :timeout="timeout" :color="colorsnackbar">
+      {{ textsnackbar }}
     </v-snackbar>
     <!-- ป้ายเเจ้งเตือน -->
   </div>
-  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarUser.vue";
+import NavbarUser from "../../components/NavbarUser.vue";
+import axios from "axios";
 export default {
-  name: "ReportSTU",
+  name: "UserReport",
   components: {
-    NavbarStu,
+    NavbarUser,
   },
   data() {
     return {
-      items: ["หัวข้อที่ 1", "หัวข้อที่ 2", "หัวข้อที่ 3", "หัวข้อที่ 3"],
+      report_title: "",
+      report_detail: "",
+      colorsnackbar: "",
+      textsnackbar: "",
       snackbar: false,
-      text: "ส่งรายงานเเล้ว",
       timeout: 2000,
     };
   },
   methods: {
-    submit: function() {
-      this.snackbar = true;
+    sentreport() {
+      axios
+        .post("http://localhost:3000/api/reports", {
+          report_title: this.report_title,
+          report_detail: this.report_detail,
+        })
+        .then((response) => {
+          if (response.data == "Please fill your information") {
+            this.textsnackbar = "กรุณากรอกข้อมูลให้ครบ";
+            this.colorsnackbar = "#DB4437";
+            this.snackbar = true;
+          } else {
+            this.textsnackbar = "รายงานปัญหาสำเร็จ";
+            this.colorsnackbar = "#2E7D32";
+            this.snackbar = true;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
 </script>
 
 <style scoped>
-h2 {
-  text-align: center;
-  padding: 10px;
+.bg-color {
+  background: #f0f0f0;
+  height: 100%;
 }
-.cardshow {
-  margin: 8%;
+.cardmargin {
+  margin: 2%;
 }
 </style>
