@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://206.189.38.90/:3000/api/';
+const url = 'http://206.189.38.90:3000/api/';
 export default {
   login(credentials) {
     return axios
