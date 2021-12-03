@@ -1,12 +1,11 @@
 <template>
-  <!-- ส่วนจัดเเสดง -->
-  <div id="DashboardSTU">
-    <NavbarStu />
-    <v-card class="cardshow">
-      <h1>
-        กระดานข่าวสาร student
-        <v-divider></v-divider>
+  <div id="DashboardSTU" class="bg-color">
+    <NavbarUser />
+    <v-card class="cardmargin">
+      <h1 class="text-center p-2">
+        Dashboard
       </h1>
+      <v-divider></v-divider>
       <v-row>
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
@@ -15,7 +14,7 @@
             height="400px"
             v-for="datastu in datastu"
             :key="datastu"
-            class="cardmagin"
+            class="cardmargin"
           >
             <v-progress-circular
               :rotate="90"
@@ -28,8 +27,6 @@
               <h1>{{ datastu.petition }}</h1>
             </v-progress-circular>
             <h2>เอกสารที่ทำการทั้งหมด</h2>
-
-            <!-- <h2>{{ datastu.petition }}</h2> -->
           </v-card>
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
@@ -40,7 +37,7 @@
             height="400px"
             v-for="datastu in datastu"
             :key="datastu"
-            class="cardmagin"
+            class="cardmargin"
           >
             <v-progress-circular
               :rotate="90"
@@ -66,7 +63,7 @@
             height="400px"
             v-for="datastu in datastu"
             :key="datastu"
-            class="cardmagin"
+            class="cardmargin"
           >
             <v-progress-circular
               :rotate="90"
@@ -87,15 +84,14 @@
       </v-row>
     </v-card>
   </div>
-  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarUser.vue";
+import NavbarUser from "../../components/NavbarUser.vue";
 export default {
   name: "DashboardSTU",
   components: {
-    NavbarStu,
+    NavbarUser,
   },
   data() {
     return {
@@ -115,24 +111,11 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
+.bg-color {
+  background: #f0f0f0;
+  height: 100%;
 }
-h2 {
-  text-align: center;
-  padding: 10px;
-}
-.cardshow {
-  margin: 8%;
-}
-.progressmagin {
-  margin: 20%;
-}
-.cardmagin {
-  margin: 8%;
-}
-.bg-role {
-  background-color: aqua;
+.cardmargin {
+  margin: 2%;
 }
 </style>

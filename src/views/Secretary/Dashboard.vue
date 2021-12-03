@@ -3,7 +3,7 @@
     <NavbarSecretary />
     <v-card class="cardmargin">
       <h1 class="text-center">
-        กระดานข่าวสาร Secretary
+        Dashboard Secretary
         <v-divider></v-divider>
       </h1>
     </v-card>
