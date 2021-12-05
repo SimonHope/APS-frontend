@@ -11,7 +11,12 @@
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
 
-          <b-card img-src="https://firebasestorage.googleapis.com/v0/b/imgatm.appspot.com/o/Docicon.png?alt=media&token=125027dd-476a-486f-b7c0-89cb888466a8" img-alt="Card image" img-left class="mb-3 box-margin">
+          <b-card :img-src="require('../../assets/Docicon.png')" 
+            img-width=100
+            img-height=100
+            img-left=true
+            class="mb-3 box-margin"
+          >
             <b-card-text>
               คำร้องที่ส่ง
             </b-card-text>
@@ -22,7 +27,12 @@
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
 
-          <b-card img-src="https://firebasestorage.googleapis.com/v0/b/imgatm.appspot.com/o/Docicon.png?alt=media&token=125027dd-476a-486f-b7c0-89cb888466a8" img-alt="Card image" img-left class="mb-3 box-margin">
+          <b-card :img-src="require('../../assets/Docicon2.png')" 
+            img-width=100
+            img-height=100
+            img-left=true
+            class="mb-3 box-margin"
+          >
             <b-card-text>
               รายงานปัญหา
             </b-card-text>
@@ -34,7 +44,12 @@
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
 
-          <b-card img-src="https://firebasestorage.googleapis.com/v0/b/imgatm.appspot.com/o/Docicon.png?alt=media&token=125027dd-476a-486f-b7c0-89cb888466a8" img-alt="Card image" img-left class="mb-3 box-margin">
+          <b-card :img-src="require('../../assets/Docicon3.png')" 
+            img-width=100
+            img-height=100
+            img-left=true
+            class="mb-3 box-margin"
+          >
             <b-card-text>
               คำร้องที่สำเร็จ
             </b-card-text>

@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import AuthService from "@/services/AuthService.js";
+// import AuthService from "@/services/AuthService.js";
 export default {
   name: "NavbarOfficer",
   data: () => ({
@@ -98,19 +98,25 @@ export default {
       {
         menu: "1",
         text: "Dashboard",
-        route: "/DashboardOfficer",
+        route: "/OfficerDashboard",
         icon: "home",
       },
       {
         menu: "2",
-        text: "จัดการ Froms",
-        route: "/petitionOfficer",
+        text: "จัดการคำร้อง",
+        route: "/OfficerPetitionManagement",
         icon: "file-document",
       },
       {
+        menu: "3",
+        text: "ติดตามสถานะคำร้อง/ปัญหา",
+        route: "/OfficerTracking",
+        icon: "bullseye-arrow",
+      },
+      {
         menu: "4",
-        text: "สถานะเอกสาร/คำร้อง",
-        route: "/tarckingOfficer",
+        text: "ข้อมูลผู้ใช้งาน",
+        route: "/OfficerTracking",
         icon: "bullseye-arrow",
       },
     ],
@@ -119,20 +125,20 @@ export default {
       { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
   }),
-  async created() {
-    if (!this.$store.getters.isLoggedIn) {
-      this.$router.push("/login");
-    }
-    this.username = this.$store.getters.getUser.username;
-    this.secretMessage = await AuthService.getSecretContent();
-  },
-  methods: {
-    logout() {
-      localStorage.clear();
-      this.$store.dispatch("logout");
-      this.$router.push("/login");
-    },
-  },
+  // async created() {
+  //   if (!this.$store.getters.isLoggedIn) {
+  //     this.$router.push("/login");
+  //   }
+  //   this.username = this.$store.getters.getUser.username;
+  //   this.secretMessage = await AuthService.getSecretContent();
+  // },
+  // methods: {
+  //   logout() {
+  //     localStorage.clear();
+  //     this.$store.dispatch("logout");
+  //     this.$router.push("/login");
+  //   },
+  // },
 };
 </script>
 

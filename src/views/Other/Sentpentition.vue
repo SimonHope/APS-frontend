@@ -83,7 +83,7 @@
           </v-row>
 
           <v-row v-for="heard in heard" :key="heard">
-            <v-col align="center" v-if="heard.type == 1">
+            <v-col align="center" v-if="heard.hasSpecificsDetail">
               <v-row v-for="specifics in specifics" :key="specifics">
                 <v-col>
                     {{specifics.titleheard}}
@@ -139,7 +139,7 @@ export default {
       heard: [
         {
           title: "การขอสอบย้อนหลัง",
-          type: 1,
+          hasSpecificsDetail:true , //ตัวกำหนดว่าเป็นฟอรมต้องใส่รายละเอียดเพิ่ม
         },
       ],
       specifics: [

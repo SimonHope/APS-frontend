@@ -3,78 +3,58 @@
   <div id="DashboardOffice">
     <NavbarOF />
     <v-card class="cardshow">
-      <h1 class="text-center">
-        กระดานข่าวสาร officer
+      <h1>
+        Dashboard
         <v-divider></v-divider>
       </h1>
       <v-row>
-        <v-col align="center">
+        <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
-          <v-card
-            width="300px"
-            height="400px"
-            v-for="datastu in datastu"
-            :key="datastu"
-            class="cardmagin"
+
+          <b-card :img-src="require('../../assets/Docicon.png')" 
+            img-width=100
+            img-height=100
+            img-left=true
+            class="mb-3 box-margin"
           >
-            <v-progress-circular
-              :rotate="90"
-              :size="180"
-              :width="15"
-              :value="datastu.petition"
-              color="#C62828"
-              class="progressmagin"
-            >
-              <h1>{{ datastu.petition }}</h1>
-            </v-progress-circular>
-            <h2>แบบฟอร์มทั้งหมด</h2>
-          </v-card>
+            <b-card-text>
+              คำร้องที่ส่ง
+            </b-card-text>
+          </b-card>
+          
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
-        <v-col align="center">
+        <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
-          <v-card
-            width="300px"
-            height="400px"
-            v-for="datastu in datastu"
-            :key="datastu"
-            class="cardmagin"
+
+          <b-card :img-src="require('../../assets/Docicon2.png')" 
+            img-width=100
+            img-height=100
+            img-left=true
+            class="mb-3 box-margin"
           >
-            <v-progress-circular
-              :rotate="90"
-              :size="180"
-              :width="15"
-              :value="datastu.report"
-              color="#D81B60"
-              class="progressmagin"
-            >
-              <h1>{{ datastu.report }}</h1>
-            </v-progress-circular>
-            <h2>การรายงานทั้งหมด</h2>
-          </v-card>
+            <b-card-text>
+              รายงานปัญหา
+            </b-card-text>
+          </b-card>
+         
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
-        <v-col align="center">
+
+        <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
-          <v-card
-            width="300px"
-            height="400px"
-            v-for="datastu in datastu"
-            :key="datastu"
-            class="cardmagin"
+
+          <b-card :img-src="require('../../assets/Docicon3.png')" 
+            img-width=100
+            img-height=100
+            img-left=true
+            class="mb-3 box-margin"
           >
-            <v-progress-circular
-              :rotate="90"
-              :size="180"
-              :width="15"
-              :value="datastu.report"
-              color="#448AFF"
-              class="progressmagin"
-            >
-              <h1>{{ datastu.tarcking }}</h1>
-            </v-progress-circular>
-            <h2>เอกสารที่กำลังดำเนินการ</h2>
-          </v-card>
+            <b-card-text>
+              คำร้องที่สำเร็จ
+            </b-card-text>
+          </b-card>
+         
           <!-- รายงานเอกสารที่ทำไป -->
         </v-col>
       </v-row>
@@ -108,16 +88,17 @@ export default {
 
 <style scoped>
 h1 {
-  text-align: left;
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  text-align: center;
   padding: 10px;
 }
 .cardshow {
-  margin: 8%;
+  margin: 2%;
 }
-.progressmagin {
-  margin: 20%;
-}
-.cardmagin {
-  margin: 8%;
+.box-margin{
+  margin: 5%;
 }
 </style>
