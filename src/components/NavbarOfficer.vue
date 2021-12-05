@@ -116,7 +116,7 @@ export default {
       {
         menu: "4",
         text: "ข้อมูลผู้ใช้งาน",
-        route: "/OfficerTracking",
+        route: "/OfficerProfile",
         icon: "bullseye-arrow",
       },
     ],

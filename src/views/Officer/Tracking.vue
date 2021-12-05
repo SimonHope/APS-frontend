@@ -26,17 +26,43 @@
             <!-- เเสดงเนื้อหาข้างใน -->
 
             <v-container id="inspire">
-              <v-stepper alt-labels>
+              <!-- ส่วนเเสดงเวลากดดู -->
+              <v-stepper alt-labels v-model="listtracking.checktracking">
                 <v-stepper-header>
+                  <v-stepper-step 
+                  :complete="listtracking.checktracking > 1"
+                  step="1"
+                  color="green"
+                   > Ad type </v-stepper-step>
+
+                  <v-divider></v-divider>
+
                   <v-stepper-step
-                    step="1"
-                    v-for="listtracking in listtracking.pointracking"
-                    :key="listtracking.pointracking"
-                  >
-                    รับข้อมูล
+                  :complete="listtracking.checktracking > 2"
+                  step="2" 
+                  color="green"
+                  > Ad style </v-stepper-step>
+
+                  <v-divider></v-divider>
+
+                  <v-stepper-step 
+                  :complete="listtracking.checktracking > 3"
+                  step="3"
+                  color="green">
+                    Ad style
                   </v-stepper-step>
+
+                  <v-divider></v-divider>
+
+                  <v-stepper-step 
+                  :complete="listtracking.checktracking > 4"
+                  step="4"
+                  color="green"> Ad style </v-stepper-step>
+
+                  
                 </v-stepper-header>
               </v-stepper>
+              <!-- ส่วนเเสดงเวลากดดู -->
             </v-container>
 
             <!-- เเสดงเนื้อหาข้างใน -->
@@ -58,9 +84,9 @@ export default {
   data() {
     return {
       listtracking: [
-        { num: 1, title: "เอกสารที่1", pointracking: 6, checktracking: 3 },
+        { num: 1, title: "เอกสารที่1", pointracking: 1, checktracking: 2 },
         { num: 2, title: "เอกสารที่2", pointracking: 2, checktracking: 2 },
-        { num: 3, title: "เอกสารที่2", pointracking: 2, checktracking: 1 },
+        { num: 3, title: "เอกสารที่2", pointracking: 2, checktracking: 4 },
       ],
     };
   },
