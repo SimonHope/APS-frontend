@@ -56,7 +56,7 @@ import AdminViewReport from '../views/Admin/ViewReport.vue'
 //Formbuilder
 import Builder from '../views/formbuilder/builderform.vue'
 import Sentpentition from '../views/Other/Sentpentition.vue'
-
+import viewpentitiontrackingbyofficer from '../views/Other/viewpentitiontrackingbyofficer.vue'
 //Formbuilder
 
 
@@ -263,6 +263,11 @@ const routes = [
     path: '/Sentpentition',
     name: 'Sentpentition',
     component: Sentpentition 
+  },
+  {
+    path: '/viewpentitiontrackingbyofficer',
+    name: 'viewpentitiontrackingbyofficer',
+    component: viewpentitiontrackingbyofficer 
   },
   //Other
 

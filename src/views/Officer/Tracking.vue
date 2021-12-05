@@ -19,11 +19,13 @@
             {{ listtracking.title }}
             <!-- เเสดงชื่อเอกสาร -->
             <v-spacer></v-spacer>
+            
             {{ listtracking.checktracking }} / {{ listtracking.pointracking }}
             <!-- เเสดงขั้นนตอน-->
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <!-- เเสดงเนื้อหาข้างใน -->
+
 
             <v-container id="inspire">
               <!-- ส่วนเเสดงเวลากดดู -->
@@ -61,7 +63,15 @@
 
                   
                 </v-stepper-header>
+                <v-row>
+               <v-col align="center">
+                 <v-btn color="#31BDDC" to="/viewpentitiontrackingbyofficer">
+                   ดูข้อมูล
+                 </v-btn>
+               </v-col>
+             </v-row>
               </v-stepper>
+             
               <!-- ส่วนเเสดงเวลากดดู -->
             </v-container>
 
@@ -86,7 +96,7 @@ export default {
       listtracking: [
         { num: 1, title: "เอกสารที่1", pointracking: 1, checktracking: 2 },
         { num: 2, title: "เอกสารที่2", pointracking: 2, checktracking: 2 },
-        { num: 3, title: "เอกสารที่2", pointracking: 2, checktracking: 4 },
+        { num: 3, title: "เอกสารที่2", pointracking: 2, checktracking: 5 },
       ],
     };
   },
