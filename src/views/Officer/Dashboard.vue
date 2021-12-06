@@ -1,10 +1,10 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
-  <div id="DashboardOffice">
+  <div id="DashboardOffice" class="bg-color">
     <NavbarOF />
     <v-card class="cardshow">
-      <h1>
-        Dashboard
+      <h1 class="text-center">
+        Dashboard officer
         <v-divider></v-divider>
       </h1>
       <v-row>
@@ -87,9 +87,9 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
+.bg-color {
+  background: #f0f0f0;
+  height: 100%;
 }
 h2 {
   text-align: center;

@@ -30,6 +30,7 @@ import ChiefProfile from '../views/Chief/Profile.vue'
 import ChiefReport from '../views/Chief/Report.vue'
 import ChiefSecretaryManagement from '../views/Chief/SecretaryManagement.vue'
 import ChiefTracking from '../views/Chief/Tracking.vue'
+import ChiefReportDetail from '../views/Chief/ReportDetail.vue'
 //Chief
 
 //Secretary
@@ -175,6 +176,11 @@ const routes = [
     path: '/ChiefTracking',
     name: 'ChiefTracking',
     component: ChiefTracking 
+  },
+  {
+    path: '/ChiefReportDetail/:id',
+    name: 'ChiefReportDetail',
+    component: ChiefReportDetail 
   },
   //Chief
 

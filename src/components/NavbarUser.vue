@@ -11,7 +11,7 @@
         <v-img height="160px" width="160px" src="../assets/logo.png"> </v-img>
       </v-btn>
       <v-spacer></v-spacer>
-      <div class="text-white title mr-4">Last login:{{ lastlogin }}</div>
+      <div class="text-white subtitle-1 mr-4">Last login: {{ lastlogin }}</div>
       <v-btn elevation="2" color="error" @click="slideexit = !slideexit">
         Logout
       </v-btn>
@@ -37,8 +37,8 @@
 
       <v-row>
         <v-col class="text-white" align="center">
-          ชื่อ : <br />
-          สถานะ :
+          ชื่อ : {{ firstname }} {{ lastname }}<br />
+          สถานะ : {{ status }}
         </v-col>
       </v-row>
       <v-divider></v-divider>
@@ -93,7 +93,10 @@ export default {
   data: () => ({
     drawer: null,
     slideexit: false,
-    lastlogin: "12 October 2021",
+    firstname: "",
+    lastname: "",
+    status: "",
+    lastlogin: "",
     menu: [
       { menu: "1", text: "Dashboard", route: "/UserDashboard", icon: "home" },
       {
@@ -116,21 +119,20 @@ export default {
       },
       {
         menu: "5",
-        text: "ข้อมูลผู้ใช้",
+        text: "โปรไฟล์",
         route: "/UserProfile",
-        icon: "bullseye-arrow",
+        icon: "account",
       },
-    ],
-    menuseting: [
-      { menu: "1", text: "เกี่ยวกับ", route: "/aboutme" },
-      { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
   }),
   async created() {
     if (!this.$store.getters.isLoggedIn) {
       this.$router.push("/login");
     }
-    this.username = this.$store.getters.getUser.username;
+    this.firstname = this.$store.getters.getUser.f_name;
+    this.lastname = this.$store.getters.getUser.l_name;
+    this.status = this.$store.getters.getUser.status;
+    this.lastlogin = this.$store.getters.getUser.last_login;
     this.secretMessage = await AuthService.getSecretContent();
   },
   methods: {

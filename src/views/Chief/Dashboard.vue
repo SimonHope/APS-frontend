@@ -4,7 +4,7 @@
     <NavbarHOF />
     <v-card class="cardshow">
       <h1>
-        กระดานข่าวสาร Chief
+        Dashboard Chief
         <v-divider></v-divider>
       </h1>
       <v-row>

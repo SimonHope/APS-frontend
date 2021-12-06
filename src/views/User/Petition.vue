@@ -1,8 +1,7 @@
 <template>
-  <!-- ส่วนจัดเเสดง -->
-  <v-app>
-    <NavbarStu />
-    <v-card class="cardshow">
+  <div id="UserPetition" class="bg-color">
+    <NavbarUser />
+    <v-card class="cardmargin text-center">
       <h1>
         เลือกแบบคำร้อง / ยื่นเรื่อง
         <v-divider></v-divider>
@@ -56,16 +55,15 @@
         </template>
       </v-data-iterator>
     </v-card>
-    <!-- ส่วนจัดเเสดง -->
-  </v-app>
+  </div>
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarUser.vue";
+import NavbarUser from "../../components/NavbarUser.vue";
 export default {
-  name: "FormsSTU",
+  name: "UserPetition",
   components: {
-    NavbarStu,
+    NavbarUser,
   },
   data() {
     return {
@@ -144,10 +142,11 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  padding: 10px;
+.bg-color {
+  background: #f0f0f0;
+  height: 100%;
 }
-.cardshow {
+.cardmargin {
   margin: 2%;
 }
 </style>

@@ -7,6 +7,7 @@
         Dashboard
         <v-divider></v-divider>
       </h1>
+      <v-divider></v-divider>
       <v-row>
         <v-col>
           <!-- รายงานเอกสารที่ทำไป -->
@@ -60,15 +61,14 @@
       </v-row>
     </v-card>
   </div>
-  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarUser.vue";
+import NavbarUser from "../../components/NavbarUser.vue";
 export default {
   name: "DashboardSTU",
   components: {
-    NavbarStu,
+    NavbarUser,
   },
   data() {
     return {
@@ -88,18 +88,11 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding: 10px;
+.bg-color {
+  background: #f0f0f0;
+  height: 100%;
 }
-h2 {
-  text-align: center;
-  padding: 10px;
-}
-.cardshow {
+.cardmargin {
   margin: 2%;
-}
-.box-margin{
-  margin: 5%;
 }
 </style>

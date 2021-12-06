@@ -1,12 +1,11 @@
 <template>
-  <!-- ส่วนจัดเเสดง -->
-  <div id="TrackingSTU">
-    <NavbarStu />
-    <v-card class="cardshow">
-      <h1 class="text-center pa-5">
+  <div id="UserTracking" class="bg-color">
+    <NavbarUser />
+    <v-card class="cardmargin">
+      <h2 class="text-center pa-5">
         สถานะคำร้อง
         <v-divider></v-divider>
-      </h1>
+      </h2>
 
       <!-- วนเเสดงรายการสถาณะเอสาร -->
 
@@ -92,11 +91,11 @@
       </v-expansion-panels>
     </v-card>
 
-    <v-card class="cardshow">
-      <h1 class="text-center pa-5">
+    <v-card class="cardmargin">
+      <h2 class="text-center pa-5">
         สถานะการรายงานปัญหาแบบไม่ระบุตัวตน
         <v-divider></v-divider>
-      </h1>
+      </h2>
 
       <!-- วนเเสดงรายการสถาณะเอสาร -->
 
@@ -151,15 +150,14 @@
       </v-expansion-panels>
     </v-card>
   </div>
-  <!-- ส่วนจัดเเสดง -->
 </template>
 
 <script>
-import NavbarStu from "../../components/NavbarUser.vue";
+import NavbarUser from "../../components/NavbarUser.vue";
 export default {
-  name: "TrackingSTU",
+  name: "UserTracking",
   components: {
-    NavbarStu,
+    NavbarUser,
   },
   data() {
     return {
@@ -207,7 +205,11 @@ export default {
 </script>
 
 <style scoped>
-.cardshow {
+.bg-color {
+  background: #f0f0f0;
+  height: 100%;
+}
+.cardmargin {
   margin: 2%;
 }
 </style>
