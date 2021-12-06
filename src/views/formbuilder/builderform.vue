@@ -14,7 +14,9 @@
       <v-main>
         <v-card class="cardshow">
           <h1>สร้างแบบเอกสาร</h1>
+          <v-container fluid>
           <v-form class="padingforms">
+            
             <v-text-field label="หัวเรื่อง"></v-text-field>
             <!-- <v-divider></v-divider> -->
 
@@ -41,7 +43,7 @@
             </v-row>
           
           </v-form>
-          
+          </v-container>
           <!-- <v-btn fab fixed right color="#607D8B" height="80" width="80"
           ><h2>1</h2></v-btn> -->
 

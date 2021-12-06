@@ -87,7 +87,7 @@
 </template>
 
 <script>
-// import AuthService from "@/services/AuthService.js";
+import AuthService from "@/services/AuthService.js";
 export default {
   name: "NavbarOfficer",
   data: () => ({
@@ -125,20 +125,20 @@ export default {
       { menu: "2", text: "ตั้งค่า", route: "/seting" },
     ],
   }),
-  // async created() {
-  //   if (!this.$store.getters.isLoggedIn) {
-  //     this.$router.push("/login");
-  //   }
-  //   this.username = this.$store.getters.getUser.username;
-  //   this.secretMessage = await AuthService.getSecretContent();
-  // },
-  // methods: {
-  //   logout() {
-  //     localStorage.clear();
-  //     this.$store.dispatch("logout");
-  //     this.$router.push("/login");
-  //   },
-  // },
+  async created() {
+    if (!this.$store.getters.isLoggedIn) {
+      this.$router.push("/login");
+    }
+    this.username = this.$store.getters.getUser.username;
+    this.secretMessage = await AuthService.getSecretContent();
+  },
+  methods: {
+    logout() {
+      localStorage.clear();
+      this.$store.dispatch("logout");
+      this.$router.push("/login");
+    },
+  },
 };
 </script>
 

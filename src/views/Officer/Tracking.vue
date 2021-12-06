@@ -109,7 +109,7 @@ h1 {
   padding: 10px;
 }
 .cardshow {
-  margin: 8%;
+  margin: 2%;
 }
 .trackcrad {
   text-align: center;
