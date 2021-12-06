@@ -1,7 +1,7 @@
 <template>
   <!-- ส่วนจัดเเสดง -->
   <div id="DashboardSTU">
-    <NavbarStu />
+    <NavbarUser />
     <v-card class="cardshow">
       <h1>
         Dashboard
